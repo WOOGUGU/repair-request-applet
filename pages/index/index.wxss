@@ -1,0 +1,7 @@
+/* pages/index/index.wxss */
+.indexContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
