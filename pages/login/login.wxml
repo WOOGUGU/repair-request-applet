@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="loginContainer">
+        <view class="title">
+            <image src=""></image>
+            网络报修
+        </view>
+    </view>
+</view>
