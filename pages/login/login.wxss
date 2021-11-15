@@ -11,10 +11,20 @@
 
 .loginContainer {
     width: 70%;
-    height: 60%;
+    height: 70%;
     border-radius: 20rpx;
     box-shadow: #dddddd 5rpx 5rpx 15rpx;
     background-color: #ffffff;
-
+    display: flex;
+    flex-direction: column;
     text-align: center;
+}
+
+.loginContainer .titleImg {
+    text-align: center;
+}
+
+.loginContainer .titleImg image {
+    width: 480rpx;
+    height: 240rpx;
 }
