@@ -15,7 +15,7 @@
 /* 登录框 start */
 .loginContainer {
     width: 70%;
-    height: 70%;
+    height: 60%;
     border-radius: 20rpx;
     box-shadow: #dddddd 5rpx 5rpx 15rpx;
     background-color: #ffffff;
@@ -25,7 +25,7 @@
 }
 
 .loginTitle {
-    /*margin: auto 0;*/
+    margin-top: 50rpx;
 }
 
 .loginContainer .loginTitle .titleImg {
@@ -33,12 +33,13 @@
 }
 
 .loginContainer .loginTitle .titleImg image {
-    width: 360rpx;
-    height: 180rpx;
+    width: 420rpx;
+    height: 150rpx;
 }
 
 .loginContainer .loginTitle .titleText {
     font-size: 42rpx;
+    margin-top: 30rpx;
 }
 
 .loginForm {
@@ -51,12 +52,14 @@
     border: 3rpx solid #92c7ff;
     border-radius: 20rpx;
     height: 80rpx;
-    box-shadow: #96b3cd 5rpx 5rpx 5rpx;
+    box-shadow: rgba(150, 179, 205, 0.5) 5rpx 5rpx 15rpx;
 }
 
 .loginForm button {
     color: white;
     margin-top: 50rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     background-color: #0069d9;
 }
 
