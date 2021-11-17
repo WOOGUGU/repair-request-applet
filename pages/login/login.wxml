@@ -1,9 +1,8 @@
 <view class="container">
     <view class="loginContainer">
-        <view class="titleImg">
-            <image src="/static/imgs/HBUT-all.svg"></image>
-        </view>
-        <view class="titleText">网络报修-登录</view>
-
+            <view class="titleImg">
+                <image src="/static/imgs/HBUT-all.svg"></image>
+            </view>
+            <view class="titleText">网络报修-登录</view>
     </view>
 </view>
