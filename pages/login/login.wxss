@@ -28,30 +28,36 @@
     /*margin: auto 0;*/
 }
 
-.cell .loginTitle .titleImg {
+.loginContainer .loginTitle .titleImg {
     text-align: center;
 }
 
-.cell .loginTitle .titleImg image {
+.loginContainer .loginTitle .titleImg image {
     width: 360rpx;
     height: 180rpx;
 }
 
-.cell .loginTitle .titleText {
+.loginContainer .loginTitle .titleText {
     font-size: 42rpx;
 }
 
 .loginForm {
-    margin: 100rpx auto 0;
+    margin: auto;
     width: 80%;
 }
 
 .loginForm input {
     margin-top: 30rpx;
-    border: 3rpx solid #000000;
+    border: 3rpx solid #92c7ff;
     border-radius: 20rpx;
     height: 80rpx;
-    box-shadow: #dddddd 10rpx 10rpx 20rpx;
+    box-shadow: #96b3cd 5rpx 5rpx 5rpx;
+}
+
+.loginForm button {
+    color: white;
+    margin-top: 50rpx;
+    background-color: #0069d9;
 }
 
 /* 登录框 end */
