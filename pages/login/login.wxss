@@ -24,17 +24,34 @@
     text-align: center;
 }
 
-.loginContainer .titleImg {
+.loginTitle {
+    /*margin: auto 0;*/
+}
+
+.cell .loginTitle .titleImg {
     text-align: center;
 }
 
-.loginContainer .titleImg image {
+.cell .loginTitle .titleImg image {
     width: 360rpx;
     height: 180rpx;
 }
 
-.loginContainer .titleText {
+.cell .loginTitle .titleText {
     font-size: 42rpx;
+}
+
+.loginForm {
+    margin: 100rpx auto 0;
+    width: 80%;
+}
+
+.loginForm input {
+    margin-top: 30rpx;
+    border: 3rpx solid #000000;
+    border-radius: 20rpx;
+    height: 80rpx;
+    box-shadow: #dddddd 10rpx 10rpx 20rpx;
 }
 
 /* 登录框 end */
