@@ -26,11 +26,7 @@ Page({
         console.log(password);
         let res = await request('/test', 'POST', {
             username: username,
-            password: password,
-            id: {
-                id1: username,
-                id2: password
-            }
+            password: password
         });
         console.log(res);
     }
