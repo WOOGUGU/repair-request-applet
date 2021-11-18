@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/login/login",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login",
+    "pages/logs/logs",
+    "pages/submit/submit"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7ECEFF",
@@ -12,5 +13,31 @@
     "backgroundTextStyle": "light",
     "enablePullDownRefresh": false
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "static/icon/news.png",
+        "selectedIconPath": "static/icon/a-news.png"
+      },
+      {
+
+        "pagePath": "pages/login/login",
+        "text": "报修",
+        "iconPath": "static/icon/repair.png",
+        "selectedIconPath": "static/icon/a-repair.png"
+      },
+      {
+
+        "pagePath": "pages/logs/logs",
+        "text": "我的",
+        "iconPath": "static/icon/people.png",
+        "selectedIconPath": "static/icon/a-people.png"
+      }
+    ],
+    "color": "#595956",
+    "selectedColor": "#5992D0"
+  }
 }

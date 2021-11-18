@@ -31,9 +31,9 @@ Page({
         });
         if (res == "map[password:1 username:1]") {
             wx.navigateTo({
-                url: '/pages/index/index',
+                url: '/pages/submit/submit',
                 success: function (res) {
-                    res.eventChannel.emit('acceptDataFromOpenerPage', {
+                    res.eventChannel.emit('loginSuccess', {
                         userInfo: {
                             userId: '1',
                             realName: 'zhangke',
@@ -51,4 +51,5 @@ Page({
         }
     }
     // 提交表单 end
+    
 });

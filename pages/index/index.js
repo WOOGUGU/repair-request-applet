@@ -14,14 +14,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        var indexPage = this;
-        const eventChannel = this.getOpenerEventChannel()
-        eventChannel.on('acceptDataFromOpenerPage', function (data) {
-            console.log(data)
-            indexPage.setData({
-                userInfo: data.userInfo,
-            })
-        });
+
     },
 
     /**
