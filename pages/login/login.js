@@ -1,7 +1,7 @@
 import request from "../../utils/request";
 import setStorage from "../../utils/setStorage";
+import getStorage from "../../utils/getStorage";
 import {hexMD5} from "../../utils/md5";
-const md5 = require("../../utils/md5");
 
 Page({
     data: {
@@ -13,28 +13,50 @@ Page({
 
     },
 
-    // 表单数据发生改变 start
+    // 表单数据发生改变
     handleInput(event) {
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
         })
     },
-    // 表单数据发生改变 end
 
-    // 提交表单 start
+    // 提交表单
     async submit() {
         let username = this.data.username;
-        let password = md5.hexMD5(this.data.password);
+        let password = this.data.password;
+
+        if (username == '') {
+            wx.showModal({
+                title: '系统提示',
+                content: '请输入学号/工号',
+                showCancel: false,
+            });
+            return;
+        } else if (password == '') {
+            wx.showModal({
+                title: '系统提示',
+                content: '请输入密码',
+                showCancel: false,
+            });
+            return;
+        }
+
         let res = await request('/handleLogin', 'POST', {
             username: username,
-            password: password
+            password: hexMD5(password)
         });
-        console.log(res);
-        if (res.status == "login_success") {
-            setStorage(res.data.id, username, res.data.name);
+        if (res.status == "user") {
+            setStorage('localUserInfo',
+                {
+                    id: res.data.id,
+                    username: username,
+                    name: res.data.name,
+                    status: res.status
+                });
+            let location = getStorage('location');
             wx.switchTab({
-                url: '/pages/submit/submit',
+                url: '/pages/' + location.id + '/' + location.id
             });
         } else if (res.status == "wrong_password") {
             wx.showModal({
@@ -56,6 +78,5 @@ Page({
             });
         }
     }
-    // 提交表单 end
 
 });

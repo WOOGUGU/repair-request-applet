@@ -1,14 +1,24 @@
 import getStorage from "../../utils/getStorage";
+import setStorage from "../../utils/setStorage";
 
 Page({
     data: {},
+
     onLoad: function () {
 
     },
-    onShow: async function (options) {
-        let verify = await getStorage();
-        console.log(verify);
-        if (verify.localUserInfo.id== '') {
+
+    onShow: function (options) {
+        // 权限验证
+        var verify = getStorage('localUserInfo');
+        // 验证失败跳转
+        if (!verify) {
+            // 记录跳转前页面位置
+            setStorage('location',
+                {
+                    id: 'submit'
+                }
+            );
             wx.showModal({
                 title: '系统提示',
                 content: '您还未登录，请先登录！',

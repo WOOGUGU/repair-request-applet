@@ -1,10 +1,6 @@
-export default (id, username, realName) => {
+export default (key, data={}) => {
     wx.setStorage({
-        key: "localUserInfo",
-        data: {
-            id,
-            username,
-            realName
-        },
+        key: key,
+        data: data,
     })
 }
