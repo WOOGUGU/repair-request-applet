@@ -7,14 +7,21 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        userInfo: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: async function (options) {
-
+    onLoad: function (options) {
+        var indexPage = this;
+        const eventChannel = this.getOpenerEventChannel()
+        eventChannel.on('acceptDataFromOpenerPage', function (data) {
+            console.log(data)
+            indexPage.setData({
+                userInfo: data.userInfo,
+            })
+        });
     },
 
     /**

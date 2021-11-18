@@ -19,6 +19,7 @@ Page({
     },
     // 表单数据发生改变 end
 
+    // 提交表单 start
     async submit() {
         let username = this.data.username;
         let password = this.data.password;
@@ -28,6 +29,26 @@ Page({
             username: username,
             password: password
         });
-        console.log(res);
+        if (res == "map[password:1 username:1]") {
+            wx.navigateTo({
+                url: '/pages/index/index',
+                success: function (res) {
+                    res.eventChannel.emit('acceptDataFromOpenerPage', {
+                        userInfo: {
+                            userId: '1',
+                            realName: 'zhangke',
+                            username: username
+                        }
+                    })
+                }
+            });
+        } else {
+            wx.showModal({
+                title: '系统提示',
+                content: '账号/密码错误，请重试',
+                showCancel: false,
+            });
+        }
     }
+    // 提交表单 end
 });
