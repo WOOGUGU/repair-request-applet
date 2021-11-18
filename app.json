@@ -2,8 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/login/login",
-    "pages/logs/logs",
-    "pages/submit/submit"
+    "pages/submit/submit",
+    "pages/mine/mine"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7ECEFF",
@@ -23,15 +23,13 @@
         "selectedIconPath": "static/icon/a-news.png"
       },
       {
-
-        "pagePath": "pages/login/login",
+        "pagePath": "pages/submit/submit",
         "text": "报修",
         "iconPath": "static/icon/repair.png",
         "selectedIconPath": "static/icon/a-repair.png"
       },
       {
-
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/mine/mine",
         "text": "我的",
         "iconPath": "static/icon/people.png",
         "selectedIconPath": "static/icon/a-people.png"
