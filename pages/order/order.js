@@ -16,7 +16,7 @@ Page({
             // 记录跳转前页面位置
             setStorage('location',
                 {
-                    id: 'submit'
+                    id: 'order'
                 }
             );
             wx.showModal({

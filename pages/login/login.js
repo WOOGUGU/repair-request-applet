@@ -50,7 +50,7 @@ Page({
             setStorage('localUserInfo',
                 {
                     id: res.data.id,
-                    username: username,
+                    username: res.data.username,
                     name: res.data.name,
                     status: res.status
                 });

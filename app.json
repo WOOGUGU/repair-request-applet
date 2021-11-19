@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/login/login",
-    "pages/submit/submit",
+    "pages/order/order",
     "pages/mine/mine"
   ],
   "window": {
@@ -23,7 +23,7 @@
         "selectedIconPath": "static/icon/a-news.png"
       },
       {
-        "pagePath": "pages/submit/submit",
+        "pagePath": "pages/order/order",
         "text": "报修",
         "iconPath": "static/icon/repair.png",
         "selectedIconPath": "static/icon/a-repair.png"
