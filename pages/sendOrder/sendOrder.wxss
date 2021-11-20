@@ -1,0 +1,62 @@
+/* 页面设置 start */
+.container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+}
+
+/* 页面设置 end */
+
+/* 表单框 start */
+.formContainer {
+    width: 95%;
+    height: 95%;
+    border-radius: 20rpx;
+    box-shadow: #dddddd 5rpx 5rpx 15rpx;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.formTitle {
+    margin-top: 50rpx;
+}
+
+.formContainer .formTitle .titleText {
+    font-size: 42rpx;
+    margin-top: 30rpx;
+}
+
+.orderForm {
+    margin: auto;
+    width: 80%;
+}
+
+.form-item {
+    text-align: start;
+    margin-bottom: 20rpx;
+}
+
+.form-item label {
+    padding-left: 5rpx;
+    color: #333333;
+}
+
+input {
+    height: 70rpx;
+    padding-left: 30rpx;
+}
+
+.form-item .radio {
+    display: block;
+    margin: 6rpx 0;
+    padding-left: 30rpx;
+}
+
+/* 表单框 end */

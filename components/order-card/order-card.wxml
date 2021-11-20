@@ -1,0 +1,15 @@
+<view class="item">
+    <view class="order">
+        <view class="order-title">
+            <view class="titleText">{{title}}</view>
+            <view class="process">{{process}}</view>
+        </view>
+        <view class="order-body">
+            <view class="time_start">发起时间：{{time_start}}</view>
+            <view class="time_distribution">审核时间：{{time_distribution}}</view>
+            <view class="solver">维修人员：{{solver}}</view>
+            <view class="time_end">完成时间：{{time_end}}</view>
+            <view class="more">查看详情>></view>
+        </view>
+    </view>
+</view>

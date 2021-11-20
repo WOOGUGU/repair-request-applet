@@ -1,16 +1,4 @@
 export default (key) => {
-    // wx.getStorage({
-    //     key: 'localUserInfo',
-    //     success: function (res) {
-    //         console.log(res.data.id)
-    //     },
-    //     fail: function (err) {
-    //         console.log(err);
-    //         wx.navigateTo({
-    //             url: '/pages/login/login'
-    //         });
-    //     }
-    // });
     try {
         var value = wx.getStorageSync(key);
         if (value) {

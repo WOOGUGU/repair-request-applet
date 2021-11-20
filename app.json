@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/sendOrder/sendOrder",
+    "pages/order/order",
     "pages/index/index",
     "pages/login/login",
-    "pages/order/order",
     "pages/mine/mine"
   ],
   "window": {
@@ -24,7 +25,7 @@
       },
       {
         "pagePath": "pages/order/order",
-        "text": "报修",
+        "text": "报修工单",
         "iconPath": "static/icon/repair.png",
         "selectedIconPath": "static/icon/a-repair.png"
       },

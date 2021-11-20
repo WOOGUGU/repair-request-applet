@@ -1,1 +1,24 @@
-报修
+<view class="container">
+    <view class="navbar">
+        <view class="nav">
+            <view class="item active">全部</view>
+            <view class="item">待审核</view>
+            <view class="item">待处理</view>
+            <view class="item">已完成</view>
+        </view>
+    </view>
+
+    <button></button>
+
+    <view class="orders">
+        <order-card title="七教-iHBUT不弹窗" process="待处理"
+                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"
+                    solver="徐周正12345678908" time_end="2021-12-31 00:00:00"></order-card>
+        <order-card title="五教-iHBUT不弹窗" process="待处理"
+                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"
+                    solver="徐周正12345678908" time_end="2021-12-31 00:00:00"></order-card>
+        <order-card title="信息技术中心-iHBUT不弹窗" process="待处理"
+                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"
+                    solver="徐周正12345678908" time_end="2021-12-31 00:00:00"></order-card>
+    </view>
+</view>
