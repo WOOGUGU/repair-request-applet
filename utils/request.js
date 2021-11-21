@@ -7,7 +7,8 @@ export default (url, method = 'GET', data = {}) => {
             method,
             data,
             success: (res) => {
-                // console.log(res.statusCode);
+                console.log(data);
+                console.log(res);
                 resolve(res.data);
             },
             fail: (err) => {

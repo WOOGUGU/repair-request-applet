@@ -75,41 +75,43 @@ Page({
             return;
         }
 
-        setStorage('tel', {
-            id: this.data.userInfo.id,
-            tel: tel
-        });
-
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
         let type = this.data.type;
         let position = this.data.posSet[this.data.posIndex];
         let des = this.data.desSet[this.data.desIndex] + this.data.desPlus;
-        let timeSubscribe = this.data.date + this.data.timeSet[this.data.timeIndex];
+        let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
-        let res = request('/addOrder', 'POST', {
+        setStorage('tel', {
+            id: this.data.userInfo.id,
+            tel: tel
+        });
+
+        let res = await request('/addOrder', 'POST', {
             sender,
             tel,
             type,
             position,
             des,
             timeSubscribe,
-
-            progress: '0',
-            solver: '张三110',
-            timeStart: '1970-01-01 00:00:00',
-            timeDistribution: '2000-01-01 00:00:00',
-            timeEnd: '2021-12-31 23:59:59',
-            feedBack: '好！很有精神'
         });
-        console.log(res);
-        wx.switchTab({
-            url: '/pages/order/order'
-        });
+        // console.log(res);
+        if (res.status == 'handle_success') {
+            wx.switchTab({
+                url: '/pages/order/order'
+            });
+        } else {
+            wx.showModal({
+                title: '系统提示',
+                content: '发生未知错误，请重试',
+                showCancel: false,
+            });
+        }
     },
 
     onShow: function () {
         let tel_local = getStorage('tel');
+        console.log(tel_local);
         if (tel_local) {
             this.setData({
                 tel_local: tel_local.tel
@@ -123,12 +125,6 @@ Page({
             this.setData({
                 userInfo
             });
-        }
-        let tel_local = getStorage('tel');
-        if (tel_local) {
-            this.setData({
-                tel_local: tel_local.tel
-            })
         }
     }
 });
