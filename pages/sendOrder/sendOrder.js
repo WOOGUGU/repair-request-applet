@@ -103,6 +103,18 @@ Page({
             feedBack: '好！很有精神'
         });
         console.log(res);
+        wx.switchTab({
+            url: '/pages/order/order'
+        });
+    },
+
+    onShow: function () {
+        let tel_local = getStorage('tel');
+        if (tel_local) {
+            this.setData({
+                tel_local: tel_local.tel
+            })
+        }
     },
 
     onLoad: function (options) {
