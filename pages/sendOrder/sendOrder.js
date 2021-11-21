@@ -116,7 +116,8 @@ Page({
         console.log(tel_local);
         if (tel_local) {
             this.setData({
-                tel_local: tel_local.tel
+                tel_local: tel_local.tel,
+                tel: tel_local.tel
             })
         }
     },
