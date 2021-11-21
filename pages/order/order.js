@@ -3,14 +3,9 @@ import setStorage from "../../utils/setStorage";
 import request from "../../utils/request";
 
 Page({
-    // data: {},
-    //
-    // onLoad: function () {
-    //
-    // },
-
     data: {
-        current: 0
+        current: 0,
+        listData: {}
     },
 
     // 发起工单
@@ -28,15 +23,14 @@ Page({
     },
 
     onLoad: async function () {
-        // let res = await request('/oes/member/list/all', 'POST');
-        // console.log(res);
+
     },
 
-    onShow: function (options) {
+    onShow: async function (options) {
         // 权限验证
-        var verify = getStorage('localUserInfo');
+        let userInfo = getStorage('localUserInfo');
         // 验证失败跳转
-        if (!verify) {
+        if (!userInfo) {
             // 记录跳转前页面位置
             setStorage('location',
                 {
@@ -59,5 +53,14 @@ Page({
                 }
             })
         }
+        let res = await request('/selectAllOrderOfUser/', 'POST',
+            {
+                username: userInfo.username,
+            });
+        console.log(res);
+        this.setData({
+            listData: res.data
+        })
+        console.log(this.data.listData);
     }
 });

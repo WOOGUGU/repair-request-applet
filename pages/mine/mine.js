@@ -10,9 +10,9 @@ Page({
 
     onShow: function (options) {
         // 权限验证
-        var verify = getStorage('localUserInfo');
+        let userInfo = getStorage('localUserInfo');
         // 验证失败跳转
-        if (!verify) {
+        if (!userInfo) {
             // 记录跳转前页面位置
             setStorage('location',
                 {
