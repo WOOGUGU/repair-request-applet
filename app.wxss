@@ -6,10 +6,10 @@ page {
 
 /* 表单样式 start */
 input {
+    height: 80rpx;
     margin: 10rpx 0 10rpx;
     border: 3rpx solid #92c7ff;
     border-radius: 20rpx;
-    height: 80rpx;
     box-shadow: rgba(150, 179, 205, 0.5) 5rpx 5rpx 15rpx;
 }
 

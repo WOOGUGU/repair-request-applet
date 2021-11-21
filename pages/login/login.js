@@ -41,6 +41,7 @@ Page({
             });
             return;
         }
+        ;
 
         let res = await request('/handleLogin', 'POST', {
             username: username,

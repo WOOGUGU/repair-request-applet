@@ -8,17 +8,18 @@
 
             <view class="form-item">
                 <label>姓名</label>
-                <input value="{{}}" type="text" id="name" disabled="true"></input>
+                <input value="{{userInfo.name}}" type="text" id="name" disabled="true"></input>
             </view>
 
             <view class="form-item">
                 <label>联系方式</label>
-                <input value="" type="text" id="tel" maxlength="11" bindinput="handleInput"></input>
+                <input value="{{tel_local}}" placeholder="请输入" type="number" id="tel" maxlength="11"
+                       bindinput="handleInput"></input>
             </view>
 
             <view class="form-item">
                 <label>网络类型</label>
-                <radio-group bindchange="radioChange">
+                <radio-group id="type" bindchange="handleInput">
                     <label class="radio"><radio color="#0067AB" value="wire" checked="true"/>有线网络（宽带拨号）
                     </label>
                     <label class="radio"><radio color="#0067AB" value="wireless"/>无线网络（iHBUT）
@@ -27,21 +28,37 @@
             </view>
 
             <view class="form-item">
-                <label>故障描述</label>
-                <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+                <label>故障位置</label>
+                <picker bindchange="handleInput" value="{{posIndex}}" range="{{posSet}}" id="posIndex">
                     <view class="picker">
-                        <input value="当前选择：{{array[index]}}" type="text" id="des"></input>
+                        <input value="{{posSet[posIndex]}}" placeholder="请选择" type="text" disabled="true"></input>
                     </view>
                 </picker>
             </view>
 
             <view class="form-item">
-                <label>预约维修时间</label>
-                <picker mode="date" value="{{date}}" start="2021-11-20" end="2021-11-22" bindchange="bindDateChange">
-                    <input value="{{date}}" type="text" id="type" disabled="true"></input>
+                <label>故障描述</label>
+                <picker bindchange="handleInput" value="{{desIndex}}" range="{{desSet}}" id="desIndex">
+                    <view class="picker">
+                        <input value="{{desSet[desIndex]}}" placeholder="请选择" type="text" disabled="true"></input>
+                    </view>
                 </picker>
-                <picker mode="time" value="{{time}}" start="09:00" end="16:00" bindchange="bindTimeChange">
-                    <input value="{{time}}" type="text" id="type" disabled="true"></input>
+            </view>
+
+            <view class="form-item">
+                <label>位置/故障补充说明</label>
+                <input class="input-higher" value="" placeholder="请输入" type="text" id="desPlus"
+                       bindinput="handleInput"></input>
+            </view>
+
+            <view class="form-item">
+                <label>预约维修时间</label>
+                <picker mode="date" value="{{date}}" start="2021-11-20" end="2021-11-30" bindchange="handleInput"
+                        id="date">
+                    <input value="{{date}}" placeholder="请选择" type="text" id="type" disabled="true"></input>
+                </picker>
+                <picker bindchange="handleInput" value="{{timeIndex}}" range="{{timeSet}}" id="timeIndex">
+                    <input value="{{timeSet[timeIndex]}}" placeholder="请选择" type="text" disabled="true"></input>
                 </picker>
             </view>
 

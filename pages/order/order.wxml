@@ -8,7 +8,9 @@
         </view>
     </view>
 
-    <button></button>
+    <view class="sendOrder">
+        <button bindtap="sendOrder">发起工单</button>
+    </view>
 
     <view class="orders">
         <order-card title="七教-iHBUT不弹窗" process="待处理"

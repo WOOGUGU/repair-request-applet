@@ -13,6 +13,13 @@ Page({
         current: 0
     },
 
+    // 发起工单
+    sendOrder() {
+        wx.navigateTo({
+            url: '/pages/sendOrder/sendOrder'
+        })
+    },
+
     onClick: function (event) {
         var index = event.currentTarget.dataset.id;
         this.setData({
@@ -25,32 +32,32 @@ Page({
         // console.log(res);
     },
 
-    // onShow: function (options) {
-    //     // 权限验证
-    //     var verify = getStorage('localUserInfo');
-    //     // 验证失败跳转
-    //     if (!verify) {
-    //         // 记录跳转前页面位置
-    //         setStorage('location',
-    //             {
-    //                 id: 'order'
-    //             }
-    //         );
-    //         wx.showModal({
-    //             title: '系统提示',
-    //             content: '您还未登录，请先登录！',
-    //             success: function (res) {
-    //                 if (res.confirm) {
-    //                     wx.navigateTo({
-    //                         url: '/pages/login/login'
-    //                     });
-    //                 } else if (res.cancel) {
-    //                     wx.switchTab({
-    //                         url: '/pages/index/index',
-    //                     });
-    //                 }
-    //             }
-    //         })
-    //     }
-    // }
+    onShow: function (options) {
+        // 权限验证
+        var verify = getStorage('localUserInfo');
+        // 验证失败跳转
+        if (!verify) {
+            // 记录跳转前页面位置
+            setStorage('location',
+                {
+                    id: 'order'
+                }
+            );
+            wx.showModal({
+                title: '系统提示',
+                content: '您还未登录，请先登录！',
+                success: function (res) {
+                    if (res.confirm) {
+                        wx.navigateTo({
+                            url: '/pages/login/login'
+                        });
+                    } else if (res.cancel) {
+                        wx.switchTab({
+                            url: '/pages/index/index',
+                        });
+                    }
+                }
+            })
+        }
+    }
 });
