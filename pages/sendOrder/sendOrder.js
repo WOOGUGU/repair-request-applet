@@ -75,6 +75,7 @@ Page({
             return;
         }
 
+        let username = this.data.userInfo.username;
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
         let type = this.data.type;
@@ -88,6 +89,7 @@ Page({
         });
 
         let res = await request('/addOrder', 'POST', {
+            username,
             sender,
             tel,
             type,
