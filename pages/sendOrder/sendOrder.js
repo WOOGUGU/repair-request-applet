@@ -52,7 +52,7 @@ Page({
                 showCancel: false,
             });
             return;
-        } else if (this.data.desIndex == null) {
+        } else if (this.data.desIndex == null || (this.data.desIndex == null && this.data.desPlus)) {
             wx.showModal({
                 title: '系统提示',
                 content: '请选择故障描述',
@@ -99,7 +99,10 @@ Page({
         });
         // console.log(res);
         if (res.status == 'handle_success') {
-            wx.switchTab({
+            // wx.switchTab({
+            //     url: '/pages/order/order'
+            // });
+            wx.reLaunch({
                 url: '/pages/order/order'
             });
         } else {

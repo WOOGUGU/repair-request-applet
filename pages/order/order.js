@@ -49,7 +49,7 @@ Page({
                 }
             })
         }
-        let res = await request('/selectAllOrderOfUser/', 'POST',
+        let res = await request('/selectAllOrderOfUser', 'POST',
             {
                 username: userInfo.username,
             });
