@@ -80,7 +80,7 @@ Page({
         let tel = this.data.tel;
         let type = this.data.type;
         let position = this.data.posSet[this.data.posIndex];
-        let des = (this.data.desSet[this.data.desIndex] == '其他' ? this.data.desSet[this.data.desIndex] : '') + this.data.desPlus;
+        let des = (this.data.desSet[this.data.desIndex] == '其他' ? '' : this.data.desSet[this.data.desIndex]) + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
         setStorage('tel', {
