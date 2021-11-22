@@ -16,7 +16,7 @@ Page({
         posIndex: null,
         posSet: ['北十', '轻工楼', '大学生活动中心', '科技楼'],
         desIndex: null,
-        desSet: ['故障1', '故障2', '故障3', '故障4', '其他（请填写补充说明）'],
+        desSet: ['故障1', '故障2', '故障3', '故障4', '其他'],
         desPlus: '',
         date: null,
         timeIndex: null,
@@ -80,7 +80,7 @@ Page({
         let tel = this.data.tel;
         let type = this.data.type;
         let position = this.data.posSet[this.data.posIndex];
-        let des = this.data.desSet[this.data.desIndex] + this.data.desPlus;
+        let des = (this.data.desSet[this.data.desIndex] == '其他' ? this.data.desSet[this.data.desIndex] == '其他' : '') + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
         setStorage('tel', {
