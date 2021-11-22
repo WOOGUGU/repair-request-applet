@@ -4,7 +4,8 @@
     "pages/login/login",
     "pages/order/order",
     "pages/sendOrder/sendOrder",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/singleOrder/singleOrder"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7ECEFF",
