@@ -4,9 +4,9 @@ Component({
             type: String,
             value: 'title'
         },
-        process: {
+        progress: {
             type: String,
-            value: 'process'
+            value: 'progress'
         },
         time_start: {
             type: String,

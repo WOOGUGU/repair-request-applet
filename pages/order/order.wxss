@@ -99,7 +99,7 @@ page {
     text-overflow: ellipsis;
 }
 
-.order .order-title .process {
+.order .order-title .progress {
     height: 70rpx;
 
 }
@@ -108,7 +108,7 @@ page {
     font-size: 24rpx;
 }
 
-.order .order-body view {
+.order .order-body .order-body-text {
     margin: 4rpx 0;
 }
 
