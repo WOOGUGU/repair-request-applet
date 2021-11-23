@@ -12,23 +12,15 @@
         <button bindtap="sendOrder">发起工单</button>
     </view>
 
-    <!--    <view class="orders">-->
-    <view class="orders" wx:for="{{listData}}">
+    <!--        <view class="orders">-->
+    <view class="orders">
         <order-card wx:if="{{current == 'all' || item.progress == current}}"
+                    wx:for="{{listData}}"
                     title="{{item.position + '-' + item.des}}"
                     time_start="{{item.timeStart}}"
                     progress="{{item.progress}}"
                     time_distribution="{{item.Distribution}}"
                     solver="{{item.solver}}"
                     time_end="{{item.timeEnd}}"></order-card>
-        <!--        <order-card title="七教-iHBUT不弹窗" progress="待处理"-->
-        <!--                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"-->
-        <!--                    solver="徐周正12345678908" time_end="2021-12-31 00:00:00"></order-card>-->
-        <!--        <order-card title="五教-iHBUT不弹窗" progress="待处理"-->
-        <!--                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"-->
-        <!--                    solver="徐周正12345678908" time_end="2021-12-31 00:00:00"></order-card>-->
-        <!--        <order-card title="信息技术中心-iHBUT不弹窗" progress="待处理"-->
-        <!--                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"-->
-        <!--                    solver="徐周正12345678908" time_end="2021-12-31 00:00:00"></order-card>-->
     </view>
 </view>
