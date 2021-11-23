@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/order/order",
     "pages/index/index",
+    "pages/order/order",
     "pages/login/login",
     "pages/sendOrder/sendOrder",
-    "pages/mine/mine",
-    "pages/singleOrder/singleOrder"
+    "pages/singleOrder/singleOrder",
+    "pages/mine/mine"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7ECEFF",

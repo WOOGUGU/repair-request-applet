@@ -36,7 +36,7 @@
 
 .order .order-title .progress {
     height: 70rpx;
-
+    font-weight: bold;
 }
 
 .order .order-body {
@@ -52,10 +52,22 @@
     text-align: right;
 }
 
-.red {
+._two {
     color: red;
 }
 
-.blue {
-    color: blue;
+._one {
+    color: #656565;
+}
+
+.zero {
+    color: #ffa600;
+}
+
+.one {
+    color: dodgerblue;
+}
+
+.two {
+    color: seagreen;
 }

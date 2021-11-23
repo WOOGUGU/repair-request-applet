@@ -2,7 +2,7 @@
     <view class="order">
         <view class="order-title">
             <view class="titleText">{{title}}</view>
-            <view class="progress {{progress == 0 ? 'red' : 'blue'}}">{{status[progress + 2]}}</view>
+            <view class="progress {{color[progress + 2]}}">{{status[progress + 2]}}</view>
         </view>
         <view class="order-body">
             <view class="order-body-text time_start">发起时间：{{time_start}}</view>
