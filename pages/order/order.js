@@ -4,7 +4,7 @@ import request from "../../utils/request";
 
 Page({
     data: {
-        current: 0,
+        current: '0',
         listData: {}
     },
 
@@ -15,11 +15,15 @@ Page({
         })
     },
 
-    onClick: function (event) {
-        var index = event.currentTarget.dataset.id;
+    clickNavbar: function (event) {
+        console.log(event)
+        var index = event.currentTarget.id;
         this.setData({
             current: index
-        })
+        });
+        // wx.reLaunch({
+        //     url: '/pages/order/order?current=' + this.data.current,
+        // });
     },
 
     onLoad: async function () {
