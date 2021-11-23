@@ -26,7 +26,7 @@ Component({
         }
     },
     data: {
-        status: ['审核不通过', '已取消', '待审核', '待处理', '已处理'],
+        status: ['审核不通过', '已取消', '待审核', '待处理', '已完成'],
         color: ['_two', '_one', 'zero', 'one', 'two']
     },
     methods: {}
