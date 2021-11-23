@@ -28,7 +28,7 @@
             </view>
 
             <view class="form-item">
-                <label>故障位置</label>
+                <label>报修位置</label>
                 <picker bindchange="handleInput" value="{{posIndex}}" range="{{posSet}}" id="posIndex">
                     <view class="picker">
                         <input value="{{posSet[posIndex]}}" placeholder="请选择" type="text" disabled="true"></input>
@@ -37,7 +37,7 @@
             </view>
 
             <view class="form-item">
-                <label>故障描述</label>
+                <label>故障类型</label>
                 <picker bindchange="handleInput" value="{{desIndex}}" range="{{desSet}}" id="desIndex">
                     <view class="picker">
                         <input value="{{desSet[desIndex]}}" placeholder="请选择" type="text" disabled="true"></input>
