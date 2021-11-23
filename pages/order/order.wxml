@@ -1,20 +1,21 @@
 <view class="container">
     <view class="navbar">
         <view class="nav">
-            <view class="item {{current == '0' ? 'active' : ''}}" bindtap="clickNavbar" id="0">全部</view>
-            <view class="item {{current == '1' ? 'active' : ''}}" bindtap="clickNavbar" id="1">待审核</view>
-            <view class="item {{current == '2' ? 'active' : ''}}" bindtap="clickNavbar" id="2">待处理</view>
-            <view class="item {{current == '3' ? 'active' : ''}}" bindtap="clickNavbar" id="3">已完成</view>
+            <view class="item {{current == 'all' ? 'active' : ''}}" bindtap="clickNavbar" id="all">全部</view>
+            <view class="item {{current == '0' ? 'active' : ''}}" bindtap="clickNavbar" id="0">待审核</view>
+            <view class="item {{current == '1' ? 'active' : ''}}" bindtap="clickNavbar" id="1">待处理</view>
+            <view class="item {{current == '2' ? 'active' : ''}}" bindtap="clickNavbar" id="2">已完成</view>
         </view>
     </view>
 
-    <view class="sendOrder">
+    <view class="sendOrder" wx:if="{{current == 'all'}}">
         <button bindtap="sendOrder">发起工单</button>
     </view>
 
     <!--    <view class="orders">-->
     <view class="orders" wx:for="{{listData}}">
-        <order-card title="{{item.position + '-' + item.des}}" time_start="{{item.timeStart}}"
+        <order-card wx:if="{{current == 'all' || item.progress == current}}"
+                    title="{{item.position + '-' + item.des}}" time_start="{{item.timeStart}}"
                     progress="{{item.progress}}"></order-card>
         <!--        <order-card title="七教-iHBUT不弹窗" progress="待处理"-->
         <!--                    time_start="1970-01-01 00:00:00" time_distribution="2000-01-01 00:00:00"-->

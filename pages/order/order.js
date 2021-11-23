@@ -4,7 +4,7 @@ import request from "../../utils/request";
 
 Page({
     data: {
-        current: '0',
+        current: 'all',
         listData: {}
     },
 
@@ -16,7 +16,6 @@ Page({
     },
 
     clickNavbar: function (event) {
-        console.log(event)
         var index = event.currentTarget.id;
         this.setData({
             current: index

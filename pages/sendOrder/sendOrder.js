@@ -99,9 +99,6 @@ Page({
         });
         // console.log(res);
         if (res.status == 'handle_success') {
-            // wx.switchTab({
-            //     url: '/pages/order/order'
-            // });
             wx.reLaunch({
                 url: '/pages/order/order'
             });
