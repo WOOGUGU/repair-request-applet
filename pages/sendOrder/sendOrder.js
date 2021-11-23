@@ -52,10 +52,10 @@ Page({
                 showCancel: false,
             });
             return;
-        } else if (this.data.desIndex == null || (this.data.desIndex == null && this.data.desPlus)) {
+        } else if (this.data.desIndex == null || (this.data.desIndex == null && (this.data.desPlus == '' || this.data.desPlus == null))) {
             wx.showModal({
                 title: '系统提示',
-                content: '请选择故障描述',
+                content: '请选择/填写故障描述',
                 showCancel: false,
             });
             return;
