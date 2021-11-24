@@ -8,7 +8,8 @@ Page({
             id: '',
             username: '',
             name: '',
-            status: ''
+            status: '',
+            token: ''
         },
         tel: '',
         tel_local: '',
@@ -76,6 +77,7 @@ Page({
             return;
         }
 
+        let token = this.data.userInfo.token;
         let username = this.data.userInfo.username;
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
@@ -90,6 +92,7 @@ Page({
         });
 
         let res = await request('/addOrder', 'POST', {
+            token,
             username,
             sender,
             tel,

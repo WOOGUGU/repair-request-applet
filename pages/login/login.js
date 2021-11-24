@@ -47,13 +47,16 @@ Page({
             username: username,
             password: hexMD5(password)
         });
-        if (res.status == "user") {
+        if (res.status.id == "user") {
+            console.log(res.status.id);
+            console.log(res.status.token);
             setStorage('localUserInfo',
                 {
                     id: res.data.id,
                     username: res.data.username,
                     name: res.data.name,
-                    status: res.status
+                    status: res.status.id,
+                    token: res.status.token
                 });
             let location = getStorage('location');
             wx.switchTab({

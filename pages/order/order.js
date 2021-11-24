@@ -53,10 +53,11 @@ Page({
                     }
                 }
             })
+            return;
         }
         let res = await request('/selectAllOrderOfUser', 'POST',
             {
-                username: userInfo.username,
+                token: userInfo.token,
             });
         console.log(res);
         this.setData({
