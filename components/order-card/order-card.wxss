@@ -25,8 +25,8 @@
     color: #333333;
     font-size: 34rpx;
     font-weight: bold;
-    margin-bottom: 10rpx;
     height: 70rpx;
+    line-height: 70rpx;
     /*溢出隐藏*/
     display: block;
     white-space: nowrap;
@@ -38,6 +38,27 @@
     height: 70rpx;
     font-size: 28rpx;
     font-weight: bold;
+    line-height: 70rpx;
+}
+
+.order .order-title ._two {
+    color: red;
+}
+
+.order .order-title ._one {
+    color: #656565;
+}
+
+.order .order-title .zero {
+    color: orange;
+}
+
+.order .order-title .one {
+    color: dodgerblue;
+}
+
+.order .order-title .two {
+    color: seagreen;
 }
 
 .order .order-body {
@@ -53,22 +74,22 @@
     text-align: right;
 }
 
-._two {
-    color: red;
+.order .order-footer {
+    width: 100%;
+    height: 70rpx;
+    display: flex;
+    justify-content: space-between;
 }
 
-._one {
-    color: #656565;
+.order .order-footer .order-footer-button {
+    /*color: #333333;*/
+    height: 50rpx;
+    margin: 10rpx 0;
+    line-height: 50rpx;
+    font-size: 22rpx;
+    /*background-color: #f8f8f8;*/
 }
 
-.zero {
-    color: orange;
-}
-
-.one {
-    color: dodgerblue;
-}
-
-.two {
-    color: seagreen;
+.order .order-footer .order-footer-text {
+    line-height: 70rpx;
 }
