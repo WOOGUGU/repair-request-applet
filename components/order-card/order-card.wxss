@@ -61,7 +61,7 @@
 }
 
 .zero {
-    color: #ffa600;
+    color: orange;
 }
 
 .one {
