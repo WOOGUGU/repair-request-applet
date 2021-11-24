@@ -86,7 +86,7 @@ page {
 }
 
 .order .order-title .titleText {
-    width: 75%;
+    width: 65%;
     color: #333333;
     font-size: 34rpx;
     font-weight: bold;
