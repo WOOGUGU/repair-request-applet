@@ -12,7 +12,6 @@
         <button bindtap="sendOrder">发起工单</button>
     </view>
 
-    <!--        <view class="orders">-->
     <view class="orders">
         <order-card wx:if="{{current == 'all' || item.progress == current}}"
                     wx:for="{{listData}}"

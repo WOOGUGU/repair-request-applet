@@ -21,38 +21,10 @@ Page({
         this.setData({
             current: index
         });
-        // wx.reLaunch({
-        //     url: '/pages/order/order?current=' + this.data.current,
-        // });
     },
 
     onLoad: async function () {
-        // // 权限验证
-        // let userInfo = getStorage('localUserInfo');
-        // // 验证失败跳转
-        // if (!userInfo) {
-        //     // 记录跳转前页面位置
-        //     setStorage('location',
-        //         {
-        //             id: 'order'
-        //         }
-        //     );
-        //     wx.showModal({
-        //         title: '系统提示',
-        //         content: '您还未登录，请先登录！',
-        //         success: function (res) {
-        //             if (res.confirm) {
-        //                 wx.navigateTo({
-        //                     url: '/pages/login/login'
-        //                 });
-        //             } else if (res.cancel) {
-        //                 wx.switchTab({
-        //                     url: '/pages/index/index',
-        //                 });
-        //             }
-        //         }
-        //     })
-        // }
+
     },
 
     onShow: async function (options) {
