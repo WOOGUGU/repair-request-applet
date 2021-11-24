@@ -38,17 +38,18 @@ Page({
     },
 
     submit: async function () {
-        if (this.data.tel.length != 11) {
+        var pattern = /^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/;
+        if (!pattern.test(this.data.tel)) {
             wx.showModal({
                 title: '系统提示',
-                content: '请输入完整的联系方式',
+                content: '请输入正确的联系方式',
                 showCancel: false,
             });
             return;
         } else if (this.data.posIndex == null) {
             wx.showModal({
                 title: '系统提示',
-                content: '请选择故障位置',
+                content: '请选择报修位置',
                 showCancel: false,
             });
             return;
