@@ -15,10 +15,11 @@
     <view class="orders">
         <order-card wx:if="{{current == 'all' || item.progress == current}}"
                     wx:for="{{listData}}"
+                    orderId="{{item.id}}"
                     title="{{item.position + '-' + item.des}}"
                     time_start="{{item.timeStart}}"
                     progress="{{item.progress}}"
-                    time_distribution="{{item.Distribution}}"
+                    time_distribution="{{item.timeDistribution}}"
                     solver="{{item.solver}}"
                     time_end="{{item.timeEnd}}"></order-card>
     </view>

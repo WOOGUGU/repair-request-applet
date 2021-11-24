@@ -9,7 +9,12 @@
             <view class="order-body-text time_distribution">审核时间：{{time_distribution}}</view>
             <view class="order-body-text solver">维修人员：{{solver}}</view>
             <view class="order-body-text time_end">完成时间：{{time_end}}</view>
-            <view class="order-body-text more">查看详情>></view>
+        </view>
+        <view class="order-footer">
+            <view>
+                <button class="order-footer-button" bindtap="cancelOrder" id="{{orderId}}">取消工单</button>
+            </view>
+            <view class="order-footer-text more">查看详情>></view>
         </view>
     </view>
 </view>
