@@ -9,7 +9,7 @@
     </view>
 
     <view class="sendOrder" wx:if="{{current == 'all'}}">
-        <button bindtap="sendOrder">发起工单</button>
+        <button class="btn" bindtap="sendOrder">发起工单</button>
     </view>
 
     <view class="orders">
