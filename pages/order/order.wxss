@@ -51,6 +51,7 @@ page {
 
 .sendOrder button {
     width: 90%;
+    font-size: 32rpx;
     margin: 0 auto;
 }
 
@@ -59,62 +60,6 @@ page {
     width: 100%;
     display: flex;
     flex-direction: column-reverse;
-}
-
-
-
-.orders .item {
-    display: flex;
-    justify-content: center;
-}
-
-.orders .item .order {
-    width: 85%;
-    padding: 20rpx 40rpx;
-    margin: 10rpx 0;
-    border-radius: 30rpx;
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: column;
-}
-
-.order .order-title {
-    width: 100%;
-    height: 70rpx;
-    display: flex;
-    justify-content: space-between;
-}
-
-.order .order-title .titleText {
-    width: 65%;
-    color: #333333;
-    font-size: 34rpx;
-    font-weight: bold;
-    margin-bottom: 10rpx;
-    height: 70rpx;
-    /*溢出隐藏*/
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.order .order-title .progress {
-    height: 70rpx;
-
-}
-
-.order .order-body {
-    font-size: 24rpx;
-}
-
-.order .order-body .order-body-text {
-    margin: 4rpx 0;
-}
-
-.order .order-body .more {
-    font-size: 28rpx;
-    text-align: right;
 }
 
 /* 工单展示 end */

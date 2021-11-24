@@ -36,6 +36,7 @@
 
 .order .order-title .progress {
     height: 70rpx;
+    font-size: 28rpx;
     font-weight: bold;
 }
 
