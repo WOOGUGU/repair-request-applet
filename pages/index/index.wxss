@@ -5,3 +5,12 @@
     height: 100%;
 }
 
+.banners {
+    width: 100%;
+    height: 56.25vw;
+}
+
+.banners image {
+    width: 100%;
+    height: 100%;
+}
