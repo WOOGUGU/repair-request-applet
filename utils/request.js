@@ -8,6 +8,8 @@ export default (url, method = 'GET', data = {}) => {
             data,
             success: (res) => {
                 console.log(data);
+                console.log(JSON.stringify(data));
+                // JSON.parse()
                 console.log(res);
                 resolve(res.data);
             },

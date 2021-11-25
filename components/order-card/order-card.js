@@ -3,33 +3,9 @@ import getStorage from "../../utils/getStorage";
 
 Component({
     properties: {
-        orderId: {
-            type: Number,
-            value: 0
-        },
-        title: {
-            type: String,
-            value: 'title'
-        },
-        progress: {
-            type: Number,
-            value: 0
-        },
-        time_start: {
-            type: String,
-            value: 'time_start'
-        },
-        time_distribution: {
-            type: String,
-            value: 'time_distribution'
-        },
-        solver: {
-            type: String,
-            value: 'solver'
-        },
-        time_end: {
-            type: String,
-            value: 'time_end'
+        orderData: {
+            type: Object,
+            value: {}
         }
     },
 
@@ -39,14 +15,67 @@ Component({
     },
 
     methods: {
-        cancelOrder: async function (event) {
-            let id = event.currentTarget.id;
-            let userInfo = getStorage('localUserInfo');
-            let token = userInfo.token;
+        cancelOrder: async function () {
+            let data = this.data.orderData;
+            let token = getStorage('localUserInfo').token;
             let res = await request('/updateOrder', 'POST',
                 {
                     token,
+                    id: data.id,
+                    username: data.username,
+                    sender: data.sender,
+                    tel: data.tel,
+                    type: data.type,
+                    des: data.des,
+                    position: data.position,
+                    timeSubscribe: data.timeSubscribe,
+                    progress: -1,
+                    solver: data.solver,
+                    timeStart: data.timeStart,
+                    timeDistribution: data.timeDistribution,
+                    timeEnd: data.timeEnd,
+                    feedback: data.feedback
                 });
+            if (res.status == "handle_success") {
+                wx.showModal({
+                    title: '系统提示',
+                    content: '取消成功',
+                    showCancel: false,
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.reLaunch({
+                                url: '/pages/order/order'
+                            })
+                        }
+                    }
+                })
+            } else if (res.status == "wrong_token") {
+                wx.showModal({
+                    title: '系统提示',
+                    content: '身份验证出现问题，请重新登录后重试',
+                    showCancel: false,
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.reLaunch({
+                                url: '/pages/order/order'
+                            })
+                        }
+                    }
+                })
+            } else if (res.status == "data_not_exist") {
+                wx.showModal({
+                    title: '系统提示',
+                    content: '当前工单不存在！',
+                    showCancel: false,
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.reLaunch({
+                                url: '/pages/order/order'
+                            })
+                        }
+                    }
+                })
+            }
         }
     }
 
