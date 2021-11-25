@@ -1,1 +1,26 @@
-wo的
+<view class="container">
+    <view class="mine">
+        <view class="mineCard">
+            <view class="head">个人信息</view>
+            <view class="name">姓名：张可</view>
+            <view class="username">用户名：zhangke</view>
+        </view>
+    </view>
+
+    <view class="mine">
+        <view class="mineCard">
+            <view class="feedback">
+                <view class="feedbackIcon">
+                    <image src="/static/icon/pen.png"></image>
+                </view>
+                <view class="footer">意见反馈</view>
+            </view>
+            <view class="about">
+                <view class="aboutIcon">
+                    <image src="/static/icon/info.png"></image>
+                </view>
+                <view class="footer">关于我们</view>
+            </view>
+        </view>
+    </view>
+</view>
