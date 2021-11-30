@@ -29,9 +29,12 @@
 
             <view class="form-item">
                 <label>报修位置</label>
-                <picker bindchange="handleInput" value="{{posIndex}}" range="{{posSet}}" id="posIndex">
+                <picker mode="multiSelector" bindchange="bindMultiPickerChange"
+                        bindcolumnchange="bindMultiPickerColumnChange"
+                        value="{{posIndex}}" range="{{posArray}}">
                     <view class="picker">
-                        <input value="{{posSet[posIndex]}}" placeholder="请选择" type="text" disabled="true"></input>
+                        <input value="{{posArray[1][posIndex[1]]}}" placeholder="请选择" type="text"
+                               disabled="true"></input>
                     </view>
                 </picker>
             </view>

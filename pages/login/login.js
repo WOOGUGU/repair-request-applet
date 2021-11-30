@@ -1,5 +1,4 @@
 import request from "../../utils/request";
-import setStorage from "../../utils/setStorage";
 import getStorage from "../../utils/getStorage";
 import {hexMD5} from "../../utils/md5";
 
@@ -41,7 +40,6 @@ Page({
             });
             return;
         }
-        ;
 
         let res = await request('/handleLogin', 'POST', {
             username: username,
@@ -50,14 +48,16 @@ Page({
         if (res.status.id == "user") {
             console.log(res.status.id);
             console.log(res.status.token);
-            setStorage('localUserInfo',
-                {
+            wx.setStorage({
+                key: 'localUserInfo',
+                data: {
                     id: res.data.id,
                     username: res.data.username,
                     name: res.data.name,
                     status: res.status.id,
                     token: res.status.token
-                });
+                }
+            });
             let location = getStorage('location');
             wx.switchTab({
                 url: '/pages/' + location.id + '/' + location.id

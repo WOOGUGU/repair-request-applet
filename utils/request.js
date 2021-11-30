@@ -7,14 +7,15 @@ export default (url, method = 'GET', data = {}) => {
             method,
             data,
             success: (res) => {
-                console.log(data);
-                console.log(JSON.stringify(data));
-                // JSON.parse()
-                console.log(res);
+                console.log('响应:', res);
                 resolve(res.data);
             },
             fail: (err) => {
                 reject(err);
+            },
+            complete: () => {
+                // console.log('请求的data对象', data);
+                console.log('请求的json字符串', JSON.stringify(data));
             }
         })
     })

@@ -16,23 +16,6 @@
     </swiper>
 
     <view class="card-area">
-        <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange"
-                value="{{multiIndex}}" range="{{multiArray}}">
-            <view class="picker">
-                当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}
-            </view>
-        </picker>
-    </view>
-
-    <!--    <view class="card-area">-->
-    <!--        <picker mode="multiSelector" bindchange="bindPickerChange" bindcolumnchange="bindPickerColumnChange" value="{{Index}}" range="{{Array}}">-->
-    <!--            <view class="picker">-->
-    <!--                当前选择：{{Array[0][Index[0]]}}，{{Array[1][Index[1]]}}，{{Array[2][Index[2]]}}-->
-    <!--            </view>-->
-    <!--        </picker>-->
-    <!--    </view>-->
-
-    <view class="card-area">
         <view class="card">
             <view class="card-title">
                 <view class="title-text">校园网使用指南</view>

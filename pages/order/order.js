@@ -1,5 +1,4 @@
 import getStorage from "../../utils/getStorage";
-import setStorage from "../../utils/setStorage";
 import request from "../../utils/request";
 
 Page({
@@ -32,11 +31,12 @@ Page({
         // 验证失败跳转
         if (!userInfo) {
             // 记录跳转前页面位置
-            setStorage('location',
-                {
+            wx.setStorage({
+                key: 'location',
+                data: {
                     id: 'order'
                 }
-            );
+            });
             wx.showModal({
                 title: '系统提示',
                 content: '您还未登录，请先登录！',
