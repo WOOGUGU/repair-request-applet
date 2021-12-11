@@ -2,10 +2,8 @@ import getStorage from "../../utils/getStorage";
 Page({
     data: {
         menuitems: [
-            { text: '个人资料', url: '#', icon: '/static/icon/a-mine.png', tips: '', arrows: '/static/icon/arrows.png' },
-            { text: '报修记录', url: '#', icon: '/static/icon/record.png', tips: '', arrows: '/static/icon/arrows.png' },
-            { text: '意见反馈', url: '#', icon: '/static/icon/feedback.png', tips: '', arrows: '/static/icon/arrows.png' },
-            { text: '关于我的', url: '#', icon: '/static/icon/about.png', tips: '', arrows: '/static/icon/arrows.png' }
+            { text: '意见反馈', url: '#', icon: '/static/icon/pen.png', tips: '', arrows: '/static/icon/arrows.png' },
+            { text: '关于我的', url: '#', icon: '/static/icon/info.png', tips: '', arrows: '/static/icon/arrows.png' }
         ]
     },
     onLoad: function (options) {
