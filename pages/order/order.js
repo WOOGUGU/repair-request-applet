@@ -59,9 +59,35 @@ Page({
                 token: userInfo.token,
             });
         console.log(res);
-        this.setData({
-            listData: res.data
-        })
-        console.log(this.data.listData);
+        if (res.status == "wrong_token") {
+            // 记录跳转前页面位置
+            wx.setStorage({
+                key: 'location',
+                data: {
+                    id: 'order'
+                }
+            });
+            wx.showModal({
+                title: '系统提示',
+                content: '您的登录状态已过期，请重新登录！',
+                success: function (res) {
+                    if (res.confirm) {
+                        wx.navigateTo({
+                            url: '/pages/login/login'
+                        });
+                    } else if (res.cancel) {
+                        wx.switchTab({
+                            url: '/pages/index/index',
+                        });
+                    }
+                }
+            })
+            return;
+        } else if (res.status == "handle_success") {
+            this.setData({
+                listData: res.data
+            })
+            console.log(this.data.listData);
+        }
     }
 });
