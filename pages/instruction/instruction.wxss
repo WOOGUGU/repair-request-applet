@@ -1,0 +1,5 @@
+#Content{
+    background: aliceblue;
+    height: 80%;
+    width: 80%;
+}

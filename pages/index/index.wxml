@@ -3,7 +3,8 @@
 
     <swiper class="banners" indicator-dots
             indicator-color="#C6EDFF"
-            indicator-active-color="#0088E2">
+            indicator-active-color="#0088E2"
+            autoplay="true" interval="3000">
         <swiper-item>
             <image src="/static/imgs/Tomcat_jpg.jpg"></image>
         </swiper-item>
@@ -29,7 +30,7 @@
                 </view>
             </view>
             <view class="card-footer">
-                <view class="footer-text">查看更多>></view>
+                <view class="footer-text" bindtap="jump">查看更多>></view>
             </view>
         </view>
 
@@ -46,7 +47,7 @@
                 </view>
             </view>
             <view class="card-footer">
-                <view class="footer-text">查看更多>></view>
+                <view class="footer-text" bindtap="jump">查看更多>></view>
             </view>
         </view>
     </view>
