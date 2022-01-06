@@ -1,15 +1,27 @@
-import getStorage from "../../utils/getStorage";
+// pages/opinion/opinion.js
+
 Page({
+
+    /**
+     * 页面的初始数据
+     */
     data: {
-        menuitems: [
-            { text: '意见反馈', url: '../opinion/opinion', icon: '/static/icon/pen.png', tips: '', arrows: '/static/icon/arrows.png' },
-            { text: '关于我们', url: '../about/about', icon: '/static/icon/info.png', tips: '', arrows: '/static/icon/arrows.png' }
-        ]
+        name: '',
+        tel: '',
+        opinion:'',
+    },
+    // 提交表单
+    async submit() {
+        wx.showModal({
+            title: '系统提示',
+            content: '提交成功！',
+            showCancel: false,
+        });
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
+    onLoad: async function (options) {
 
     },
 
@@ -23,7 +35,7 @@ Page({
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
+    onShow: async function () {
 
     },
 

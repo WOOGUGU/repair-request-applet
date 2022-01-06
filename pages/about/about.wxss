@@ -1,0 +1,33 @@
+/* pages/about/about.wxss */
+/* pages/opinion/opinion.wxss */
+
+.about {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+}
+
+.aboutContainer {
+    width: 85%;
+    height: 85%;
+    border-radius: 20rpx;
+    box-shadow: #dddddd 5rpx 5rpx 15rpx;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.aboutTitle {
+    margin-top: 50rpx;
+}
+
+.aboutContainer .loginTitle .titleText {
+    font-size: 42rpx;
+    margin-top: 30rpx;
+}

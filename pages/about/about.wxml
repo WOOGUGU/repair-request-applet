@@ -1,0 +1,7 @@
+<view class="about">
+    <view class="aboutContainer">
+        <view class="aboutTitle">
+            <view class="titleText">湖北工业大学网络报修微信小程序</view>
+        </view>
+    </view>
+</view>

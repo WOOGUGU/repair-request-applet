@@ -1,4 +1,4 @@
-
+/* pages/mine/mine.wxss */
 .avatar-wrapper {
     background: -webkit-linear-gradient(top, rgb(255, 255, 255), #9ecaee, #5b7ea6);
     padding: 25px 0;
@@ -45,5 +45,3 @@
     height: 15px;
     margin-left: 500rpx;
 }
-
-/* user.wxss */
