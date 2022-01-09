@@ -8,7 +8,7 @@
     "pages/mine/mine",
     "pages/opinion/opinion",
     "pages/about/about",
-    "pages/instruction/Instructuon"
+    "pages/instruction/instruction"
   ],
   "window": {
     "navigationBarBackgroundColor": "#7ECEFF",
