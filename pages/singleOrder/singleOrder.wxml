@@ -1,0 +1,8 @@
+<view class="container">
+    <view class="order">
+        <view class="order-title">
+            <view class="titleText">这里是标题</view>
+            <view class="progress one">哈哈</view>
+        </view>
+    </view>
+</view>
