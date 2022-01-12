@@ -1,12 +1,14 @@
+<!--pages/mine/mine.wxml-->
 <view class="mine-wrapper">
     <view class="avatar-wrapper">
         <view>
             <view class="avatar">
-                <image style="border-radius:50%;" src="{{userinfo.avatarUrl ? userinfo.avatarUrl:'/static/icon/mine.png'}}"></image>
+                <image style="border-radius:80%;" src="{{userInfo.avatarUrl ? userInfo.avatarUrl:'/static/icon/mine.png'}}"></image>
             </view>
+
             <view class="text">
-                <text wx:if="{{userinfo.Name}}">{{userinfo.Name}}</text>
-                <text wx:else bindtap="toLogin">登录</text>
+                <text wx:if="{{!userInfo}}">{{"未登录"}}</text>
+                <text wx:elif="{{userInfo}}">{{"已登录"}}</text>
             </view>
         </view>
     </view>
