@@ -1,7 +1,7 @@
 /* pages/mine/mine.wxss */
 .avatar-wrapper {
     background: -webkit-linear-gradient(top, rgb(255, 255, 255), #9ecaee, #5b7ea6);
-    padding: 50px 0;
+    padding: 80px 0;
 }
 
 .avatar-wrapper .avatar {
