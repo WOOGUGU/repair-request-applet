@@ -1,9 +1,9 @@
 <view id="Instruction">
+
     <view id="InstructionContent">
-        <view class="Title">
+        <view class="Title" id="Title">
             <view type="text">校园网使用指南</view>
         </view>
-
         <view class="Content">
             <textarea id="Content1" type="text">
                 1.就是这么用
