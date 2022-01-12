@@ -25,18 +25,18 @@
         "checkInvalidKey": true,
         "checkSiteMap": true,
         "uploadWithSourceMap": true,
-        "compileHotReLoad": false,
+        "compileHotReLoad": true,
         "lazyloadPlaceholderEnable": false,
-        "useMultiFrameRuntime": false,
-        "useApiHook": false,
-        "useApiHostProcess": false,
+        "useMultiFrameRuntime": true,
+        "useApiHook": true,
+        "useApiHostProcess": true,
         "babelSetting": {
             "ignore": [],
             "disablePlugins": [],
             "outputPath": ""
         },
         "enableEngineNative": false,
-        "useIsolateContext": true,
+        "useIsolateContext": false,
         "userConfirmedBundleSwitch": false,
         "packNpmManually": false,
         "packNpmRelationList": [],
@@ -48,7 +48,7 @@
     },
     "compileType": "miniprogram",
     "libVersion": "2.15.0",
-    "appid": "touristappid",
+    "appid": "wx221d6853057ea555",
     "projectname": "miniprogram-1",
     "debugOptions": {
         "hidedInDevtools": []
