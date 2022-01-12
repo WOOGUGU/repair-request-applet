@@ -47,7 +47,7 @@
                 </view>
             </view>
             <view class="card-footer">
-                <view class="footer-text" bindtap="jump">查看更多>></view>
+                <view class="footer-text" bindtap="jump_1">查看更多>></view>
             </view>
         </view>
 
@@ -64,7 +64,7 @@
                 </view>
             </view>
             <view class="card-footer">
-                <view class="footer-text" bindtap="jump">查看更多>></view>
+                <view class="footer-text" bindtap="jump_2">查看更多>></view>
             </view>
         </view>
     </view>
