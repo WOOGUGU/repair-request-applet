@@ -5,7 +5,7 @@
                 <image style="border-radius:50%;" src="{{userinfo.avatarUrl ? userinfo.avatarUrl:'/static/icon/mine.png'}}"></image>
             </view>
             <view class="text">
-                <text wx:if="{{userinfo.Name}}">{{userinfo.Name}}</text>
+                <text wx:if="{{test>0}}">{{name}}</text>
                 <text wx:else bindtap="toLogin">登录</text>
             </view>
         </view>

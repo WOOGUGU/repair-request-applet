@@ -4,28 +4,55 @@ Page({
         menuitems: [
             { text: '意见反馈', url: '../opinion/opinion', icon: '/static/icon/pen.png', tips: '', arrows: '/static/icon/arrows.png' },
             { text: '关于我们', url: '../about/about', icon: '/static/icon/info.png', tips: '', arrows: '/static/icon/arrows.png' }
-        ]
+        ],
+        name : "n",
+        test : 0,
     },
+
+    toLogin: function () {
+        wx.setStorage({
+            key: 'location',
+            data: {
+                id: 'mine'
+            }
+        }),
+        wx.navigateTo({url:'../login/login'})
+    },
+
+
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
 
     },
-
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function () {
+    onReady: function (){
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function () {
-
+    onShow: function (){
+        let userInfo = getStorage('localUserInfo');
+        if (userInfo) {
+            this.setData({
+                    test:1,
+                    name:userInfo.username
+                }
+            )
+        }else{
+            this.setData({
+                    test:0,
+                    name:"n"
+                }
+            )
+        };
     },
+
 
     /**
      * 生命周期函数--监听页面隐藏
