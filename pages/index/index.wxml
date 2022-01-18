@@ -1,4 +1,6 @@
 <!--pages/index/index.wxml-->
+<view class="top"> 主页 </view>
+
 <view class="indexContainer">
 
     <swiper class="banners" indicator-dots
