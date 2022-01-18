@@ -11,7 +11,11 @@ Page({
         name: '',
         tel: '',
         opinion:'',
+        topNavBar: {
+            bgColor: 'bg-gradual-blue'
+        },
         listData: {}
+
     },
 
     onLoad: async function () {

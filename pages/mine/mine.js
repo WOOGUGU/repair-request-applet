@@ -1,10 +1,10 @@
 import getStorage from "../../utils/getStorage";
+
 Page({
     data: {
-        menuitems: [
-            { text: '意见反馈', url: '../opinion/opinion', icon: '/static/icon/pen.png', tips: '', arrows: '/static/icon/arrows.png' },
-            { text: '关于我们', url: '../about/about', icon: '/static/icon/info.png', tips: '', arrows: '/static/icon/arrows.png' }
-        ]
+        topNavBar: {
+            bgColor: 'bg-gradual-blue'
+        },
     },
     /**
      * 生命周期函数--监听页面加载
