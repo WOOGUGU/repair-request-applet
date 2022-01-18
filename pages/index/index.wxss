@@ -12,7 +12,8 @@ page {
 /* 轮播 start */
 .banners {
     width: 100%;
-    height: 56.25vw;
+    /*height: 56.25vw;*/
+    height:50vw;
 }
 
 .banners image {
