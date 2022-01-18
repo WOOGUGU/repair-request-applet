@@ -1,0 +1,25 @@
+<view class="item">
+    <view class="order">
+        <view class="order-title">
+            <view class="titleText">{{orderData.position + '-' + orderData.des}}</view>
+            <view class="progress {{color[orderData.progress + 2]}}">{{status[orderData.progress + 2]}}</view>
+        </view>
+        <view class="order-body">
+            <!--            <view class="order-body-text time_start">发起时间：{{orderData.timeStart}}</view>-->
+            <view class="order-body-text time_subscribe">预约上门时间：{{orderData.timeSubscribe}}</view>
+            <view class="order-body-text time_distribution">
+                审核时间：{{orderData.timeDistribution == null ? '' : orderData.timeDistribution}}
+            </view>
+            <view class="order-body-text solver">维修人员：{{orderData.solver == null ? '' : orderData.solver}}</view>
+            <view class="order-body-text time_end">完成时间：{{orderData.timeEnd == null ? '' : orderData.timeEnd}}</view>
+        </view>
+        <view class="order-footer">
+            <view>
+                <button wx:if="{{orderData.progress != -1 && orderData.progress != 2}}" class="order-footer-button"
+                        bindtap="cancelOrder">取消工单
+                </button>
+            </view>
+            <view class="order-footer-text more">查看详情>></view>
+        </view>
+    </view>
+</view>

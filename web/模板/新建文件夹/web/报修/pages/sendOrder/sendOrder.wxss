@@ -1,0 +1,75 @@
+/* 页面设置 start */
+page {
+    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 页面设置 end */
+
+/* 表单框 start */
+.formContainer {
+    width: 90%;
+    margin: 40rpx 0;
+    border-radius: 20rpx;
+    box-shadow: #dddddd 5rpx 5rpx 15rpx;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.formTitle {
+    margin-top: 30rpx;
+}
+
+.formContainer .formTitle .titleText {
+    font-size: 42rpx;
+    margin-top: 30rpx;
+}
+
+.orderForm {
+    margin: auto;
+    width: 80%;
+}
+
+.form-item {
+    /*width: 100%;*/
+    text-align: start;
+    margin-bottom: 20rpx;
+}
+
+.form-item label {
+    font-size: 36rpx;
+    padding-left: 5rpx;
+    color: #444444;
+}
+
+.form-item radio-group label {
+    font-size: 28rpx;
+}
+
+.form-item input {
+    color: #333333;
+    height: 80rpx;
+    font-size: 30rpx;
+    padding: 0 30rpx;
+}
+
+.form-item .radio {
+    display: block;
+    margin: 6rpx 0;
+    padding-left: 30rpx;
+}
+
+.orderForm button {
+    margin: 40rpx 0 40rpx;
+}
+/* 表单框 end */
