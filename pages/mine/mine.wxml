@@ -1,5 +1,5 @@
 <view class="padding-tb-xl padding text-center" style="height: 414rpx;" >
-  <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow' style="background-color:{{BgColor}}">
+  <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow'>
     <view class="padding-xl text-while">
       <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>
       <view class="padding-xs text-xl">
@@ -7,7 +7,7 @@
       </view>
     </view>
   </button>
-  <button wx:else bindtap='toLogin' class='{{topNavBar.bgColor}} shadow' style="background-color:{{BgColor}}">
+  <button wx:else bindtap='toLogin' class='{{topNavBar.bgColor}} shadow' >
     <view class="padding-xl text-while">
       <view class="cu-avatar xl round" style="background-image:url(/static/icon/avatar.png);"></view>
       <view class="padding-xs text-xl">

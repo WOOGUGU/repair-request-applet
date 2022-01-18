@@ -5,6 +5,9 @@ Page({
         name : "n",
         test : 0,
         BgColor: '#7ECEFF',
+        topNavBar: {
+                        bgColor: 'bg-gradual-blue'
+       },
     },
 
     toLogin: function () {
