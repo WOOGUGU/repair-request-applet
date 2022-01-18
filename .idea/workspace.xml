@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b026c486-07eb-4d9a-9f7b-04c25ab948fc" name="Changes" comment="Merge branch 'huangpinchun' into newB&#10;&#10;# Conflicts:&#10;#&#9;pages/mine/mine.wxml&#10;#&#9;pages/opinion/opinion.js" />
+    <list default="true" id="b026c486-07eb-4d9a-9f7b-04c25ab948fc" name="Changes" comment="Merge branch 'huangpinchun' into newB&#10;&#10;# Conflicts:&#10;#&#9;pages/mine/mine.wxml&#10;#&#9;pages/opinion/opinion.js">
+      <change afterPath="$PROJECT_DIR$/static/imgs/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/imgs/3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -45,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../new" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/imgs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -63,6 +69,7 @@
       <workItem from="1642322521894" duration="1822000" />
       <workItem from="1642486906054" duration="4702000" />
       <workItem from="1642494383770" duration="518000" />
+      <workItem from="1642494947859" duration="613000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'tianyun' of one_two_three/network-repair-front-end into master&#10;&#10;我的-登录修改">
       <created>1642322723872</created>
@@ -134,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642494675881</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge branch 'huangpinchun' into newB&#10;&#10;# Conflicts:&#10;#&#9;pages/mine/mine.wxml&#10;#&#9;pages/opinion/opinion.js">
+      <created>1642495205131</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1642495205131</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

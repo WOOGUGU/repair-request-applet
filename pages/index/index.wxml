@@ -6,13 +6,13 @@
             indicator-active-color="#0088E2"
             autoplay="true" interval="3000">
         <swiper-item>
-            <image src="/static/imgs/Tomcat_jpg.jpg"></image>
+            <image src="/static/imgs/1.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/static/imgs/Tomcat_jpg.jpg"></image>
+            <image src="/static/imgs/2.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/static/imgs/Tomcat_jpg.jpg"></image>
+            <image src="/static/imgs/3.png"></image>
         </swiper-item>
     </swiper>
 
