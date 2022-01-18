@@ -1,4 +1,6 @@
 /* pages/mine/mine.wxss */
+@import "../../colorui/main.wxss";
+@import "../../colorui/icon.wxss";
 .avatar-wrapper {
     background: -webkit-linear-gradient(top, rgb(255, 255, 255), #9ecaee, #5b7ea6);
     padding: 25px 0;
