@@ -1,8 +1,8 @@
-<view class="top">我的</view>
+<view class="top"> 我的 </view>
 
 <view class='bg-gradual-blue '>
 </view>
-<view class="padding-tb-xl padding text-center" style="height: 414rpx;">
+<view class="padding-tb-xl padding text-center" style="height: 360rpx;">
     <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow'>
         <view class="padding-xl text-while">
             <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>
