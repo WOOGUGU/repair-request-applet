@@ -20,6 +20,7 @@
 
     <!-- 推荐列表 -->
     <view class="lists">
+
         <view class="news" bindtap="toDetail">
             <view class="content">
                 <view class='imgitem'>
@@ -36,10 +37,11 @@
                 </view>
             </view>
         </view>
+
         <view class="news" bindtap="toDetail">
             <view class="content">
                 <view class='imgitem'>
-                    <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>
+                    <image class='imgitem' mode="widthFit" src="/static/imgs/3.png"></image>
                 </view>
                 <view class="title">使用指南</view>
                 <view class="bottom">
@@ -48,7 +50,24 @@
                     </view>
                 </view>
                 <view class="detail">
-                    校园网常见问题及解决方案
+                    看了也不会用
+                </view>
+            </view>
+        </view>
+
+        <view class="news" bindtap="toDetail">
+            <view class="content">
+                <view class='imgitem'>
+                    <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>
+                </view>
+                <view class="title">常见问题及解决方案</view>
+                <view class="bottom">
+                    <view class="icon">
+                        2022-1-19
+                    </view>
+                </view>
+                <view class="detail">
+                    没方案
                 </view>
             </view>
         </view>
