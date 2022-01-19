@@ -4,24 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="首页美化_2">
+    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/instruction/instruction.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/instruction/instruction.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icon/a-index.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/a-index.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icon/a-mine.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/a-mine.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icon/a-order.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/a-order.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icon/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/index.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icon/mine.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/mine.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/icon/order.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/order.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/a.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/c.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/c.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/gonggao.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/gonggao.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/imgs/problem.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/problem.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +26,14 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="23uOFHRpeQcEYh00EdfeuqMzx3t" />
   <component name="ProjectViewState">
@@ -107,7 +100,21 @@
       <option name="project" value="LOCAL" />
       <updated>1642594842294</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1642602181597</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642602181597</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1642602185352</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642602185352</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +149,7 @@
     <MESSAGE value="工单详情页初稿，ui待优化" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="首页美化_2" />
-    <option name="LAST_COMMIT_MESSAGE" value="首页美化_2" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
 </project>
