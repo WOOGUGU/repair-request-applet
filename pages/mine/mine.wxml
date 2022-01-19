@@ -13,7 +13,7 @@
     </button>
     <button wx:else open-type='getUserInfo' class='{{topNavBar.bgColor}} shadow'>
         <view class="padding-xl text-while">
-            <view class="cu-avatar xl round" style="background-image:url(/static/icon/mine.png);"></view>
+            <view class="cu-avatar xl round" style="background-image:url(./static/icon/mine.png);"></view>
             <view class="padding-xs text-xl">
                 登录
             </view>
