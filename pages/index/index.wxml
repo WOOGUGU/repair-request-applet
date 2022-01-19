@@ -1,5 +1,5 @@
 <!--pages/index/index.wxml-->
-<view class="top"> 主页 </view>
+<view class="top">主页</view>
 
 <view class="indexContainer">
 
@@ -20,10 +20,10 @@
 
     <!-- 推荐列表 -->
     <view class="lists">
-        <view class="news" bindtap="toDetail" >
+        <view class="news" bindtap="toDetail">
             <view class="content">
                 <view class='imgitem'>
-                    <image class='imgitem' mode="widthFit"  src="/static/imgs/gonggao.png"></image>
+                    <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
                 </view>
                 <view class="title">公告</view>
                 <view class="bottom">
@@ -36,10 +36,10 @@
                 </view>
             </view>
         </view>
-        <view class="news" bindtap="toDetail" >
+        <view class="news" bindtap="toDetail">
             <view class="content">
                 <view class='imgitem'>
-                    <image class='imgitem' mode="widthFit"  src="/static/imgs/problem.png"></image>
+                    <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>
                 </view>
                 <view class="title">使用指南</view>
                 <view class="bottom">

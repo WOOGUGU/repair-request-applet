@@ -5,15 +5,13 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
-
-    },
-    jump_1:function(){
-        wx.navigateTo({url:'../instruction/instruction'})
+    data: {},
+    jump_1: function () {
+        wx.navigateTo({url: '../instruction/instruction'})
     },
 
-    jump_2:function(){
-        wx.navigateTo({url:'../FAQ/FAQ'})
+    jump_2: function () {
+        wx.navigateTo({url: '../FAQ/FAQ'})
     },
     /**
      * 生命周期函数--监听页面加载

@@ -15,14 +15,14 @@
     flex-direction: column;
 }
 
-#Title{
+#Title {
     height: 8%;
     color: #ffffff;
     background-color: #224abe;
     text-align: center;
 }
 
-#Content{
+#Content {
     text-align: left;
 }
 

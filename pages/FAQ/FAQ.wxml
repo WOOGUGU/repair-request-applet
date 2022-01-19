@@ -1,14 +1,14 @@
 <view id="Instruction">
 
-<view id="InstructionContent">
-    <view class="Title" id="Title">
-        <view type="text">FAQ</view>
-    </view>
-    <view class="Content">
-        <textarea id="Content1" type="text">
-            1.xxxxxxxxxxxxxxxxxxx
-        </textarea>
-    </view>
+    <view id="InstructionContent">
+        <view class="Title" id="Title">
+            <view type="text">FAQ</view>
+        </view>
+        <view class="Content">
+            <textarea id="Content1" type="text">
+                1.xxxxxxxxxxxxxxxxxxx
+            </textarea>
+        </view>
 
-</view>
+    </view>
 </view>

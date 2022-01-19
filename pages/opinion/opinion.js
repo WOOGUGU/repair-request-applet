@@ -10,7 +10,7 @@ Page({
     data: {
         name: '',
         tel: '',
-        opinion:'',
+        opinion: '',
         topNavBar: {
             bgColor: 'bg-gradual-blue'
         },

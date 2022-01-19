@@ -1,6 +1,6 @@
 {
-  "usingComponents": {
-    "order-card": "/components/order-card/order-card"
-  },
-  "navigationBarTitleText": "报修工单"
+    "usingComponents": {
+        "order-card": "/components/order-card/order-card"
+    },
+    "navigationBarTitleText": "报修工单"
 }
