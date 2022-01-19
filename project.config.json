@@ -47,8 +47,8 @@
         "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.15.0",
-    "appid": "touristappid",
+    "libVersion": "2.19.6",
+    "appid": "wx221d6853057ea555",
     "projectname": "miniprogram-1",
     "debugOptions": {
         "hidedInDevtools": []
