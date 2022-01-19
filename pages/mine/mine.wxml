@@ -1,33 +1,37 @@
-<view class="padding-tb-xl padding text-center" style="height: 414rpx;" >
-  <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow'>
-    <view class="padding-xl text-while">
-      <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>
-      <view class="padding-xs text-xl">
-        {{name}}
-      </view>
-    </view>
-  </button>
-  <button wx:else bindtap='toLogin' class='{{topNavBar.bgColor}} shadow' >
-    <view class="padding-xl text-while">
-      <view class="cu-avatar xl round" style="background-image:url(/static/icon/avatar.png);"></view>
-      <view class="padding-xs text-xl">
-        点我登录
-      </view>
-    </view>
-  </button>
+<view class="top"> 我的 </view>
+
+<view class='bg-gradual-blue '>
+</view>
+<view class="padding-tb-xl padding text-center" style="height: 414rpx;">
+    <button wx:if='{{is_login}}' class='{{topNavBar.bgColor}} shadow'>
+        <view class="padding-xl text-while">
+            <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>
+            <view class="padding-xs text-xl">
+                {{user_info.nickname}}
+            </view>
+        </view>
+    </button>
+    <button wx:else open-type='getUserInfo' class='{{topNavBar.bgColor}} shadow'>
+        <view class="padding-xl text-while">
+            <view class="cu-avatar xl round" style="background-image:url(/static/icon/mine.png);"></view>
+            <view class="padding-xs text-xl">
+                登录
+            </view>
+        </view>
+    </button>
 </view>
 
 <view class="cu-list menu card-menu">
-  <view class="cu-item arrow">
-    <button class="cu-btn content" bindtap="confirm">
-      <text class="cuIcon-community text-blue"></text>
-      <text class="text-grey">意见反馈</text>
-    </button>
-  </view>
-  <view class="cu-item arrow">
-    <navigator class="content" hover-class="none" url="/pages/about/about" open-type="navigate">
-      <text class="cuIcon-info text-blue"></text>
-      <text class="text-grey">关于我们</text>
-    </navigator>
-  </view>
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="/pages/opinion/opinion" open-type="navigate">
+            <text class="cuIcon-community text-blue"></text>
+            <text class="text-grey">意见反馈</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" url="/pages/about/about" open-type="navigate">
+            <text class="cuIcon-info text-blue"></text>
+            <text class="text-grey">关于我们</text>
+        </navigator>
+    </view>
 </view>
