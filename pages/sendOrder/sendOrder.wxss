@@ -1,6 +1,6 @@
 /* 页面设置 start */
 page {
-    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-color: #f1f1f1;
 }
 
 .container {
@@ -72,4 +72,5 @@ page {
 .orderForm button {
     margin: 40rpx 0 40rpx;
 }
+
 /* 表单框 end */
