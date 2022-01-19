@@ -76,6 +76,13 @@ Component({
                     }
                 })
             }
+        },
+
+        more: function () {
+            let data = this.data.orderData;
+            wx.navigateTo({
+                url: '../singleOrder/singleOrder?order=' + JSON.stringify(data),
+            })
         }
     }
 

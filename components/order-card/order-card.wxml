@@ -19,7 +19,7 @@
                         bindtap="cancelOrder">取消工单
                 </button>
             </view>
-            <view class="order-footer-text more">查看详情>></view>
+            <view class="order-footer-text more" bindtap="more">查看详情>></view>
         </view>
     </view>
 </view>
