@@ -3,6 +3,9 @@ import request from "../../utils/request";
 
 Page({
     data: {
+        topNavBar: {
+            bgColor: 'bg-gradual-blue'
+        },
         userInfo: {
             id: '',
             username: '',
