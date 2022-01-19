@@ -18,57 +18,40 @@
         </swiper-item>
     </swiper>
 
-    <view class="card-area">
-        <view class="card">
-            <view class="card-title">
-                <view class="title-text">通知</view>
-            </view>
-            <view class="card-body">
-                <view class="listItems">
-                    <view class="item">1.啊哈哈哈哈哈哈哈哈</view>
+    <!-- 推荐列表 -->
+    <view class="lists">
+        <view class="news" bindtap="toDetail" >
+            <view class="content">
+                <view class='imgitem'>
+                    <image class='imgitem' mode="widthFit"  src="/static/imgs/gonggao.png"></image>
                 </view>
-                <view class="listItems">
-                    <view class="item">2.啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</view>
+                <view class="title">公告</view>
+                <view class="bottom">
+                    <view class="icon">
+                        2021-1-19
+                    </view>
                 </view>
-            </view>
-            <view class="card-footer">
-                <view class="footer-text" bindtap="jump">查看更多>></view>
+                <view class="detail">
+                    公告就是公告
+                </view>
             </view>
         </view>
-
-        <view class="card">
-            <view class="card-title">
-                <view class="title-text">校园网使用指南</view>
-            </view>
-            <view class="card-body">
-                <view class="listItems">
-                    <view class="item">1.啊哈哈哈哈哈哈哈哈</view>
+        <view class="news" bindtap="toDetail" >
+            <view class="content">
+                <view class='imgitem'>
+                    <image class='imgitem' mode="widthFit"  src="/static/imgs/problem.png"></image>
                 </view>
-                <view class="listItems">
-                    <view class="item">2.啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</view>
+                <view class="title">使用指南</view>
+                <view class="bottom">
+                    <view class="icon">
+                        2022-1-19
+                    </view>
                 </view>
-            </view>
-            <view class="card-footer">
-                <view class="footer-text" bindtap="jump_1">查看更多>></view>
-            </view>
-        </view>
-
-        <view class="card">
-            <view class="card-title">
-                <view class="title-text">常见问题及解决方案</view>
-            </view>
-            <view class="card-body">
-                <view class="listItems">
-                    <view class="item">1.啊哈哈哈哈哈哈哈哈</view>
+                <view class="detail">
+                    校园网常见问题及解决方案
                 </view>
-                <view class="listItems">
-                    <view class="item">2.啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</view>
-                </view>
-            </view>
-            <view class="card-footer">
-                <view class="footer-text" bindtap="jump_2">查看更多>></view>
             </view>
         </view>
     </view>
-
+    <!-- 底部 -->
 </view>
