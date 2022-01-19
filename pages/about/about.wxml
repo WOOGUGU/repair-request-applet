@@ -1,3 +1,7 @@
+<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">关于我们</view>
+</cu-custom>
 <view class="about">
     <view class="aboutContainer">
         <view class="aboutTitle">
