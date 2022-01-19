@@ -17,7 +17,9 @@
     "navigationBarTitleText": "ColorUI",
     "navigationStyle": "custom",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": true,
+    "enablePullDownRefresh": true,
+    "backgroundTextStyle": "dark"
   },
   "usingComponents": {
     "cu-custom": "/components/cu-custom"
