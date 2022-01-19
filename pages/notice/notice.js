@@ -1,22 +1,12 @@
-// pages/index/index.js
-
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
-    },
-    jump_1: function () {
-        wx.navigateTo({url: '../instruction/instruction'})
-    },
-
-    jump_2: function () {
-        wx.navigateTo({url: '../FAQ/FAQ'})
-    },
-    jump_3:function(){
-        wx.navigateTo({url:'../notice/notice'})
+        topNavBar: {
+            bgColor: 'bg-gradual-blue'
+        },
     },
     /**
      * 生命周期函数--监听页面加载
@@ -73,4 +63,5 @@ Page({
     onShareAppMessage: function () {
 
     }
+
 })

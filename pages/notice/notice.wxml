@@ -2,15 +2,15 @@
     <view slot="backText">返回</view>
     <view slot="content">主页</view>
 </cu-custom>
-<view id="Instruction">
+<view id="Notice">
 
-    <view id="InstructionContent">
-        <view class="Title" id="Title">
-            <view type="text">校园网使用指南</view>
+    <view id="NoticeContent">
+        <view class="Title">
+            <view type="text">公告</view>
         </view>
         <view class="Content">
-            <textarea id="Content1" type="text">
-                1.就是这么用
+            <textarea type="text">
+                1.公告就是公告
             </textarea>
         </view>
     </view>

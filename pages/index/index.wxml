@@ -21,7 +21,7 @@
     <!-- 推荐列表 -->
     <view class="lists">
 
-        <view class="news" bindtap="toDetail">
+        <view class="news" bindtap="jump_3">
             <view class="content">
                 <view class='imgitem'>
                     <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
@@ -37,6 +37,8 @@
                 </view>
             </view>
         </view>
+
+
 
         <view class="news" bind:tap="jump_1">
             <view class="content">
