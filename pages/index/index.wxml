@@ -18,7 +18,7 @@
     </swiper>
 
     <view class="lists">
-        <view class="news" bindtap="jump_FAQ" >
+        <view class="news" bindtap="jump_1" >
             <view class="content">
                 <view class='imgitem'>
                     <image class='imgitem' mode="widthFit"  src="/static/imgs/gonggao.png"></image>
@@ -34,7 +34,7 @@
                 </view>
             </view>
         </view>
-        <view class="news" bindtap="jump_instruct" >
+        <view class="news" bindtap="jump_2" >
             <view class="content">
                 <view class='imgitem'>
                     <image class='imgitem' mode="widthFit"  src="/static/imgs/problem.png"></image>
