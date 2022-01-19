@@ -2,21 +2,25 @@
   "pages": [
     "pages/index/index",
     "pages/order/order",
+    "pages/mine/mine",
     "pages/login/login",
     "pages/sendOrder/sendOrder",
     "pages/singleOrder/singleOrder",
-    "pages/mine/mine",
     "pages/opinion/opinion",
     "pages/about/about",
-    "pages/instruction/instruction"
+    "pages/instruction/instruction",
+    "pages/FAQ/FAQ"
   ],
   "window": {
-    "navigationBarBackgroundColor": "#7ECEFF",
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "网络报修",
-    "backgroundColor": "#eeeeee",
     "backgroundTextStyle": "light",
-    "enablePullDownRefresh": false
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "ColorUI",
+    "navigationStyle": "custom",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  },
+  "usingComponents": {
+    "cu-custom": "/components/cu-custom"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

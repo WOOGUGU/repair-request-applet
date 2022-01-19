@@ -5,6 +5,9 @@ import {hexMD5} from "../../utils/md5";
 Page({
     data: {
         username: '',
+        topNavBar: {
+            bgColor: 'bg-gradual-blue'
+        },
         password: ''
     },
 

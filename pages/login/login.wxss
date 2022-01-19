@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(180deg, #4e73df 10%, #224abe 100%);
+    background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
 }
 
 /* 页面设置 end */
@@ -60,7 +60,7 @@
     margin-top: 50rpx;
     height: 80rpx;
     line-height: 80rpx;
-    background-color: #0069d9;
+    background-color: #0081ff;
 }
 
 /* 登录框 end */
