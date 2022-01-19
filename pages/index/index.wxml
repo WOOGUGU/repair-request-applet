@@ -21,6 +21,23 @@
     <view class="card-area">
         <view class="card">
             <view class="card-title">
+                <view class="title-text">通知</view>
+            </view>
+            <view class="card-body">
+                <view class="listItems">
+                    <view class="item">1.啊哈哈哈哈哈哈哈哈</view>
+                </view>
+                <view class="listItems">
+                    <view class="item">2.啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</view>
+                </view>
+            </view>
+            <view class="card-footer">
+                <view class="footer-text" bindtap="jump">查看更多>></view>
+            </view>
+        </view>
+
+        <view class="card">
+            <view class="card-title">
                 <view class="title-text">校园网使用指南</view>
             </view>
             <view class="card-body">
