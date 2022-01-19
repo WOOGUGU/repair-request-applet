@@ -8,34 +8,17 @@
             indicator-active-color="#0088E2"
             autoplay="true" interval="3000">
         <swiper-item>
-            <image src="/static/imgs/Tomcat_jpg.jpg"></image>
+            <image src="/static/imgs/1.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/static/imgs/Tomcat_jpg.jpg"></image>
+            <image src="/static/imgs/2.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/static/imgs/Tomcat_jpg.jpg"></image>
+            <image src="/static/imgs/3.png"></image>
         </swiper-item>
     </swiper>
 
     <view class="card-area">
-        <view class="card">
-            <view class="card-title">
-                <view class="title-text">通知</view>
-            </view>
-            <view class="card-body">
-                <view class="listItems">
-                    <view class="item">1.啊哈哈哈哈哈哈哈哈</view>
-                </view>
-                <view class="listItems">
-                    <view class="item">2.啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</view>
-                </view>
-            </view>
-            <view class="card-footer">
-                <view class="footer-text" bindtap="jump">查看更多>></view>
-            </view>
-        </view>
-
         <view class="card">
             <view class="card-title">
                 <view class="title-text">校园网使用指南</view>
