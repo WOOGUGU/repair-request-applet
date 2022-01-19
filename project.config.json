@@ -25,7 +25,7 @@
         "checkInvalidKey": true,
         "checkSiteMap": true,
         "uploadWithSourceMap": true,
-        "compileHotReLoad": true,
+        "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
         "useMultiFrameRuntime": true,
         "useApiHook": true,
@@ -47,7 +47,7 @@
         "useCompilerPlugins": false
     },
     "compileType": "miniprogram",
-    "libVersion": "2.15.0",
+    "libVersion": "2.19.6",
     "appid": "wx221d6853057ea555",
     "projectname": "miniprogram-1",
     "debugOptions": {

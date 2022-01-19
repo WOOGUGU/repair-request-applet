@@ -20,7 +20,7 @@ page {
     justify-content: space-between;
 }
 
-.order-title .titleText {
+.order-title .title-text {
     width: 65%;
     color: #333333;
     font-size: 34rpx;
@@ -60,65 +60,40 @@ page {
 .order .order-title .two {
     color: seagreen;
 }
-page {
-    background-color: #f8f8f8;
+
+.order .order-body {
+    font-size: 28rpx;
+    padding-top: 15rpx;
 }
 
-.container {
-    padding: 0 20rpx;
+.order .order-body .order-body-text {
+    margin: 4rpx 0;
+    line-height: 38rpx;
 }
 
-.order {
+.feedback_submission {
     margin: 15rpx 0;
     padding: 20rpx;
     border-radius: 10rpx;
     background-color: #ffffff;
-}
-
-.order-title {
-    width: 100%;
-    height: 80rpx;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.order-title .titleText {
-    width: 65%;
-    color: #333333;
-    font-size: 34rpx;
-    font-weight: bold;
-    height: 80rpx;
-    line-height: 80rpx;
-    /*溢出隐藏*/
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.feedback_submission .feedback_title {
+    align-self: center;
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
 }
 
-.order .order-title .progress {
-    height: 80rpx;
-    font-size: 28rpx;
-    font-weight: bold;
-    line-height: 80rpx;
+.feedback_submission .feedback_title .title-text {
+    line-height: 100rpx;
 }
 
-.order .order-title ._two {
-    color: red;
-}
-
-.order .order-title ._one {
-    color: #656565;
-}
-
-.order .order-title .zero {
-    color: orange;
-}
-
-.order .order-title .one {
-    color: dodgerblue;
-}
-
-.order .order-title .two {
-    color: seagreen;
+.feedback_submission .feedback_btn {
+    align-self: center;
+    width: 80%;
 }
