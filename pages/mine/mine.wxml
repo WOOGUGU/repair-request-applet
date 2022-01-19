@@ -2,18 +2,18 @@
 
 <view class='bg-gradual-blue '>
 </view>
-<view class="padding-tb-xl padding text-center" style="height: 414rpx;">
-    <button wx:if='{{is_login}}' class='{{topNavBar.bgColor}} shadow'>
+<view class="padding-tb-xl padding text-center" style="height: 360rpx;">
+    <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow'>
         <view class="padding-xl text-while">
             <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>
             <view class="padding-xs text-xl">
-                {{user_info.nickname}}
+                {{name}}
             </view>
         </view>
     </button>
-    <button wx:else open-type='getUserInfo' class='{{topNavBar.bgColor}} shadow'>
+    <button wx:else bindtap="toLogin" class='{{topNavBar.bgColor}} shadow'>
         <view class="padding-xl text-while">
-            <view class="cu-avatar xl round" style="background-image:url(./static/icon/mine.png);"></view>
+            <view class="cu-avatar xl round" style="background-image:url(/static/icon/mine.png);"></view>
             <view class="padding-xs text-xl">
                 登录
             </view>
@@ -23,7 +23,7 @@
 
 <view class="cu-list menu card-menu">
     <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" url="/pages/opinion/opinion" open-type="navigate">
+        <navigator class="content" hover-class="none" bindtap="confirm">
             <text class="cuIcon-community text-blue"></text>
             <text class="text-grey">意见反馈</text>
         </navigator>
