@@ -20,7 +20,7 @@
     "enablePullDownRefresh": true
   },
   "usingComponents": {
-    "cu-custom": "/components/cu-custom"
+    "cu-custom": "/components/cu-custom/cu-custom"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
