@@ -1,5 +1,5 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "首页",
-  "van-icon": "/dist/icon/index"
+    "usingComponents": {},
+    "navigationBarTitleText": "首页",
+    "van-icon": "/dist/icon/index"
 }

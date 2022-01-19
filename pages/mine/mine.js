@@ -1,9 +1,10 @@
 import getStorage from "../../utils/getStorage";
 import request from "../../utils/request";
+
 Page({
     data: {
-        name : "n",
-        test : 0,
+        name: "n",
+        test: 0,
         topNavBar: {
             bgColor: 'bg-gradual-blue'
         },
@@ -16,7 +17,7 @@ Page({
                 id: 'mine'
             }
         }),
-            wx.navigateTo({url:'../login/login'})
+            wx.navigateTo({url: '../login/login'})
     },
 
     confirm: async function (options) {
@@ -92,28 +93,29 @@ Page({
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
-    onReady: function (){
+    onReady: function () {
 
     },
 
     /**
      * 生命周期函数--监听页面显示
      */
-    onShow: function (){
+    onShow: function () {
         let userInfo = getStorage('localUserInfo');
         if (userInfo) {
             this.setData({
-                    test:1,
-                    name:userInfo.username
+                    test: 1,
+                    name: userInfo.username
                 }
             )
-        }else{
+        } else {
             this.setData({
-                    test:0,
-                    name:"n"
+                    test: 0,
+                    name: "n"
                 }
             )
-        };
+        }
+        ;
     },
 
 

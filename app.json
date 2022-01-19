@@ -1,50 +1,50 @@
 {
-  "pages": [
-    "pages/index/index",
-    "pages/order/order",
-    "pages/mine/mine",
-    "pages/login/login",
-    "pages/sendOrder/sendOrder",
-    "pages/singleOrder/singleOrder",
-    "pages/opinion/opinion",
-    "pages/about/about",
-    "pages/instruction/instruction",
-    "pages/FAQ/FAQ"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "ColorUI",
-    "navigationStyle": "custom",
-    "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": true
-  },
-  "usingComponents": {
-    "cu-custom": "/components/cu-custom/cu-custom"
-  },
-  "sitemapLocation": "sitemap.json",
-  "tabBar": {
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "text": "主页",
-        "iconPath": "static/icon/index.png",
-        "selectedIconPath": "static/icon/a-index.png"
-      },
-      {
-        "pagePath": "pages/order/order",
-        "text": "报修工单",
-        "iconPath": "static/icon/order.png",
-        "selectedIconPath": "static/icon/a-order.png"
-      },
-      {
-        "pagePath": "pages/mine/mine",
-        "text": "我的",
-        "iconPath": "static/icon/mine.png",
-        "selectedIconPath": "static/icon/a-mine.png"
-      }
+    "pages": [
+        "pages/index/index",
+        "pages/order/order",
+        "pages/mine/mine",
+        "pages/login/login",
+        "pages/sendOrder/sendOrder",
+        "pages/singleOrder/singleOrder",
+        "pages/opinion/opinion",
+        "pages/about/about",
+        "pages/instruction/instruction",
+        "pages/FAQ/FAQ"
     ],
-    "color": "#595956",
-    "selectedColor": "#5992D0"
-  }
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "ColorUI",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "white",
+        "enablePullDownRefresh": true
+    },
+    "usingComponents": {
+        "cu-custom": "/components/cu-custom/cu-custom"
+    },
+    "sitemapLocation": "sitemap.json",
+    "tabBar": {
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "主页",
+                "iconPath": "static/icon/index.png",
+                "selectedIconPath": "static/icon/a-index.png"
+            },
+            {
+                "pagePath": "pages/order/order",
+                "text": "报修工单",
+                "iconPath": "static/icon/order.png",
+                "selectedIconPath": "static/icon/a-order.png"
+            },
+            {
+                "pagePath": "pages/mine/mine",
+                "text": "我的",
+                "iconPath": "static/icon/mine.png",
+                "selectedIconPath": "static/icon/a-mine.png"
+            }
+        ],
+        "color": "#595956",
+        "selectedColor": "#5992D0"
+    }
 }
