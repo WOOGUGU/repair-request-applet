@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="首页美化_2">
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/instruction/instruction.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/instruction/instruction.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon/a-index.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/a-index.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon/a-mine.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/a-mine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon/a-order.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/a-order.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon/index.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/index.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon/mine.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/mine.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/icon/order.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/icon/order.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/a.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/c.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/c.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/gonggao.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/gonggao.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/imgs/problem.png" beforeDir="false" afterPath="$PROJECT_DIR$/static/imgs/problem.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,35 +107,7 @@
       <option name="project" value="LOCAL" />
       <updated>1642594842294</updated>
     </task>
-    <task id="LOCAL-00006" summary="首页美化_2">
-      <created>1642596669249</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1642596669249</updated>
-    </task>
-    <task id="LOCAL-00007" summary="首页美化_2">
-      <created>1642596754371</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1642596754371</updated>
-    </task>
-    <task id="LOCAL-00008" summary="首页美化_2">
-      <created>1642596756886</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1642596756886</updated>
-    </task>
-    <task id="LOCAL-00009" summary="首页美化_2">
-      <created>1642596762282</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1642596762282</updated>
-    </task>
-    <option name="localTasksCounter" value="10" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
