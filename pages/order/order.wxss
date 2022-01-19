@@ -11,8 +11,8 @@ page {
 /* 导航栏 start */
 .navbar {
     position: sticky;
-    top: 0;
-    z-index: 1000;
+    top: 135rpx;
+    z-index: 3;
 }
 
 .nav-items {

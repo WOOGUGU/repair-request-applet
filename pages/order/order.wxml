@@ -1,6 +1,7 @@
+<view class="top">报修工单</view>
 <view class="container">
     <view class="navbar">
-        <view class="nav-items">
+        <view class="nav">
             <view class="item {{current == 'all' ? 'active' : ''}}" bindtap="clickNavbar" id="all">全部</view>
             <view class="item {{current == '0' ? 'active' : ''}}" bindtap="clickNavbar" id="0">待审核</view>
             <view class="item {{current == '1' ? 'active' : ''}}" bindtap="clickNavbar" id="1">待处理</view>
@@ -15,6 +16,7 @@
     <view class="orders">
         <order-card wx:if="{{current == 'all' || item.progress == current}}"
                     wx:for="{{listData}}"
-                    orderData="{{item}}"></order-card>
+                    orderData="{{item}}">
+        </order-card>
     </view>
 </view>
