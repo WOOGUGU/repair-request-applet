@@ -1,77 +1,78 @@
-/* pages/index/index.wxss */
-page {
-    background-color: #f8f8f8;
-}
+/**index.wxss**/
 
-.indexContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-/* 轮播 start */
-.banners {
-    width: 100%;
-    /*height: 56.25vw;*/
-    height:50vw;
-}
-
-.banners image {
-    width: 100%;
-    height: 100%;
-}
-
-/* 轮播 end */
-.card-area {
-    display: flex;
-    flex-direction: column;
-    margin-top: 15rpx;
-    padding: 0 20rpx;
-}
-
-.card-area .card {
-    margin: 15rpx 0;
-    padding: 20rpx;
-    border-radius: 10rpx;
-    background-color: #ffffff;
-}
-
-.card .card-title {
-    display: flex;
-    justify-content: center;
-}
-
-.card .card-title .title-text {
-    margin: 15rpx 0;
-    font-size: 30rpx;
-    font-weight: bold;
-}
-
-.card .card-body {
-    padding-left: 30rpx;
-}
-
-.card .card-body .listItems {
-    display: flex;
-}
-
-.card .card-body .item {
-    font-size: 30rpx;
-    margin: 10rpx 0;
-    /*溢出隐藏*/
-    display: block;
-    white-space: nowrap;
+.news {
     overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 20rpx;
+    background: #fff;
+    border-radius: 8rpx;
 }
 
-.card .card-footer {
-    display: flex;
-    justify-content: flex-end;
+.title {
+    display: -webkit-box;
+    margin: 10rpx 20rpx 0;
+    font-size: 34rpx;
+    color: #333;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
-.card .card-footer .footer-text {
+.imgitem {
+    flex: none;
+    width: 100%;
+    height: 300rpx;
+    overflow: hidden;
+    display: block;
+}
+
+.content {
+    position: relative;
+    color: #333;
+}
+
+.detail {
+    padding: 10rpx 20rpx 20rpx;
     font-size: 28rpx;
-    margin: 15rpx 0;
-    padding-right: 30rpx;
+    color: #999;
+    z-index: 3;
+    line-height: 1.5;
+}
+
+.bottom {
+    position: absolute;
+    top: 244rpx;
+    width: 100%;
+    display: flex;
+    margin: 10rpx 0 0;
+    padding: 0 20rpx;
+    color: #fff;
+    line-height: 2;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    font-size: 24rpx;
+    margin-right: 24rpx;
+}
+
+.bottom .iconfont {
+    margin: -22rpx 0 0;
+    font-size: 24rpx;
+}
+
+.carousel {
+    width: 100%;
+    background-color: rebeccapurple;
+}
+
+.carousel_swiper {
+    width: 100%;
+    height: 400rpx;
+    display: block;
+    position: relative;
+    background: #f4f4f4;
+}
+
+.carouselImg {
+    width: 100%;
+    height: inherit;
 }
