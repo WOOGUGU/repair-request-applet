@@ -8,7 +8,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: 0;
+    background-color: #f1f1f1;
 }
 
 .opinionContainer {
@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    font-size: 35rpx;
 }
 
 .opinionTitle {
@@ -35,20 +36,20 @@
     margin: auto;
     width: 80%;
 }
+
 .opinionForm textarea {
     text-align: left;
     margin-top: 30rpx;
-    border: 3rpx solid #92c7ff;
     border-radius: 20rpx;
-    height: 500rpx;
+    border: 3rpx solid #e7e7e7;
+    height: 600rpx;
     width: 500rpx;
     box-shadow: rgba(150, 179, 205, 0.5) 5rpx 5rpx 15rpx;
 }
+
 .opinionForm input {
     text-align: left;
     margin-top: 30rpx;
-    border: 3rpx solid #92c7ff;
-    border-radius: 20rpx;
     height: 80rpx;
     width: 500rpx;
     box-shadow: rgba(150, 179, 205, 0.5) 5rpx 5rpx 15rpx;
@@ -56,7 +57,7 @@
 
 .opinionForm button {
     color: white;
-    margin-top: 50rpx;
+    margin-top: 20rpx;
     height: 80rpx;
     line-height: 80rpx;
     background-color: #0081ff;

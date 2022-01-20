@@ -7,7 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+    background-color: #f1f1f1;
 }
 
 /* 页面设置 end */

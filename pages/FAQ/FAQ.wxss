@@ -1,7 +1,7 @@
 #Instruction {
     height: 100%;
     width: 100%;
-    background-color: #224abe;
+    background-color: #f1f1f1;
     position: absolute;
     display: flex;
     align-items: center;
@@ -15,14 +15,14 @@
     flex-direction: column;
 }
 
-#Title{
+#Title {
     height: 8%;
-    color: #ffffff;
-    background-color: #224abe;
+    color: #000000;
+    background-color: #ffffff;
     text-align: center;
 }
 
-#Content{
+#Content {
     text-align: left;
 }
 
