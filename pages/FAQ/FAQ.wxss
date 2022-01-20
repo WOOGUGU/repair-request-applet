@@ -1,7 +1,7 @@
 #Instruction {
     height: 100%;
     width: 100%;
-    background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+    background-color: #f1f1f1;
     position: absolute;
     display: flex;
     align-items: center;
