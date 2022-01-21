@@ -13,6 +13,8 @@
     height: 85%;
     background-color: #ffffff;
     flex-direction: column;
+    padding: 100 200rpx;
+    box-shadow: 5rpx 5rpx 10rpx 5rpx #e1e1e1;
 }
 
 #Title {
