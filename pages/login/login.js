@@ -25,17 +25,17 @@ Page({
 
     // 提交表单
     async submit() {
-        let username = this.data.username;
-        let password = this.data.password;
+        let uname = this.data.username;
+        let passwd = this.data.password;
 
-        if (username == '') {
+        if (uname == '') {
             wx.showModal({
                 title: '系统提示',
                 content: '请输入学号/工号',
                 showCancel: false,
             });
             return;
-        } else if (password == '') {
+        } else if (passwd == '') {
             wx.showModal({
                 title: '系统提示',
                 content: '请输入密码',
@@ -43,41 +43,34 @@ Page({
             });
             return;
         }
-
-        let res = await request('/handleLogin', 'POST', {
-            username: username,
-            password: hexMD5(password)
+        passwd = hexMD5(passwd).toUpperCase();
+        let res = await request('/doLogin', 'POST', {}, {
+            uname,
+            passwd
         });
-        if (res.status.id == "user") {
-            console.log(res.status.id);
-            console.log(res.status.token);
+        console.log(res);
+        if (res.data.code == '00000') {
             wx.setStorage({
                 key: 'localUserInfo',
-                data: {
-                    id: res.data.id,
-                    username: res.data.username,
-                    name: res.data.name,
-                    status: res.status.id,
-                    token: res.status.token
-                }
-            });
-            let location = getStorage('location');
+                data: res.data.data
+            })
+            let location = getStorage('location') ? getStorage('location') : 'index';
             wx.switchTab({
                 url: '/pages/' + location.id + '/' + location.id
             });
-        } else if (res.status == "wrong_password") {
+        } else if (res.data.code == 'F0001') {
             wx.showModal({
                 title: '系统提示',
-                content: '密码错误，请更正后重试',
+                content: res.data.userMsg,
                 showCancel: false,
             });
-        } else if (res.status == "wrong_user") {
+        } else if (res.data.code == 'A0201') {
             wx.showModal({
                 title: '系统提示',
                 content: '学号/工号不存在，请更正后重试',
                 showCancel: false,
             });
-        } else {
+        } else if (res.data.code == 'A0202') {
             wx.showModal({
                 title: '系统提示',
                 content: '发生未知错误，请重试',
