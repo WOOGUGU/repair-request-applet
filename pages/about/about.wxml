@@ -1,11 +1,16 @@
-<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
     <view slot="backText">返回</view>
-    <view slot="content">关于我们</view>
+
 </cu-custom>
-<view class="about">
-    <view class="aboutContainer">
-        <view class="aboutTitle">
-            <view class="titleText">湖北工业大学网络报修微信小程序</view>
+<view id="Instruction">
+    <view id="InstructionContent">
+        <view class="Title" id="Title">
+            <view type="text">校园网使用指南</view>
+        </view>
+        <view class="Content">
+            <textarea id="Content1" type="text">
+                1.就是这么用
+            </textarea>
         </view>
     </view>
 </view>

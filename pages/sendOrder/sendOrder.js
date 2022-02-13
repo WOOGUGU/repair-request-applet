@@ -24,6 +24,8 @@ Page({
         desSet: ['故障1', '故障2', '故障3', '故障4', '其他'],
         desPlus: '',
         date: null,
+        dataStart: '',
+        dataEnd: '',
         timeIndex: null,
         timeSet: [
             '9:00-9:30', '9:30-10:00',
@@ -51,14 +53,14 @@ Page({
     },
 
     bindMultiPickerColumnChange: function (event) {
-        var data = {
+        let data = {
             posArray: this.data.posArray,
             posIndex: this.data.posIndex,
             positionPickerData: this.data.positionPickerData
         };
         data.posIndex[event.detail.column] = event.detail.value;
         if (event.detail.column == 0) {
-            for (var i in data.positionPickerData) {
+            for (let i in data.positionPickerData) {
                 if (i == data.posIndex[0]) {
                     data.posArray[1] = data.positionPickerData[i].position;
                     break;
@@ -70,7 +72,7 @@ Page({
     },
 
     submit: async function () {
-        var pattern = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
+        let pattern = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
         if (!pattern.test(this.data.tel)) {
             wx.showModal({
                 title: '系统提示',
@@ -151,8 +153,8 @@ Page({
 
     onShow: function () {
         let tel_local = getStorage('tel');
-        console.log(tel_local);
         if (tel_local) {
+            console.log(tel_local);
             this.setData({
                 tel_local: tel_local.tel,
                 tel: tel_local.tel
@@ -167,19 +169,38 @@ Page({
                 userInfo
             });
         }
-        let res = await request('/selectAllPickerLocationForUser', 'POST',
+
+        let locationData = await request('/selectAllPickerLocationForUser', 'POST',
             {
                 token: this.data.userInfo.token
             });
         this.setData({
-            positionPickerData: res.data
+            positionPickerData: locationData.data
         })
-        var areaList = [];
-        for (var i in this.data.positionPickerData) {
+        let areaList = [];
+        for (let i in this.data.positionPickerData) {
             areaList.push(this.data.positionPickerData[i].name)
         }
         this.setData({
             posArray: [areaList, this.data.positionPickerData[0].position]
+        })
+
+        let timeData = await request('/selectAllPickerTimeForUser', 'POST',
+            {
+                token: this.data.userInfo.token
+            });
+        let timeList = [];
+        for (let i in timeData.data) {
+            timeList.push(timeData.data[i].time)
+        }
+        this.setData({
+            timeSet: timeList
+        })
+
+        let dateData = await request('/getTime');
+        this.setData({
+            timeStart: dateData.data.now,
+            timeEnd: dateData.data.after
         })
     }
 });

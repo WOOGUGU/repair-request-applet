@@ -1,6 +1,5 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
     <view slot="backText">返回</view>
-    <view slot="content">工单</view>
 </cu-custom>
 <view class="container">
     <view class="formContainer">
@@ -60,7 +59,7 @@
 
             <view class="form-item">
                 <label>预约维修时间</label>
-                <picker mode="date" value="{{date}}" start="2021-11-20" end="2021-11-30" bindchange="handleInput"
+                <picker mode="date" value="{{date}}" start="{{timeStart}}" end="{{timeEnd}}" bindchange="handleInput"
                         id="date">
                     <input value="{{date}}" placeholder="请选择" type="text" id="type" disabled="true"></input>
                 </picker>

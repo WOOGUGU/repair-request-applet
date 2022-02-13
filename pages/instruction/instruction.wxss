@@ -20,13 +20,14 @@
 #Title {
     height: 8%;
     color: #000000;
-    font-size: 15px;
+    font-size: 35rpx;
     background-color: #ffffff;
     text-align: center;
 }
 
 #Content {
     text-align: left;
+    font-size: 30rpx;
 }
 
 

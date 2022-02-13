@@ -1,6 +1,6 @@
 /* 页面设置 start */
 page {
-    background-color: #f1f1f1;
+    background: #f6f6f6;
 }
 
 .container {
@@ -17,9 +17,10 @@ page {
 /* 表单框 start */
 .formContainer {
     width: 90%;
-    margin: 40rpx 0;
-    border-radius: 20rpx;
-    box-shadow: #dddddd 5rpx 5rpx 15rpx;
+    margin: 45rpx 0;
+    border-radius: 15px;
+    box-shadow: 6px 6px 12px #cad1d5,
+    -6px -6px 12px #ffffff;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
