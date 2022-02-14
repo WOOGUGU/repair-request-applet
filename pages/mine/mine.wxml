@@ -34,4 +34,7 @@
             <text class="text-grey">关于我们</text>
         </navigator>
     </view>
+
+<!--  测试用  -->
+    <button bindtap="test_1">管理员登陆</button>
 </view>

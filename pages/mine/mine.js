@@ -10,6 +10,7 @@ Page({
         },
     },
 
+
     toLogin: function () {
         wx.setStorage({
             key: 'location',
@@ -20,6 +21,9 @@ Page({
             wx.navigateTo({url: '../login/login'})
     },
 
+    test_1:function (){
+        wx.navigateTo({url:'../administrator/administrator'})
+    },
     confirm: async function (options) {
         // 权限验证
         let userInfo = getStorage('localUserInfo');

@@ -4,11 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <change afterPath="$PROJECT_DIR$/pages/administrator/administrator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/administrator/administrator.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/administrator/administrator.wxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/administrator/administrator.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/mine/mine.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.wxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Wechat mini program page js file(Page API)" />
+        <option value="Wechat mini program page json file(Page API)" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
