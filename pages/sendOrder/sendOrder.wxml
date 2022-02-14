@@ -11,7 +11,7 @@
 
             <view class="form-item">
                 <label>姓名</label>
-                <input value="{{userInfo.name}}" type="text" id="name" disabled="true"></input>
+                <input value="{{userInfo.username}}" type="text" id="sender" disabled="true"></input>
             </view>
 
             <view class="form-item">
@@ -59,7 +59,7 @@
 
             <view class="form-item">
                 <label>预约维修时间</label>
-                <picker mode="date" value="{{date}}" start="{{timeStart}}" end="{{timeEnd}}" bindchange="handleInput"
+                <picker mode="date" value="{{date}}" start="{{dateStart}}" end="{{dateEnd}}" bindchange="handleInput"
                         id="date">
                     <input value="{{date}}" placeholder="请选择" type="text" id="type" disabled="true"></input>
                 </picker>
