@@ -1,3 +1,7 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view>返回</view>
+</cu-custom>
+<view class="head"></view>
 <view>
     <view class="navbar">
         <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
