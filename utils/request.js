@@ -2,22 +2,21 @@ import config from "./config";
 
 export default (url, method, header = {'content-type': 'application/json'}, data = {}) => {
     return new Promise((resolve, reject) => {
+        console.log('header', typeof header == 'object' ? JSON.stringify(header) : header);
+        console.log('data', typeof data == 'object' ? JSON.stringify(data) : data);
         wx.request({
             url: config.host + url,
             method,
             header,
             data,
             success: (res) => {
-                console.log('响应', res);
+                console.log('res', res);
+                console.log('res.data', res.data);
                 resolve(res);
             },
             fail: (err) => {
                 reject(err);
             },
-            complete: () => {
-                console.log('请求的data', data);
-                // console.log('请求的json字符串', JSON.stringify(data));
-            }
         })
     })
 }

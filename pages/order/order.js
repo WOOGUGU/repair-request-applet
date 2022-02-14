@@ -28,15 +28,9 @@ Page({
     onShow: async function (options) {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
+        let cookie = getStorage('cookie');
         // 验证失败跳转
-        if (!userInfo) {
-            // 记录跳转前页面位置
-            wx.setStorage({
-                key: 'location',
-                data: {
-                    id: 'order'
-                }
-            });
+        if (!userInfo || !cookie) {
             wx.showModal({
                 title: '系统提示',
                 content: '您还未登录，请先登录！',
@@ -54,22 +48,21 @@ Page({
             })
             return;
         }
-        let res = await request('/selectAllOrderOfUser', 'POST',
-            {
-                token: userInfo.token,
+        let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+            cookie: cookie
+        }, {
+            username: userInfo.username
+        });
+        res = res.data;
+        if (res.code == '00000') {
+            this.setData({
+                listData: res.data
             });
-        console.log(res);
-        if (res.status == "wrong_token") {
-            // 记录跳转前页面位置
-            wx.setStorage({
-                key: 'location',
-                data: {
-                    id: 'order'
-                }
-            });
+            console.log(this.data.listData);
+        } else if (res.code == 'A0200') {
             wx.showModal({
                 title: '系统提示',
-                content: '您的登录状态已过期，请重新登录！',
+                content: res.userMsg,
                 success: function (res) {
                     if (res.confirm) {
                         wx.navigateTo({
@@ -81,13 +74,13 @@ Page({
                         });
                     }
                 }
-            })
-            return;
-        } else if (res.status == "handle_success") {
-            this.setData({
-                listData: res.data
-            })
-            console.log(this.data.listData);
+            });
+        } else if (res.code == 'E0100') {
+            wx.showModal({
+                title: '系统提示',
+                content: res.userMsg,
+                showCancel: false,
+            });
         }
     }
 });

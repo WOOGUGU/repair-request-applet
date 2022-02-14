@@ -6,13 +6,9 @@ Page({
         topNavBar: {
             bgColor: 'bg-gradual-blue'
         },
-        userInfo: {
-            id: '',
-            username: '',
-            name: '',
-            status: '',
-            token: ''
-        },
+        userInfo: {},
+        cookie: '',
+        sender: '',
         tel: '',
         tel_local: '',
         type: 'wire',
@@ -24,8 +20,8 @@ Page({
         desSet: ['故障1', '故障2', '故障3', '故障4', '其他'],
         desPlus: '',
         date: null,
-        dataStart: '',
-        dataEnd: '',
+        dateStart: '',
+        dateEnd: '',
         timeIndex: null,
         timeSet: [
             '9:00-9:30', '9:30-10:00',
@@ -112,7 +108,7 @@ Page({
 
         let token = this.data.userInfo.token;
         let username = this.data.userInfo.username;
-        let sender = this.data.userInfo.name;
+        let sender = this.data.userInfo.username;
         let tel = this.data.tel;
         let type = this.data.type;
         let position = this.data.posResult;
@@ -122,12 +118,14 @@ Page({
         wx.setStorage({
             key: 'tel',
             data: {
-                id: this.data.userInfo.id,
                 tel: tel
             }
         });
 
-        let res = await request('/addOrder', 'POST', {
+        let res = await request('/v2/order/addOrder', 'POST', {
+            cookie: this.data.cookie,
+            'content-type': 'application/x-www-form-urlencoded'
+        }, {
             token,
             username,
             sender,
@@ -135,10 +133,10 @@ Page({
             type,
             position,
             des,
-            timeSubscribe,
+            timeSubscribe
         });
 
-        if (res.status == 'handle_success') {
+        if (res.data.code == '00000') {
             wx.reLaunch({
                 url: '/pages/order/order'
             });
@@ -154,7 +152,6 @@ Page({
     onShow: function () {
         let tel_local = getStorage('tel');
         if (tel_local) {
-            console.log(tel_local);
             this.setData({
                 tel_local: tel_local.tel,
                 tel: tel_local.tel
@@ -164,16 +161,18 @@ Page({
 
     onLoad: async function (options) {
         let userInfo = getStorage('localUserInfo');
-        if (userInfo) {
+        let cookie = getStorage('cookie');
+        if (userInfo && cookie) {
             this.setData({
-                userInfo
+                userInfo,
+                cookie
             });
         }
 
-        let locationData = await request('/selectAllPickerLocationForUser', 'POST',
-            {
-                token: this.data.userInfo.token
-            });
+        let locationRes = await request('/v2/picker/selectAllPickerLocation', 'GET', {
+            cookie
+        });
+        let locationData = locationRes.data;
         this.setData({
             positionPickerData: locationData.data
         })
@@ -185,10 +184,10 @@ Page({
             posArray: [areaList, this.data.positionPickerData[0].position]
         })
 
-        let timeData = await request('/selectAllPickerTimeForUser', 'POST',
-            {
-                token: this.data.userInfo.token
-            });
+        let timeRes = await request('/v2/picker/selectAllPickerTime', 'GET', {
+            cookie
+        });
+        let timeData = timeRes.data;
         let timeList = [];
         for (let i in timeData.data) {
             timeList.push(timeData.data[i].time)
@@ -197,10 +196,13 @@ Page({
             timeSet: timeList
         })
 
-        let dateData = await request('/getTime');
+        let dateRes = await request('/getTime', 'GET', {
+            cookie
+        });
+        let dateData = dateRes.data;
         this.setData({
-            timeStart: dateData.data.now,
-            timeEnd: dateData.data.after
+            dateStart: dateData.data.now,
+            dateEnd: dateData.data.after
         })
     }
 });
