@@ -93,11 +93,9 @@
 <!--  头像  -->
     <view hidden="{{currentTab!==2}}" id="instruction" class="padding-xl text-while">
         <view class="padding-tb-xl padding text-center" style="height: 360rpx;">
-            <button wx:else bindtap="toLogin" class='{{topNavBar.bgColor}} shadow'>
                 <view class="padding-xl text-while">
                     <view class="cu-avatar xl round" style="background-image:url(/static/icon/mine.png);"></view>
                 </view>
-            </button>
         </view>
         <button class="button">点击更换</button>
     </view>
