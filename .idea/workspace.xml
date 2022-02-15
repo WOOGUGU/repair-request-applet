@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Admintext/Admintext.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.wxml" afterDir="false" />
-    </list>
+    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,7 +76,7 @@
       <workItem from="1642581317531" duration="88000" />
       <workItem from="1642581458148" duration="500000" />
       <workItem from="1642581984356" duration="368000" />
-      <workItem from="1644913631530" duration="4699000" />
+      <workItem from="1644913631530" duration="6312000" />
     </task>
     <task id="LOCAL-00001" summary="创建/components/cu-custom目录">
       <created>1642580619733</created>
@@ -203,7 +197,28 @@
       <option name="project" value="LOCAL" />
       <updated>1644917122893</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644928977037</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1644928977037</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644928994577</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1644928994577</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644930446974</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1644930446974</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
