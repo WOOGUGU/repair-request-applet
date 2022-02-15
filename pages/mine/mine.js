@@ -18,7 +18,7 @@ Page({
     },
 
     test_1:function (){
-        wx.navigateTo({url:'../administrator/index'})
+        wx.navigateTo({url:'../Admin/Admin'})
     },
     confirm: async function (options) {
         // 权限验证

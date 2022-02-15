@@ -23,13 +23,13 @@
 
 <view class="cu-list menu card-menu">
     <view class="cu-item arrow" bindtap="picture">
-            <text class="cuIcon-paint text-grey">   图片展示</text>
+        <text class="cuIcon-paint text-grey">   图片展示</text>
     </view>
     <view class="cu-item arrow" bindtap="order">
-            <text class="cuIcon-tag text-grey">    工单展示</text>
+        <text class="cuIcon-tag text-grey">    工单展示</text>
     </view>
     <view class="cu-item arrow" bindtap="text">
-            <text class="cuIcon-text text-grey">    文本展示</text>
+        <text class="cuIcon-text text-grey">    文本展示</text>
     </view>
     <!--  测试用  -->
 </view>

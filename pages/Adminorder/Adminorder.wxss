@@ -34,3 +34,12 @@ page{
     height: 4rpx;
     background: #1cbbb4;
 }
+
+.container {
+    padding: 0 20rpx;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-color: #7a7a7a;
+}

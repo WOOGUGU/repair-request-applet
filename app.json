@@ -10,7 +10,7 @@
     "pages/about/about",
     "pages/instruction/instruction",
     "pages/FAQ/FAQ",
-    "pages/administrator/index",
+    "pages/Admin/Admin",
     "pages/Adminpicture/Adminpicture",
     "pages/Adminorder/Adminorder",
     "pages/Admintext/Admintext"
