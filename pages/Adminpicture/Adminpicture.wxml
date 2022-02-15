@@ -1,0 +1,30 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+</cu-custom>
+<view class="head"></view>
+
+<view>
+    <view class="navbar">
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+              bindtap="navbarTap">{{item}}</text>
+    </view>
+
+    <view hidden="{{currentTab!==0}}" id="swiper">
+
+    </view>
+
+    <view hidden="{{currentTab!==1}}" id="notice">
+
+    </view>
+
+    <view hidden="{{currentTab!==2}}" id="instruction">
+
+    </view>
+
+    <view hidden="{{currentTab!==3}}" id="FAQ">
+
+    </view>
+
+    <view hidden="{{currentTab!==4}}" id="face">
+
+    </view>
+</view>

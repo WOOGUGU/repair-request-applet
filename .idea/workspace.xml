@@ -5,33 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB">
-      <change afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/index.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/index.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.wxss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Admintext/Admintext.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.wxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +82,7 @@
       <workItem from="1642581317531" duration="88000" />
       <workItem from="1642581458148" duration="500000" />
       <workItem from="1642581984356" duration="368000" />
-      <workItem from="1644913631530" duration="3369000" />
+      <workItem from="1644913631530" duration="4699000" />
     </task>
     <task id="LOCAL-00001" summary="创建/components/cu-custom目录">
       <created>1642580619733</created>
@@ -211,7 +189,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644913543053</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644917052348</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1644917052348</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644917122893</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1644917122893</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
