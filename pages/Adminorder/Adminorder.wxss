@@ -1,3 +1,4 @@
+/* pages/administrator/order/order.wxss */
 page{
     display: flex;
     flex-direction: column;

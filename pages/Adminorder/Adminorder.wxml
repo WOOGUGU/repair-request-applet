@@ -1,5 +1,4 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-    <view>返回</view>
 </cu-custom>
 <view class="head"></view>
 <view>

@@ -9,7 +9,11 @@
     "pages/opinion/opinion",
     "pages/about/about",
     "pages/instruction/instruction",
-    "pages/FAQ/FAQ"
+    "pages/FAQ/FAQ",
+    "pages/administrator/index",
+    "pages/Adminpicture/Adminpicture",
+    "pages/Adminorder/Adminorder",
+    "pages/Admintext/Admintext"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,10 +1,7 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
-    <view>返回</view>
 </cu-custom>
 
 <view class="top">管理员</view>
-<view class='bg-gradual-blue '>
-</view>
 <view class="padding-tb-xl padding text-center" style="height: 360rpx;">
     <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow'>
         <view class="padding-xl text-while">
@@ -25,23 +22,14 @@
 </view>
 
 <view class="cu-list menu card-menu">
-    <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" bindtap="picture">
-            <text class="cuIcon-community text-blue"></text>
-            <text class="text-grey">图片展示</text>
-        </navigator>
+    <view class="cu-item arrow" bindtap="picture">
+            <text class="cuIcon-paint text-grey">   图片展示</text>
     </view>
-    <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" url="/pages/about/about" open-type="order">
-            <text class="cuIcon-info text-blue"></text>
-            <text class="text-grey">工单展示</text>
-        </navigator>
+    <view class="cu-item arrow" bindtap="order">
+            <text class="cuIcon-tag text-grey">    工单展示</text>
     </view>
-    <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" url="/pages/about/about" open-type="text">
-            <text class="cuIcon-info text-blue"></text>
-            <text class="text-grey">文本展示</text>
-        </navigator>
+    <view class="cu-item arrow" bindtap="text">
+            <text class="cuIcon-text text-grey">    文本展示</text>
     </view>
     <!--  测试用  -->
 </view>

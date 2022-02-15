@@ -4,25 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change afterPath="$PROJECT_DIR$/pages/administrator/index/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/index/index.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/index/index.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/order/administrator.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/picture/picture.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/picture/picture.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/picture/picture.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/picture/picture.wxss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/text/text.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/text/text.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/text/text.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/administrator/text/text.wxss" afterDir="false" />
+    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB">
+      <change afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.wxss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/administrator/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/administrator/index.wxss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/about/about.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/about/about.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/administrator.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/order/administrator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/administrator.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/index/index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/administrator.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/order/administrator.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/administrator/administrator.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/order/administrator.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/app.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/administrator/index.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.wxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/order/administrator.wxss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminorder/Adminorder.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/picture/picture.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Adminpicture/Adminpicture.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/administrator/text/text.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Admintext/Admintext.wxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/mine/mine.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/mine/mine.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,13 +87,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebStorm\newload\pages\administrator" />
+      <recent name="D:\WebStorm\newload\pages\administrator-picture" />
       <recent name="D:\WebStorm\newload\pages\administrator\工单展示" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ebfde994-9a1d-4cee-b9e6-db1ef1335708" name="Changes" comment="" />
+      <changelist id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB" />
       <created>1642580399678</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -94,6 +104,7 @@
       <workItem from="1642581317531" duration="88000" />
       <workItem from="1642581458148" duration="500000" />
       <workItem from="1642581984356" duration="368000" />
+      <workItem from="1644913631530" duration="3369000" />
     </task>
     <task id="LOCAL-00001" summary="创建/components/cu-custom目录">
       <created>1642580619733</created>
@@ -179,7 +190,28 @@
       <option name="project" value="LOCAL" />
       <updated>1642603343116</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Merge branch 'master' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/.gitignore&#10;#&#9;project.config.json">
+      <created>1644913509779</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1644913509779</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Merge branch 'master' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/.gitignore&#10;#&#9;project.config.json">
+      <created>1644913520870</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1644913520870</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644913543053</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1644913543053</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,13 +228,28 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/newB" />
                       </list>
                     </value>
                   </entry>
                 </map>
               </option>
             </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/newB" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -215,6 +262,8 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
     <MESSAGE value="首页美化_2" />
     <MESSAGE value="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'master' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/.gitignore&#10;#&#9;project.config.json" />
+    <MESSAGE value="Merge remote-tracking branch 'origin/newB' into newB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/newB' into newB" />
   </component>
 </project>
