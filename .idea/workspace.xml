@@ -76,7 +76,7 @@
       <workItem from="1642581317531" duration="88000" />
       <workItem from="1642581458148" duration="500000" />
       <workItem from="1642581984356" duration="368000" />
-      <workItem from="1644913631530" duration="9682000" />
+      <workItem from="1644913631530" duration="10306000" />
     </task>
     <task id="LOCAL-00001" summary="创建/components/cu-custom目录">
       <created>1642580619733</created>
@@ -246,7 +246,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644944654708</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644944693522</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1644944693522</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Merge remote-tracking branch 'origin/newB' into newB">
+      <created>1644945397588</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1644945397588</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
