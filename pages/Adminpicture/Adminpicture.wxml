@@ -1,30 +1,105 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
 </cu-custom>
-<view class="head"></view>
-
+<view>head</view>
 <view>
     <view class="navbar">
         <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
               bindtap="navbarTap">{{item}}</text>
     </view>
 
+<!--  轮播图  -->
     <view hidden="{{currentTab!==0}}" id="swiper">
+        <view class="swpier">轮播图1效果如下
+            <swiper class="banners" indicator-dots
+                    indicator-color="#C6EDFF"
+                    indicator-active-color="#0088E2"
+                    autoplay="true" interval="3000">
+                <swiper-item>
+                    <image src="/static/imgs/a.png"></image>
+                </swiper-item>
+            </swiper>
+            <button class="button">点击更换</button>
+        </view>
 
+        <view class="swpier">轮播图2效果如下
+            <swiper class="banners" indicator-dots
+                    indicator-color="#C6EDFF"
+                    indicator-active-color="#0088E2"
+                    autoplay="true" interval="3000">
+                <swiper-item>
+                    <image src="/static/imgs/c.png"></image>
+                </swiper-item>
+            </swiper>
+            <button class="button">点击更换</button>
+        </view>
+
+        <view class="swpier">轮播图3效果如下
+            <swiper class="banners" indicator-dots
+                    indicator-color="#C6EDFF"
+                    indicator-active-color="#0088E2"
+                    autoplay="true" interval="3000">
+                <swiper-item>
+                    <image src="/static/imgs/gonggao.png"></image>
+                </swiper-item>
+            </swiper>
+            <button class="button">点击更换</button>
+        </view>
+
+        <view class="bottom-modal">
+            Bottom
+        </view>
     </view>
 
+<!--  公告  -->
     <view hidden="{{currentTab!==1}}" id="notice">
+        <view class="pic">公告封面图
+            <view class="banners" indicator-dots
+                    indicator-color="#C6EDFF"
+                    indicator-active-color="#0088E2"
+                    autoplay="true" interval="3000">
+                <view class="picture">
+                    <image src="/static/imgs/a.png"></image>
+                </view>
+            </view>
+            <button class="button">点击更换</button>
+        </view>
+
+        <view class="pic" style="top:10px">校园网使用说明封面图
+            <view class="banners" indicator-dots
+                    indicator-color="#C6EDFF"
+                    indicator-active-color="#0088E2"
+                    autoplay="true" interval="3000">
+                <view class="picture">
+                    <image src="/static/imgs/c.png"></image>
+                </view>
+            </view>
+            <button class="button">点击更换</button>
+        </view>
+
+        <view class="pic">FAQ封面图
+            <swiper class="pic" indicator-dots
+                    indicator-color="#C6EDFF"
+                    indicator-active-color="#0088E2"
+                    autoplay="true" interval="3000">
+                <view class="picture">
+                    <image src="/static/imgs/gonggao.png"></image>
+                </view>
+            </swiper>
+            <button class="button">点击更换</button>
+        </view>
 
     </view>
 
-    <view hidden="{{currentTab!==2}}" id="instruction">
-
+<!--  头像  -->
+    <view hidden="{{currentTab!==2}}" id="instruction" class="padding-xl text-while">
+        <view class="padding-tb-xl padding text-center" style="height: 360rpx;">
+            <button wx:else bindtap="toLogin" class='{{topNavBar.bgColor}} shadow'>
+                <view class="padding-xl text-while">
+                    <view class="cu-avatar xl round" style="background-image:url(/static/icon/mine.png);"></view>
+                </view>
+            </button>
+        </view>
+        <button class="button">点击更换</button>
     </view>
 
-    <view hidden="{{currentTab!==3}}" id="FAQ">
-
-    </view>
-
-    <view hidden="{{currentTab!==4}}" id="face">
-
-    </view>
 </view>

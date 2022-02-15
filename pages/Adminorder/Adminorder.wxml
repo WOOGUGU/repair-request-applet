@@ -3,7 +3,8 @@
 <view class="head"></view>
 <view>
     <view class="navbar">
-        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique"
+        <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}"
+              wx:key="unique"
               bindtap="navbarTap">{{item}}</text>
     </view>
 
@@ -14,35 +15,20 @@
                     12345
                 </view>
                 <view class="order-body">
-                    <view class="order-body-text type">网络类型：{{orderData.type == 'wire' ? '有线网络' : '无线网络'}}</view>
-                    <view class="order-body-text time_subscribe">预约上门时间：{{orderData.timeSubscribe}}</view>
-                    <view class="order-body-text sender">发起者：{{orderData.sender}}</view>
-                    <view class="order-body-text tel">联系方式：{{orderData.tel}}</view>
-                    <view class="order-body-text solver">维修人员：{{orderData.solver == null ? '待分配' : orderData.solver}}</view>
+                    <view class="order-body-text type">网络类型：</view>
+                    <view class="order-body-text time_subscribe">预约上门时间：</view>
+                    <view class="order-body-text sender">发起者：</view>
+                    <view class="order-body-text tel">联系方式：</view>
+                    <view class="order-body-text solver">维修人员：</view>
                 </view>
                 <view class="order-body">
-                    <view class="order-body-text time_start">工单发起时间：{{orderData.timeStart}}</view>
-                    <view wx:if="{{orderData.timeDistribution != null}}" class="order-body-text time_distribution">
-                        工单审核时间：{{orderData.timeDistribution}}
-                    </view>
-                    <view wx:if="{{orderData.timeEnd != null}}" class="order-body-text time_end">工单完成时间：{{orderData.timeEnd}}
-                    </view>
-                    <view wx:if="{{orderData.progress == 2}}" class="order-body-text feedback">
-                        评价状态：{{orderData.feedback == null ? '未评价' : '已评价'}}
-                    </view>
-                </view>
-            </view>
-            <view wx:if="{{orderData.progress == 2 && orderData.feedback == null}}" class="feedback_submission">
-                <view class="feedback_title">
-                    <view class="title-text">提交评价</view>
-                </view>
-                <view class="form-item">
-                    <input class="input-higher" value="" placeholder="" type="text" id="feedback"
-                           bindinput="handleInput"></input>
+                    <view class="order-body-text time_start">工单发起时间：</view>
+                    <view>工单审核时间：</view>
+                    <view>工单完成时间：</view>
+                    <view>评价状态：</view>
                 </view>
             </view>
         </view>
-
     </view>
 
     <view hidden="{{currentTab!==1}}">
@@ -60,10 +46,4 @@
     <view hidden="{{currentTab!==4}}">
         已取消
     </view>
-</view>
-<view class="orders">
-    <order-card wx:if="{{current == 'all' || item.progress == current}}"
-                wx:for="{{listData}}"
-                orderData="{{item}}">
-    </order-card>
 </view>

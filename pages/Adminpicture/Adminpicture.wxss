@@ -8,6 +8,37 @@ page{
     width: 100%;
     height: 50rpx;
 }
+
+#swiper{
+    line-height: 40px;
+    text-align: center;
+}
+.swpier{
+    text-align: center;
+}
+
+
+.bottom-modal{
+    text-align: center;
+}
+
+.button{
+    width: 80%;
+    margin-top: 20rpx;
+    background-color: #00ccff;
+    color: white;
+    border-radius: 98rpx;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.banners{
+    width: 100%;
+    height: 45vw;
+}
+
 .navbar{
     flex: none;
     top: 100px;
@@ -32,4 +63,17 @@ page{
     right: 0;
     height: 4rpx;
     background: #1cbbb4;
+}
+
+.pic{
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.picture{
+    flex: none;
+    width: 100%;
+    height: 300rpx;
+    overflow: hidden;
+    display: block;
 }
