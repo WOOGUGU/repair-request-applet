@@ -17,7 +17,7 @@ Page({
         posIndex: [0, 0],
         positionPickerData: {},
         desIndex: null,
-        desSet: ['故障1', '故障2', '故障3', '故障4', '其他'],
+        desSet: ['其他'],
         desPlus: '',
         date: null,
         dateStart: '',
@@ -184,25 +184,33 @@ Page({
             posArray: [areaList, this.data.positionPickerData[0].position]
         })
 
-        let timeRes = await request('/v2/picker/selectAllPickerTime', 'GET', {
+        // let dateRes = await request('/v2/inner/getTime', 'GET', {
+        //     cookie
+        // });
+        // let dateData = dateRes.data;
+        // this.setData({
+        //     dateStart: dateData.data.now,
+        //     dateEnd: dateData.data.after
+        // })
+
+        let pickerRes = await request('/v2/picker/selectAllPicker', 'GET', {
             cookie
         });
-        let timeData = timeRes.data;
+        let timeData = pickerRes.data.data.picker.times;
         let timeList = [];
-        for (let i in timeData.data) {
-            timeList.push(timeData.data[i].time)
+        for (let i in timeData) {
+            timeList.push(timeData[i].picker)
+        }
+        let typeData = pickerRes.data.data.picker.types;
+        let typeList = [];
+        for (let i in typeData) {
+            typeList.push(typeData[i].picker)
         }
         this.setData({
-            timeSet: timeList
-        })
-
-        let dateRes = await request('/getTime', 'GET', {
-            cookie
+            timeSet: timeList,
+            desSet: typeList,
+            dateStart: pickerRes.data.data.now,
+            dateEnd: pickerRes.data.data.after
         });
-        let dateData = dateRes.data;
-        this.setData({
-            dateStart: dateData.data.now,
-            dateEnd: dateData.data.after
-        })
     }
 });
