@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB" />
+    <list default="true" id="0037ce6e-a9a0-4d77-ad1a-3b42c6b70c32" name="变更" comment="Merge branch 'master' into newB">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +69,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3dced869-77a7-473e-9ce8-9ea3c39a0dfc" name="变更" comment="Merge remote-tracking branch 'origin/newB' into newB" />
+      <changelist id="0037ce6e-a9a0-4d77-ad1a-3b42c6b70c32" name="变更" comment="Merge branch 'master' into newB" />
       <created>1642580399678</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -77,6 +79,9 @@
       <workItem from="1642581458148" duration="500000" />
       <workItem from="1642581984356" duration="368000" />
       <workItem from="1644913631530" duration="10306000" />
+      <workItem from="1645033340125" duration="1343000" />
+      <workItem from="1645254206991" duration="487000" />
+      <workItem from="1646185331284" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="创建/components/cu-custom目录">
       <created>1642580619733</created>
@@ -260,7 +265,21 @@
       <option name="project" value="LOCAL" />
       <updated>1644945397588</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Merge branch 'master' into newB">
+      <created>1644989226180</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1644989226180</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Merge branch 'master' into newB">
+      <created>1644989260481</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1644989260481</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,6 +332,7 @@
     <MESSAGE value="Merge remote-tracking branch 'origin/newB' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'master' into newB&#10;&#10;# Conflicts:&#10;#&#9;.idea/.gitignore&#10;#&#9;project.config.json" />
     <MESSAGE value="Merge remote-tracking branch 'origin/newB' into newB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/newB' into newB" />
+    <MESSAGE value="Merge branch 'master' into newB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' into newB" />
   </component>
 </project>
