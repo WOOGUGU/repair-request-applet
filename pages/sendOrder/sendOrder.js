@@ -8,7 +8,6 @@ Page({
         },
         userInfo: {},
         cookie: '',
-        sender: '',
         tel: '',
         tel_local: '',
         type: 'wire',
@@ -108,7 +107,7 @@ Page({
 
         let token = this.data.userInfo.token;
         let username = this.data.userInfo.username;
-        let sender = this.data.userInfo.username;
+        let sender = this.data.userInfo.name;
         let tel = this.data.tel;
         let type = this.data.type;
         let position = this.data.posResult;
