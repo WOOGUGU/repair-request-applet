@@ -8,7 +8,6 @@ Page({
         },
         userInfo: {},
         cookie: '',
-        sender: '',
         tel: '',
         tel_local: '',
         type: 'wire',
@@ -108,7 +107,7 @@ Page({
 
         let token = this.data.userInfo.token;
         let username = this.data.userInfo.username;
-        let sender = this.data.userInfo.username;
+        let sender = this.data.userInfo.name;
         let tel = this.data.tel;
         let type = this.data.type;
         let position = this.data.posResult;
@@ -122,7 +121,7 @@ Page({
             }
         });
 
-        let res = await request('/v2/order/addOrder', 'POST', {
+        let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
             cookie: this.data.cookie,
             'content-type': 'application/x-www-form-urlencoded'
         }, {
@@ -136,7 +135,7 @@ Page({
             timeSubscribe
         });
 
-        if (res.data.code == '00000') {
+        if (sendOrderRes.data.code == '00000') {
             wx.reLaunch({
                 url: '/pages/order/order'
             });

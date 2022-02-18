@@ -17,67 +17,33 @@ Component({
     methods: {
         cancelOrder: async function () {
             let cookie = getStorage('cookie');
-            let data = this.data.orderData;
-            let token = getStorage('localUserInfo').token;
-            let cancelRes = await request('/v2/order/updateOrder', 'POST', {
+            let orderId = this.data.orderData.id;
+            let username = this.data.orderData.username;
+            let cancelRes = await request('/v2/order/cancelOrder', 'POST', {
                 cookie,
                 'content-type': 'application/x-www-form-urlencoded'
             }, {
-                orderId: data.id,
-                username: data.username,
-                sender: data.sender,
-                tel: data.tel,
-                type: data.type,
-                des: data.des,
-                position: data.position,
-                timeSubscribe: data.timeSubscribe,
-                progress: -1,
-                solver: data.solver,
-                timeStart: data.timeStart,
-                timeDistribution: data.timeDistribution,
-                timeEnd: data.timeEnd,
-                feedback: data.feedback
+                orderId,
+                username
             });
             let cancelData = cancelRes.data;
-            if (cancelData.code == '') {
+            if (cancelData.code == '00000') {
                 wx.showModal({
                     title: '系统提示',
                     content: '取消成功',
                     showCancel: false,
                     success: function (res) {
-                        if (res.confirm) {
-                            wx.reLaunch({
-                                url: '/pages/order/order'
-                            })
-                        }
+                        wx.reLaunch({
+                            url: '/pages/order/order'
+                        })
                     }
-                })
-            } else if (cancelData.status == "wrong_token") {
+                });
+            } else {
                 wx.showModal({
                     title: '系统提示',
-                    content: '身份验证出现问题，请重新登录后重试',
-                    showCancel: false,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.reLaunch({
-                                url: '/pages/order/order'
-                            })
-                        }
-                    }
-                })
-            } else if (cancelData.status == "data_not_exist") {
-                wx.showModal({
-                    title: '系统提示',
-                    content: '当前工单不存在！',
-                    showCancel: false,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.reLaunch({
-                                url: '/pages/order/order'
-                            })
-                        }
-                    }
-                })
+                    content: cancelData.userMsg,
+                    showCancel: false
+                });
             }
         },
 
