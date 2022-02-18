@@ -44,36 +44,37 @@ Page({
             return;
         }
         passwd = hexMD5(passwd).toUpperCase();
-        let res = await request('/doLogin', 'POST', {}, {
+        let loginRes
+            = await request('/doLogin', 'POST', {}, {
             uname,
             passwd
         });
-        if (res.data.code == '00000') {
+        if (loginRes.data.code == '00000') {
             wx.setStorage({
                 key: 'cookie',
-                data: res.cookies[0]
+                data: loginRes.cookies[0]
             });
             wx.setStorage({
                 key: 'localUserInfo',
-                data: res.data.data
+                data: loginRes.data.data
             });
             wx.navigateBack();
-        } else if (res.data.code == 'A0201') {
+        } else if (loginRes.data.code == 'A0201') {
             wx.showModal({
                 title: '系统提示',
-                content: res.data.userMsg,
+                content: loginRes.data.userMsg,
                 showCancel: false,
             });
-        } else if (res.data.code == 'A0202') {
+        } else if (loginRes.data.code == 'A0202') {
             wx.showModal({
                 title: '系统提示',
-                content: res.data.userMsg,
+                content: loginRes.data.userMsg,
                 showCancel: false,
             });
         } else {
             wx.showModal({
                 title: '系统提示',
-                content: res.data.userMsg,
+                content: loginRes.data.userMsg,
                 showCancel: false,
             });
         }
