@@ -28,13 +28,13 @@
     </view>
 </view>
 <view class="feedback_">
-    <view wx:if="{{orderData.progress == 2 && orderData.feedback == null}}" class="feedback_submission">
+    <view class="feedback_submission">
         <view class="feedback_title">
             <view class="title-text">提交评价</view>
         </view>
         <view class="form-item">
-            <input class="input-higher" value="" placeholder="" type="text" id="feedback"
-                   bindinput="handleInput"></input>
+            <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价！"
+                      bindinput="handleInput"></textarea>
         </view>
         <view class="feedback_btn">
             <button class="btn" bindtap="addFeedback">提交</button>
