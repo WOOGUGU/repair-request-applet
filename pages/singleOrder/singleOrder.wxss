@@ -81,7 +81,7 @@ page {
 }
 
 .feedback_ {
-    margin-top: 260px;
+    margin-top: 300px;
     padding: 0 20rpx;
     position: absolute;
     display: flex;
