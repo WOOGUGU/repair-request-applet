@@ -26,6 +26,8 @@
             </view>
         </view>
     </view>
+</view>
+<view class="feedback_">
     <view wx:if="{{orderData.progress == 2 && orderData.feedback == null}}" class="feedback_submission">
         <view class="feedback_title">
             <view class="title-text">提交评价</view>
