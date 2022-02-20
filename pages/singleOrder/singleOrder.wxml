@@ -28,11 +28,11 @@
     </view>
 </view>
 <view class="feedback_">
-    <view class="feedback_submission">
+    <view wx:if="{{orderData.progress == 2 && orderData.feedback == null}}" class="feedback_submission">
         <view class="feedback_title">
             <view class="title-text">提交评价</view>
         </view>
-        <view wx:if="{{orderData.progress == 2 && orderData.feedback == null}}" class="form-item">
+        <view class="form-item">
             <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价！"
                       bindinput="handleInput"></textarea>
         </view>
