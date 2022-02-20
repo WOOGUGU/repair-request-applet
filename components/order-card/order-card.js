@@ -16,72 +16,41 @@ Component({
 
     methods: {
         cancelOrder: async function () {
-            let data = this.data.orderData;
-            let token = getStorage('localUserInfo').token;
-            let res = await request('/updateOrder', 'POST',
-                {
-                    token,
-                    id: data.id,
-                    username: data.username,
-                    sender: data.sender,
-                    tel: data.tel,
-                    type: data.type,
-                    des: data.des,
-                    position: data.position,
-                    timeSubscribe: data.timeSubscribe,
-                    progress: -1,
-                    solver: data.solver,
-                    timeStart: data.timeStart,
-                    timeDistribution: data.timeDistribution,
-                    timeEnd: data.timeEnd,
-                    feedback: data.feedback
-                });
-            if (res.status == "handle_success") {
+            let cookie = getStorage('cookie');
+            let orderId = this.data.orderData.id;
+            let username = this.data.orderData.username;
+            let cancelRes = await request('/v2/order/cancelOrder', 'POST', {
+                cookie,
+                'content-type': 'application/x-www-form-urlencoded'
+            }, {
+                orderId,
+                username
+            });
+            let cancelData = cancelRes.data;
+            if (cancelData.code == '00000') {
                 wx.showModal({
                     title: '系统提示',
                     content: '取消成功',
                     showCancel: false,
                     success: function (res) {
-                        if (res.confirm) {
-                            wx.reLaunch({
-                                url: '/pages/order/order'
-                            })
-                        }
+                        wx.reLaunch({
+                            url: '/pages/order/order'
+                        })
                     }
-                })
-            } else if (res.status == "wrong_token") {
+                });
+            } else {
                 wx.showModal({
                     title: '系统提示',
-                    content: '身份验证出现问题，请重新登录后重试',
-                    showCancel: false,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.reLaunch({
-                                url: '/pages/order/order'
-                            })
-                        }
-                    }
-                })
-            } else if (res.status == "data_not_exist") {
-                wx.showModal({
-                    title: '系统提示',
-                    content: '当前工单不存在！',
-                    showCancel: false,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.reLaunch({
-                                url: '/pages/order/order'
-                            })
-                        }
-                    }
-                })
+                    content: cancelData.userMsg,
+                    showCancel: false
+                });
             }
         },
 
         more: function () {
             let data = this.data.orderData;
             wx.navigateTo({
-                url: '../singleOrder/singleOrder?order=' + JSON.stringify(data),
+                url: '/pages/singleOrder/singleOrder?order=' + JSON.stringify(data),
             })
         }
     }

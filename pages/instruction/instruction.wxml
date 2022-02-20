@@ -1,9 +1,8 @@
 <cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
     <view slot="backText">返回</view>
-
 </cu-custom>
-<view id="Instruction">
 
+<view id="Instruction">
     <view id="InstructionContent">
         <view class="Title" id="Title">
             <view type="text">校园网使用指南</view>
@@ -13,6 +12,5 @@
                 1.就是这么用
             </textarea>
         </view>
-
     </view>
 </view>

@@ -6,13 +6,8 @@ Page({
         topNavBar: {
             bgColor: 'bg-gradual-blue'
         },
-        userInfo: {
-            id: '',
-            username: '',
-            name: '',
-            status: '',
-            token: ''
-        },
+        userInfo: {},
+        cookie: '',
         tel: '',
         tel_local: '',
         type: 'wire',
@@ -21,9 +16,11 @@ Page({
         posIndex: [0, 0],
         positionPickerData: {},
         desIndex: null,
-        desSet: ['故障1', '故障2', '故障3', '故障4', '其他'],
+        desSet: ['其他'],
         desPlus: '',
         date: null,
+        dateStart: '',
+        dateEnd: '',
         timeIndex: null,
         timeSet: [
             '9:00-9:30', '9:30-10:00',
@@ -51,14 +48,14 @@ Page({
     },
 
     bindMultiPickerColumnChange: function (event) {
-        var data = {
+        let data = {
             posArray: this.data.posArray,
             posIndex: this.data.posIndex,
             positionPickerData: this.data.positionPickerData
         };
         data.posIndex[event.detail.column] = event.detail.value;
         if (event.detail.column == 0) {
-            for (var i in data.positionPickerData) {
+            for (let i in data.positionPickerData) {
                 if (i == data.posIndex[0]) {
                     data.posArray[1] = data.positionPickerData[i].position;
                     break;
@@ -70,7 +67,7 @@ Page({
     },
 
     submit: async function () {
-        var pattern = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
+        let pattern = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
         if (!pattern.test(this.data.tel)) {
             wx.showModal({
                 title: '系统提示',
@@ -120,12 +117,14 @@ Page({
         wx.setStorage({
             key: 'tel',
             data: {
-                id: this.data.userInfo.id,
                 tel: tel
             }
         });
 
-        let res = await request('/addOrder', 'POST', {
+        let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
+            cookie: this.data.cookie,
+            'content-type': 'application/x-www-form-urlencoded'
+        }, {
             token,
             username,
             sender,
@@ -133,10 +132,10 @@ Page({
             type,
             position,
             des,
-            timeSubscribe,
+            timeSubscribe
         });
 
-        if (res.status == 'handle_success') {
+        if (sendOrderRes.data.code == '00000') {
             wx.reLaunch({
                 url: '/pages/order/order'
             });
@@ -151,7 +150,6 @@ Page({
 
     onShow: function () {
         let tel_local = getStorage('tel');
-        console.log(tel_local);
         if (tel_local) {
             this.setData({
                 tel_local: tel_local.tel,
@@ -162,24 +160,56 @@ Page({
 
     onLoad: async function (options) {
         let userInfo = getStorage('localUserInfo');
-        if (userInfo) {
+        let cookie = getStorage('cookie');
+        if (userInfo && cookie) {
             this.setData({
-                userInfo
+                userInfo,
+                cookie
             });
         }
-        let res = await request('/selectAllPickerLocationForUser', 'POST',
-            {
-                token: this.data.userInfo.token
-            });
+
+        let locationRes = await request('/v2/picker/selectAllPickerLocation', 'GET', {
+            cookie
+        });
+        let locationData = locationRes.data;
         this.setData({
-            positionPickerData: res.data
+            positionPickerData: locationData.data
         })
-        var areaList = [];
-        for (var i in this.data.positionPickerData) {
+        let areaList = [];
+        for (let i in this.data.positionPickerData) {
             areaList.push(this.data.positionPickerData[i].name)
         }
         this.setData({
             posArray: [areaList, this.data.positionPickerData[0].position]
         })
+
+        // let dateRes = await request('/v2/inner/getTime', 'GET', {
+        //     cookie
+        // });
+        // let dateData = dateRes.data;
+        // this.setData({
+        //     dateStart: dateData.data.now,
+        //     dateEnd: dateData.data.after
+        // })
+
+        let pickerRes = await request('/v2/picker/selectAllPicker', 'GET', {
+            cookie
+        });
+        let timeData = pickerRes.data.data.picker.times;
+        let timeList = [];
+        for (let i in timeData) {
+            timeList.push(timeData[i].picker)
+        }
+        let typeData = pickerRes.data.data.picker.types;
+        let typeList = [];
+        for (let i in typeData) {
+            typeList.push(typeData[i].picker)
+        }
+        this.setData({
+            timeSet: timeList,
+            desSet: typeList,
+            dateStart: pickerRes.data.data.now,
+            dateEnd: pickerRes.data.data.after
+        });
     }
 });

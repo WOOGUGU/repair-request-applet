@@ -11,13 +11,9 @@ Page({
     },
 
     toLogin: function () {
-        wx.setStorage({
-            key: 'location',
-            data: {
-                id: 'mine'
-            }
-        }),
-            wx.navigateTo({url: '../login/login'})
+        wx.navigateTo({
+            url: '/pages/login/login'
+        })
     },
 
     confirm: async function (options) {
@@ -25,13 +21,6 @@ Page({
         let userInfo = getStorage('localUserInfo');
         // 验证失败跳转
         if (!userInfo) {
-            // 记录跳转前页面位置
-            wx.setStorage({
-                key: 'location',
-                data: {
-                    id: 'mine'
-                }
-            });
             wx.showModal({
                 title: '系统提示',
                 content: '您还未登录，请先登录！',
@@ -46,22 +35,15 @@ Page({
                         });
                     }
                 }
-            })
+            });
             return;
         }
-        let res = await request('/selectAllOrderOfUser', 'POST',
+        let res = await request('/v2/order/selectAllOrderOfUser', 'POST',
             {
                 token: userInfo.token,
             });
         console.log(res);
         if (res.status == "wrong_token") {
-            // 记录跳转前页面位置
-            wx.setStorage({
-                key: 'location',
-                data: {
-                    id: 'mine'
-                }
-            });
             wx.showModal({
                 title: '系统提示',
                 content: '您的登录状态已过期，请重新登录！',
@@ -115,7 +97,6 @@ Page({
                 }
             )
         }
-        ;
     },
 
 

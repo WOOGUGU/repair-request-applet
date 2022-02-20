@@ -1,16 +1,24 @@
 page {
-    background-color: #f8f8f8;
+    background-color: #f6f6f6;
 }
 
 .container {
     padding: 0 20rpx;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .order {
-    margin: 15rpx 0;
-    padding: 20rpx;
-    border-radius: 10rpx;
-    background-color: #ffffff;
+    margin-top: 40px;
+    width: 720rpx;
+    height: 460rpx;
+    padding: 100 200rpx;
+    border-radius: 15px;
+    background: #f6f6f6;
+    box-shadow: 6px 6px 12px #cad1d5,
+    -6px -6px 12px #ffffff;
 }
 
 .order-title {
