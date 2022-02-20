@@ -105,7 +105,6 @@ Page({
             return;
         }
 
-        let token = this.data.userInfo.token;
         let username = this.data.userInfo.username;
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
@@ -125,7 +124,6 @@ Page({
             cookie: this.data.cookie,
             'content-type': 'application/x-www-form-urlencoded'
         }, {
-            token,
             username,
             sender,
             tel,
