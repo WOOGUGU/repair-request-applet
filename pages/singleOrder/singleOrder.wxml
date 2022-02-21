@@ -33,8 +33,8 @@
             <view class="title-text">提交评价</view>
         </view>
         <view class="form-item">
-            <input class="input-higher" value="" placeholder="" type="text" id="feedback"
-                   bindinput="handleInput"></input>
+            <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价！"
+                      bindinput="handleInput"></textarea>
         </view>
         <view class="feedback_btn">
             <button class="btn" bindtap="addFeedback">提交</button>
