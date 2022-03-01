@@ -193,12 +193,12 @@ Page({
         let pickerRes = await request('/v2/picker/selectAllPicker', 'GET', {
             cookie
         });
-        let timeData = pickerRes.data.data.picker.times;
+        let timeData = pickerRes.data.data.picker.time;
         let timeList = [];
         for (let i in timeData) {
             timeList.push(timeData[i].picker)
         }
-        let typeData = pickerRes.data.data.picker.types;
+        let typeData = pickerRes.data.data.picker.des;
         let typeList = [];
         for (let i in typeData) {
             typeList.push(typeData[i].picker)
