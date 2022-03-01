@@ -44,8 +44,7 @@ Page({
             return;
         }
         passwd = hexMD5(passwd).toUpperCase();
-        let loginRes
-            = await request('/doLogin', 'POST', {}, {
+        let loginRes = await request('/doLogin', 'POST', {}, {
             uname,
             passwd
         });

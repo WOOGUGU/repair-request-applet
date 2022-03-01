@@ -16,7 +16,7 @@ Page({
         })
     },
 
-    confirm: async function (options) {
+    toOpinion: async function (options) {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
         // 验证失败跳转
@@ -38,15 +38,16 @@ Page({
             });
             return;
         }
-        let res = await request('/v2/order/selectAllOrderOfUser', 'POST',
-            {
-                token: userInfo.token,
-            });
-        console.log(res);
-        if (res.status == "wrong_token") {
+        let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+            cookie: cookie
+        }, {
+            username: userInfo.username
+        });
+        res = res.data;
+        if (res.code != '00000') {
             wx.showModal({
                 title: '系统提示',
-                content: '您的登录状态已过期，请重新登录！',
+                content: res.userMsg,
                 success: function (res) {
                     if (res.confirm) {
                         wx.navigateTo({
@@ -54,12 +55,11 @@ Page({
                         });
                     } else if (res.cancel) {
                         wx.switchTab({
-                            url: '/pages/mine/mine',
+                            url: '/pages/index/index',
                         });
                     }
                 }
-            })
-            return;
+            });
         }
         wx.navigateTo({
             url: '/pages/opinion/opinion'

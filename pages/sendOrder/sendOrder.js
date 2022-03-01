@@ -105,7 +105,6 @@ Page({
             return;
         }
 
-        let token = this.data.userInfo.token;
         let username = this.data.userInfo.username;
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
@@ -125,7 +124,6 @@ Page({
             cookie: this.data.cookie,
             'content-type': 'application/x-www-form-urlencoded'
         }, {
-            token,
             username,
             sender,
             tel,
@@ -195,12 +193,12 @@ Page({
         let pickerRes = await request('/v2/picker/selectAllPicker', 'GET', {
             cookie
         });
-        let timeData = pickerRes.data.data.picker.times;
+        let timeData = pickerRes.data.data.picker.time;
         let timeList = [];
         for (let i in timeData) {
             timeList.push(timeData[i].picker)
         }
-        let typeData = pickerRes.data.data.picker.types;
+        let typeData = pickerRes.data.data.picker.des;
         let typeList = [];
         for (let i in typeData) {
             typeList.push(typeData[i].picker)

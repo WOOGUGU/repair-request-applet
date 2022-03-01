@@ -23,7 +23,7 @@
 
 <view class="cu-list menu card-menu">
     <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" bindtap="confirm">
+        <navigator class="content" hover-class="none" bindtap="toOpinion">
             <text class="cuIcon-community text-blue"></text>
             <text class="text-grey">意见反馈</text>
         </navigator>
