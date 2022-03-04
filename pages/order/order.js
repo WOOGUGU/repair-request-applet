@@ -40,9 +40,7 @@ Page({
                             url: '/pages/login/login'
                         });
                     } else if (res.cancel) {
-                        wx.switchTab({
-                            url: '/pages/index/index',
-                        });
+                        wx.navigateBack();
                     }
                 }
             })
@@ -69,9 +67,7 @@ Page({
                             url: '/pages/login/login'
                         });
                     } else if (res.cancel) {
-                        wx.switchTab({
-                            url: '/pages/index/index',
-                        });
+                        wx.navigateBack();
                     }
                 }
             });

@@ -19,8 +19,9 @@ Page({
     toOpinion: async function (options) {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
+        let cookie = getStorage('cookie');
         // 验证失败跳转
-        if (!userInfo) {
+        if (!userInfo || !cookie) {
             wx.showModal({
                 title: '系统提示',
                 content: '您还未登录，请先登录！',
@@ -30,12 +31,10 @@ Page({
                             url: '/pages/login/login'
                         });
                     } else if (res.cancel) {
-                        wx.switchTab({
-                            url: '/pages/mine/mine',
-                        });
+                        wx.navigateBack();
                     }
                 }
-            });
+            })
             return;
         }
         let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
@@ -44,7 +43,11 @@ Page({
             username: userInfo.username
         });
         res = res.data;
-        if (res.code != '00000') {
+        if (res.code == '00000') {
+            wx.navigateTo({
+                url: '/pages/opinion/opinion'
+            });
+        } else if (res.code == 'A0200') {
             wx.showModal({
                 title: '系统提示',
                 content: res.userMsg,
@@ -54,16 +57,17 @@ Page({
                             url: '/pages/login/login'
                         });
                     } else if (res.cancel) {
-                        wx.switchTab({
-                            url: '/pages/index/index',
-                        });
+                        wx.navigateBack();
                     }
                 }
             });
+        } else if (res.code == 'E0100') {
+            wx.showModal({
+                title: '系统提示',
+                content: res.userMsg,
+                showCancel: false,
+            });
         }
-        wx.navigateTo({
-            url: '/pages/opinion/opinion'
-        });
     },
 
 
