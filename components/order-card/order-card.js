@@ -10,8 +10,8 @@ Component({
     },
 
     data: {
-        status: ['审核不通过', '已取消', '待审核', '待处理', '已完成'],
-        color: ['_two', '_one', 'zero', 'one', 'two']
+        status: ['待审核', '待处理', '已完成', '已取消', '审核不通过'],
+        color: ['zero', 'one', 'two', 'three', 'four'],
     },
 
     methods: {

@@ -42,11 +42,11 @@
     line-height: 70rpx;
 }
 
-.order .order-title ._two {
+.order .order-title .four {
     color: red;
 }
 
-.order .order-title ._one {
+.order .order-title .three {
     color: #656565;
 }
 
