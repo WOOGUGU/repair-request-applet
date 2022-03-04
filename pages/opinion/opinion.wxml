@@ -1,22 +1,32 @@
 <cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
     <view slot="backText">返回</view>
-
 </cu-custom>
 <view class="opinion">
     <view class="opinionContainer">
+
         <view class="opinionTitle">
             <view class="titleText">意见反馈</view>
         </view>
 
         <view class="opinionForm">
-            <textarea class="font-break" value="" type="text" id="opinion" maxlength="50" placeholder="感谢您提供的宝贵意见！"
-                      bindinput="opinionInput"></textarea>
-            <input value="" type="text" id="username" maxlength="15" placeholder="姓名（选填）"
-                   bindinput="handleInput"></input>
-            <input value="" type="text" id="tel" maxlength="11" placeholder="联系方式（选填）"
-                   bindinput="handleInput"></input>
+
+            <view class="form-item">
+                <textarea class="opinionTextarea" value="" type="text" id="opinion" maxlength="50"
+                          placeholder="感谢您的宝贵意见！"
+                          bindinput="handleInput"/>
+            </view>
+
+            <view class="form-item">
+                <input class="opinionInput" value="" type="text" id="name" maxlength="15" placeholder="姓名（选填）"
+                       bindinput="handleInput"/>
+            </view>
+
+            <view class="form-item">
+                <input class="opinionInput" value="" type="text" id="tel" maxlength="11" placeholder="联系方式（选填）"
+                       bindinput="handleInput"/>
+            </view>
+
             <button class="btn" bindtap="submit">提交</button>
         </view>
-
     </view>
 </view>
