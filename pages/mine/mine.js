@@ -16,7 +16,7 @@ Page({
         })
     },
 
-    toOpinion: async function (options) {
+    toOpinion: async function () {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
         let cookie = getStorage('cookie');
@@ -56,8 +56,6 @@ Page({
                         wx.navigateTo({
                             url: '/pages/login/login'
                         });
-                    } else if (res.cancel) {
-                        wx.navigateBack();
                     }
                 }
             });
@@ -70,6 +68,11 @@ Page({
         }
     },
 
+    toAbout: function () {
+        wx.navigateTo({
+            url: '/pages/about/about'
+        })
+    },
 
     /**
      * 生命周期函数--监听页面加载
