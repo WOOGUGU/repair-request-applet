@@ -5,7 +5,19 @@
     <view class="order">
         <view class="order-title">
             <view class="title-text">{{orderData.position + '-' + orderData.des}}</view>
-            <view class="progress {{color[orderData.progress]}}">{{status[orderData.progress]}}</view>
+            <view wx:if="{{orderData.progress == 3}}" class="progress {{color[orderData.progress]}}">
+                {{status[orderData.progress]}}
+            </view>
+        </view>
+        <view wx:if="{{orderData.progress != 3}}" class="progress-box">
+            <progress percent="{{per[orderData.progress]}}" color="{{progress_color[orderData.progress]}}"
+                      duration="{{orderData.progress != 4 ? '15' : '1'}}" active stroke-width="5"/>
+            <view class="progress-ps">
+                <view class="progress-text {{color[0]}}">待审核</view>
+                <view wx:if="{{orderData.progress != 4}}" class="progress-text {{color[1]}}">待处理</view>
+                <view wx:if="{{orderData.progress != 4}}" class="progress-text {{color[2]}}">已完成</view>
+                <view wx:if="{{orderData.progress == 4}}" class="progress-text {{color[4]}}">审核不通过</view>
+            </view>
         </view>
         <view class="order-body">
             <view class="order-body-text type">网络类型：{{orderData.type == 'wire' ? '有线网络' : '无线网络'}}</view>

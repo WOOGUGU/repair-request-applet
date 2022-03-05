@@ -8,6 +8,8 @@ Page({
         },
         status: ['待审核', '待处理', '已完成', '已取消', '审核不通过'],
         color: ['zero', 'one', 'two', 'three', 'four'],
+        per: [5, 55, 100, 0, 100],
+        progress_color: ['#FFA500', '#1E90FF', '#2E8B57', '#656565', '#FF5D5D'],
         orderData: {},
         feedback: ''
     },

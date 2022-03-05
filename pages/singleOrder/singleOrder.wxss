@@ -4,7 +4,7 @@ page {
 
 .container {
     width: 100%;
-    margin-top: 40rpx;
+    margin-top: 80rpx;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -13,7 +13,7 @@ page {
 }
 
 .order {
-    margin-top: 40px;
+    margin-top: 40rpx;
     width: 85%;
     padding: 20rpx;
     border-radius: 15px;
@@ -49,24 +49,39 @@ page {
     line-height: 80rpx;
 }
 
-.order .order-title .four {
-    color: red;
+.order .zero {
+    color: #FFA500;
 }
 
-.order .order-title .three {
+.order .one {
+    color: #1E90FF;
+}
+
+.order .two {
+    color: #2E8B57;
+}
+
+.order .three {
     color: #656565;
 }
 
-.order .order-title .zero {
-    color: orange;
+.order .four {
+    color: #FF5D5D;
 }
 
-.order .order-title .one {
-    color: dodgerblue;
+.order .progress-box {
+    margin: 30rpx 10rpx;
 }
 
-.order .order-title .two {
-    color: seagreen;
+.order .progress-ps {
+    margin-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.order .progress-text {
+    font-size: 28rpx;
+    font-weight: bold;
 }
 
 .order .order-body {
