@@ -17,55 +17,9 @@ Page({
     },
 
     toOpinion: async function () {
-        // 权限验证
-        let userInfo = getStorage('localUserInfo');
-        let cookie = getStorage('cookie');
-        // 验证失败跳转
-        if (!userInfo || !cookie) {
-            wx.showModal({
-                title: '系统提示',
-                content: '您还未登录，请先登录！',
-                success: function (res) {
-                    if (res.confirm) {
-                        wx.navigateTo({
-                            url: '/pages/login/login'
-                        });
-                    } else if (res.cancel) {
-                        wx.navigateBack();
-                    }
-                }
-            })
-            return;
-        }
-        let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
-            cookie: cookie
-        }, {
-            username: userInfo.username
+        wx.navigateTo({
+            url: '/pages/opinion/opinion'
         });
-        res = res.data;
-        if (res.code == '00000') {
-            wx.navigateTo({
-                url: '/pages/opinion/opinion'
-            });
-        } else if (res.code == 'A0200') {
-            wx.showModal({
-                title: '系统提示',
-                content: res.userMsg,
-                success: function (res) {
-                    if (res.confirm) {
-                        wx.navigateTo({
-                            url: '/pages/login/login'
-                        });
-                    }
-                }
-            });
-        } else if (res.code == 'E0100') {
-            wx.showModal({
-                title: '系统提示',
-                content: res.userMsg,
-                showCancel: false,
-            });
-        }
     },
 
     toAbout: function () {
