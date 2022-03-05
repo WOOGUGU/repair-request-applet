@@ -32,7 +32,7 @@ page {
     width: 25%;
     color: gray;
     font-size: 32rpx;
-    font-weight: lighter;
+    font-weight: normal;
     line-height: 60rpx;
     align-self: center;
     text-align: center;
@@ -40,7 +40,7 @@ page {
 
 .nav .active {
     color: #0067AB;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 /* 导航栏 end */

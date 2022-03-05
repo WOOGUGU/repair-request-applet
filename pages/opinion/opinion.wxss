@@ -13,18 +13,19 @@
 
 .opinionContainer {
     width: 85%;
-    height: 85%;
+    height: 75%;
     border-radius: 20rpx;
     box-shadow: #dddddd 5rpx 5rpx 15rpx;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     font-size: 35rpx;
 }
 
 .opinionTitle {
-    margin-top: 50rpx;
+    margin-top: 30rpx;
 }
 
 .opinionContainer .loginTitle .titleText {
@@ -33,31 +34,33 @@
 }
 
 .opinionForm {
-    margin: auto;
+    /*margin: auto;*/
     width: 80%;
 }
 
-.opinionForm textarea {
+.opinionForm .opinionTextarea {
+    padding: 20rpx;
     text-align: left;
     margin-top: 30rpx;
     border-radius: 20rpx;
     border: 3rpx solid #e7e7e7;
-    height: 600rpx;
-    width: 500rpx;
+    height: 300rpx;
+    width: 95%;
     box-shadow: rgba(150, 179, 205, 0.5) 5rpx 5rpx 15rpx;
 }
 
-.opinionForm input {
+.opinionForm .opinionInput {
+    width: 95%;
+    padding: 20rpx;
     text-align: left;
     margin-top: 30rpx;
-    height: 80rpx;
-    width: 500rpx;
+    height: 60rpx;
     box-shadow: rgba(150, 179, 205, 0.5) 5rpx 5rpx 15rpx;
 }
 
-.opinionForm button {
+.opinionForm .btn {
     color: white;
-    margin-top: 20rpx;
+    margin-top: 40rpx;
     height: 80rpx;
     line-height: 80rpx;
     background-color: #0081ff;
