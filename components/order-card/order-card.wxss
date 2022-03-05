@@ -42,14 +42,6 @@
     line-height: 70rpx;
 }
 
-.order .order-title ._two {
-    color: red;
-}
-
-.order .order-title ._one {
-    color: #656565;
-}
-
 .order .order-title .zero {
     color: orange;
 }
@@ -60,6 +52,14 @@
 
 .order .order-title .two {
     color: seagreen;
+}
+
+.order .order-title .four {
+    color: #FF5D5D;
+}
+
+.order .order-title .three {
+    color: #656565;
 }
 
 .order .order-body {

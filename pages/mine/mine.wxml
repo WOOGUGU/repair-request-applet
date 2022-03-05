@@ -22,17 +22,17 @@
 </view>
 
 <view class="cu-list menu card-menu">
-    <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" bindtap="confirm">
+    <view class="cu-item arrow" bindtap="toOpinion">
+        <view class="content" hover-class="none">
             <text class="cuIcon-community text-blue"></text>
             <text class="text-grey">意见反馈</text>
-        </navigator>
+        </view>
     </view>
-    <view class="cu-item arrow">
-        <navigator class="content" hover-class="none" url="/pages/about/about" open-type="navigate">
+    <view class="cu-item arrow" bindtap="toAbout">
+        <view class="content" hover-class="none">
             <text class="cuIcon-info text-blue"></text>
             <text class="text-grey">关于我们</text>
-        </navigator>
+        </view>
     </view>
 
 <!--  测试用  -->

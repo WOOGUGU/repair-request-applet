@@ -41,7 +41,7 @@ Page({
                         });
                     } else if (res.cancel) {
                         wx.switchTab({
-                            url: '/pages/index/index',
+                            url: '/pages/index/index'
                         });
                     }
                 }
@@ -70,7 +70,7 @@ Page({
                         });
                     } else if (res.cancel) {
                         wx.switchTab({
-                            url: '/pages/index/index',
+                            url: '/pages/index/index'
                         });
                     }
                 }

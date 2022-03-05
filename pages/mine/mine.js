@@ -10,16 +10,12 @@ Page({
         },
     },
 
-
     toLogin: function () {
         wx.navigateTo({
             url: '/pages/login/login'
         })
     },
 
-    test_1:function (){
-        wx.navigateTo({url:'../Admin/Admin'})
-    },
     confirm: async function (options) {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
