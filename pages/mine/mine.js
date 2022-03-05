@@ -9,7 +9,11 @@ Page({
             bgColor: 'bg-gradual-blue'
         },
     },
-
+    test_1:function (){
+        wx.navigateTo({
+            url: '/pages/Admin/Admin'
+        })
+    },
     toLogin: function () {
         wx.navigateTo({
             url: '/pages/login/login'
