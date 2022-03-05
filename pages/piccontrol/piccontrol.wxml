@@ -1,0 +1,39 @@
+<cu-custom  isBack="{{true}}">
+    <view slot="backText">返回</view>
+</cu-custom>
+<view class='imgitem'>
+    <image class='imgitem' mode="widthFit" src="/static/imgs/a.png"></image>
+</view>
+<view class="cu-list menu card-menu">
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" bindtap="check">
+            <text class="cuIcon-community text-blue"></text>
+            <text class="text-grey">上传图片</text>
+        </navigator>
+    </view>
+</view>
+
+<view class='imgitem'>
+    <image class='imgitem' mode="widthFit" src="/static/imgs/c.png"></image>
+</view>
+<view class="cu-list menu card-menu">
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" bindtap="check">
+            <text class="cuIcon-community text-blue"></text>
+            <text class="text-grey">上传图片</text>
+        </navigator>
+    </view>
+</view>
+
+
+<view class='imgitem'>
+    <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
+</view>
+<view class="cu-list menu card-menu">
+    <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" bindtap="check">
+            <text class="cuIcon-community text-blue"></text>
+            <text class="text-grey">上传图片</text>
+        </navigator>
+    </view>
+</view>

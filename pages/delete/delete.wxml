@@ -1,0 +1,22 @@
+<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
+    <view slot="backText">返回</view>
+
+</cu-custom>
+<view class="delete">
+    <view class="deleteContainer">
+        <view class="deleteTitle">
+            <view class="titleText">取消工单</view>
+        </view>
+
+        <view class="deleteForm">
+            <textarea class="font-break" value="" type="text" id="delete" maxlength="50" placeholder="请填写取消的原因"
+                      bindinput="ReasonInput"></textarea>
+            <input value="" type="text" id="username" maxlength="15" placeholder="姓名（选填）"
+                   bindinput="NameInput"></input>
+            <input value="" type="text" id="tel" maxlength="11" placeholder="联系方式（选填）"
+                   bindinput="NumberInput"></input>
+            <button class="btn" bindtap="submit">提交</button>
+        </view>
+
+    </view>
+</view>

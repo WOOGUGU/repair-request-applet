@@ -1,0 +1,69 @@
+<cu-custom  isBack="{{true}}">
+    <view slot="backText">返回</view>
+</cu-custom>
+ <view class="lists">
+        <view class="news" bindtap="jump_2">
+            <view class="content">
+                <view class='imgitem'>
+                    <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
+                </view>
+                <view class="title">公告</view>
+                <view class="bottom">
+                    <view class="icon">
+                        2021-1-19
+                    </view>
+                </view>
+                <view class="detail">
+                    公告就是公告
+                </view>
+            </view>
+        </view>
+        <view class="cu-list menu card-menu">
+
+            <view class="cu-item arrow">
+                <navigator class="content" hover-class="none" bindtap="check">
+                    <text class="cuIcon-community text-blue"></text>
+                    <text class="text-grey">上传图片</text>
+                </navigator>
+            </view>
+            <view class="cu-item arrow">
+                <navigator class="content" hover-class="none" url="/pages/textupdate/textupdate" open-type="navigate">
+                     <text class="cuIcon-community text-blue"></text>
+                     <text class="text-grey">修改文本</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="news" bindtap="jump_1">
+            <view class="content">
+                <view class='imgitem'>
+                    <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>
+                </view>
+                <view class="title">使用指南</view>
+                <view class="bottom">
+                    <view class="icon">
+                        2022-1-19
+                    </view>
+                </view>
+                <view class="detail">
+                    校园网常见问题及解决方案
+                </view>
+            </view>
+        </view>
+         <view class="cu-list menu card-menu">
+
+             <view class="cu-item arrow">
+                 <navigator class="content" hover-class="none" bindtap="check">
+                     <text class="cuIcon-community text-blue"></text>
+                     <text class="text-grey">上传图片</text>
+                 </navigator>
+             </view>
+             <view class="cu-item arrow">
+                 <navigator class="content" hover-class="none" url="/pages/textupdate/textupdate" open-type="navigate">
+                      <text class="cuIcon-community text-blue"></text>
+                      <text class="text-grey">修改文本</text>
+                 </navigator>
+             </view>
+         </view>
+
+    <!-- 底部 -->
+</view>

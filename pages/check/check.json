@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "order-card": "/components/order-card/order-card"
+  },
+  "navigationBarTitleText": "工单审核"
+}

@@ -1,0 +1,20 @@
+<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
+    <view slot="backText">返回</view>
+
+</cu-custom>
+<view class="opinion">
+    <view class="opinionContainer">
+        <view class="opinionTitle">
+            <view class="titleText">上传公告</view>
+        </view>
+
+        <view class="opinionForm">
+            <textarea class="font-break" value="" type="text" id="opinion" maxlength="50" placeholder="填写公告内容"
+                      bindinput="opinionInput"></textarea>
+            <input value="" type="text" id="date" maxlength="15" placeholder="请填写日期"
+                   bindinput="handleInput"></input>
+            <button class="btn" bindtap="submit">提交</button>
+        </view>
+
+    </view>
+</view>
