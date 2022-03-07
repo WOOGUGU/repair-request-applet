@@ -1,6 +1,7 @@
-<cu-custom  isBack="{{true}}">
+<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
     <view slot="backText">返回</view>
 </cu-custom>
+<view class="container">
 <view class='imgitem'>
     <image class='imgitem' mode="widthFit" src="/static/imgs/a.png"></image>
 </view>
@@ -36,4 +37,5 @@
             <text class="text-grey">上传图片</text>
         </navigator>
     </view>
+</view>
 </view>

@@ -23,6 +23,12 @@
 
 <view class="cu-list menu card-menu">
     <view class="cu-item arrow">
+        <navigator class="content" hover-class="none" bindtap="check">
+            <text class="cuIcon-community text-blue"></text>
+            <text class="text-grey">管理员菜单</text>
+        </navigator>
+    </view>
+    <view class="cu-item arrow">
         <navigator class="content" hover-class="none" bindtap="confirm">
             <text class="cuIcon-community text-blue"></text>
             <text class="text-grey">意见反馈</text>

@@ -1,8 +1,11 @@
-<cu-custom  isBack="{{true}}">
+
+<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
     <view slot="backText">返回</view>
 </cu-custom>
+<!--图片示例-->
+<view class="container">
  <view class="lists">
-        <view class="news" bindtap="jump_2">
+        <view class="news">
             <view class="content">
                 <view class='imgitem'>
                     <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
@@ -18,18 +21,11 @@
                 </view>
             </view>
         </view>
+        <!--上传图片按钮-->
         <view class="cu-list menu card-menu">
-
             <view class="cu-item arrow">
-                <navigator class="content" hover-class="none" bindtap="check">
-                    <text class="cuIcon-community text-blue"></text>
+                <navigator class="content" hover-class="none" url="/pages/picupdate/picupdate" open-type="navigate">
                     <text class="text-grey">上传图片</text>
-                </navigator>
-            </view>
-            <view class="cu-item arrow">
-                <navigator class="content" hover-class="none" url="/pages/textupdate/textupdate" open-type="navigate">
-                     <text class="cuIcon-community text-blue"></text>
-                     <text class="text-grey">修改文本</text>
                 </navigator>
             </view>
         </view>
@@ -53,17 +49,11 @@
 
              <view class="cu-item arrow">
                  <navigator class="content" hover-class="none" bindtap="check">
-                     <text class="cuIcon-community text-blue"></text>
                      <text class="text-grey">上传图片</text>
-                 </navigator>
-             </view>
-             <view class="cu-item arrow">
-                 <navigator class="content" hover-class="none" url="/pages/textupdate/textupdate" open-type="navigate">
-                      <text class="cuIcon-community text-blue"></text>
-                      <text class="text-grey">修改文本</text>
                  </navigator>
              </view>
          </view>
 
     <!-- 底部 -->
+</view>
 </view>

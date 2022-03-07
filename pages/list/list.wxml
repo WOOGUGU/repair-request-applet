@@ -1,8 +1,8 @@
 <cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
     <view slot="backText">返回</view>
-
 </cu-custom>
 
+<view class="container">
 <view class="cu-list menu card-menu">
     <view class="cu-item arrow">
         <navigator class="content" hover-class="none" url="/pages/check/check" open-type="navigate">
@@ -22,4 +22,5 @@
             <text class="text-grey">轮播图管理</text>
         </navigator>
     </view>
+</view>
 </view>
