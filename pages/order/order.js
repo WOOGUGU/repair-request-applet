@@ -48,39 +48,76 @@ Page({
             })
             return;
         }
-        let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
-            cookie: cookie
-        }, {
-            username: userInfo.username
-        });
-        res = res.data;
-        if (res.code == '00000') {
-            this.setData({
-                listData: res.data
+        if (userInfo.authorities[0].authority == 'ROLE_repairman') {
+            let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+                cookie: cookie
+            }, {
+                username: userInfo.username
             });
-            console.log(this.data.listData);
-        } else if (res.code == 'A0200') {
-            wx.showModal({
-                title: '系统提示',
-                content: res.userMsg,
-                success: function (res) {
-                    if (res.confirm) {
-                        wx.navigateTo({
-                            url: '/pages/login/login'
-                        });
-                    } else if (res.cancel) {
-                        wx.switchTab({
-                            url: '/pages/index/index'
-                        });
+            res = res.data;
+            if (res.code == '00000') {
+                this.setData({
+                    listData: res.data
+                });
+                console.log(this.data.listData);
+            } else if (res.code == 'A0200') {
+                wx.showModal({
+                    title: '系统提示',
+                    content: res.userMsg,
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.navigateTo({
+                                url: '/pages/login/login'
+                            });
+                        } else if (res.cancel) {
+                            wx.switchTab({
+                                url: '/pages/index/index'
+                            });
+                        }
                     }
-                }
+                });
+            } else if (res.code == 'E0100') {
+                wx.showModal({
+                    title: '系统提示',
+                    content: res.userMsg,
+                    showCancel: false,
+                });
+            }
+        } else if (userInfo.authorities[0].authority == 'ROLE_user') {
+            let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+                cookie: cookie
+            }, {
+                username: userInfo.username
             });
-        } else if (res.code == 'E0100') {
-            wx.showModal({
-                title: '系统提示',
-                content: res.userMsg,
-                showCancel: false,
-            });
+            res = res.data;
+            if (res.code == '00000') {
+                this.setData({
+                    listData: res.data
+                });
+                console.log(this.data.listData);
+            } else if (res.code == 'A0200') {
+                wx.showModal({
+                    title: '系统提示',
+                    content: res.userMsg,
+                    success: function (res) {
+                        if (res.confirm) {
+                            wx.navigateTo({
+                                url: '/pages/login/login'
+                            });
+                        } else if (res.cancel) {
+                            wx.switchTab({
+                                url: '/pages/index/index'
+                            });
+                        }
+                    }
+                });
+            } else if (res.code == 'E0100') {
+                wx.showModal({
+                    title: '系统提示',
+                    content: res.userMsg,
+                    showCancel: false,
+                });
+            }
         }
     }
 });
