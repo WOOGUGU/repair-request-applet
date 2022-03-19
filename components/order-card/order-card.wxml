@@ -8,14 +8,14 @@
             <!--            <view class="order-body-text time_start">发起时间：{{orderData.timeStart}}</view>-->
             <view class="order-body-text time_subscribe">预约上门时间：{{orderData.timeSubscribe}}</view>
             <view class="order-body-text time_distribution">
-                审核时间：{{orderData.timeDistribution == null ? '' : orderData.timeDistribution}}
+                分配时间：{{orderData.timeDistribution == null ? '' : orderData.timeDistribution}}
             </view>
             <view class="order-body-text solver">维修人员：{{orderData.solver == null ? '' : orderData.solver}}</view>
             <view class="order-body-text time_end">完成时间：{{orderData.timeEnd == null ? '' : orderData.timeEnd}}</view>
         </view>
         <view class="order-footer">
             <view>
-                <button wx:if="{{orderData.progress <= 1}}" class="order-footer-button"
+                <button wx:if="{{withCancelBtn && orderData.progress <= 1}}" class="order-footer-button"
                         bindtap="cancelOrder">取消工单
                 </button>
             </view>

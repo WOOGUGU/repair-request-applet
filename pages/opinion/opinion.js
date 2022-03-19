@@ -22,7 +22,7 @@ Page({
         })
     },
 
-    submit: async function () {
+    submit: function () {
         if (this.data.opinion == null || this.data.opinion == '') {
             wx.showModal({
                 title: '系统提示',
@@ -41,52 +41,60 @@ Page({
             return;
         }
 
+        let cookie = this.data.cookie;
         let uid = this.data.userInfo.id;
         let content = ((this.data.name != null && this.data.name != '') ? (this.data.name + '：') : 'Anonymous：') + this.data.opinion;
         let tel = (this.data.tel != null && this.data.tel != '') ? this.data.tel : '';
-
-        let sendFeedbackRes = await request('/v2/feedback/addFeedback', 'POST', {
-            cookie: this.data.cookie,
-            'content-type': 'application/x-www-form-urlencoded'
-        }, {
-            uid,
-            content,
-            tel
-        });
-        if (sendFeedbackRes.data.code == '00000') {
-            wx.showModal({
-                title: '系统提示',
-                content: sendFeedbackRes.data.userMsg,
-                showCancel: false,
-                success: function () {
-                    wx.switchTab({
-                        url: '/pages/mine/mine'
+        wx.showModal({
+            title: '系统提示',
+            content: '确定要提交吗？',
+            success: async function (res) {
+                if (res.confirm) {
+                    let sendFeedbackRes = await request('/v2/feedback/addFeedback', 'POST', {
+                        cookie,
+                        'content-type': 'application/x-www-form-urlencoded'
+                    }, {
+                        uid,
+                        content,
+                        tel
                     });
-                }
-            });
-        } else if (sendFeedbackRes.data.code == 'A0200') {
-            wx.showModal({
-                title: '系统提示',
-                content: sendFeedbackRes.data.userMsg,
-                success: function (res) {
-                    if (res.confirm) {
-                        wx.navigateTo({
-                            url: '/pages/login/login'
+                    if (sendFeedbackRes.data.code == '00000') {
+                        wx.showModal({
+                            title: '系统提示',
+                            content: sendFeedbackRes.data.userMsg,
+                            showCancel: false,
+                            success: function () {
+                                wx.switchTab({
+                                    url: '/pages/mine/mine'
+                                });
+                            }
                         });
-                    } else if (res.cancel) {
-                        wx.switchTab({
-                            url: '/pages/mine/mine'
+                    } else if (sendFeedbackRes.data.code == 'A0200') {
+                        wx.showModal({
+                            title: '系统提示',
+                            content: sendFeedbackRes.data.userMsg,
+                            success: function (res) {
+                                if (res.confirm) {
+                                    wx.navigateTo({
+                                        url: '/pages/login/login'
+                                    });
+                                } else if (res.cancel) {
+                                    wx.switchTab({
+                                        url: '/pages/mine/mine'
+                                    });
+                                }
+                            }
+                        });
+                    } else {
+                        wx.showModal({
+                            title: '系统提示',
+                            content: sendFeedbackRes.data.userMsg,
+                            showCancel: false,
                         });
                     }
                 }
-            });
-        } else {
-            wx.showModal({
-                title: '系统提示',
-                content: sendFeedbackRes.data.userMsg,
-                showCancel: false,
-            });
-        }
+            }
+        });
     },
 
     onLoad: function () {

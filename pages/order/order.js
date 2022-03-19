@@ -48,11 +48,14 @@ Page({
             })
             return;
         }
+        this.setData({
+            userInfo
+        });
         if (userInfo.authorities[0].authority == 'ROLE_repairman') {
-            let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+            let res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
                 cookie: cookie
             }, {
-                username: userInfo.username
+                name: userInfo.name
             });
             res = res.data;
             if (res.code == '00000') {

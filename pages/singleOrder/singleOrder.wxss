@@ -94,6 +94,18 @@ page {
     line-height: 38rpx;
 }
 
+.order-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-options .finish_btn {
+    align-self: center;
+    width: 80%;
+}
+
 .feedback_ {
     margin-top: 40rpx;
     width: 85%;

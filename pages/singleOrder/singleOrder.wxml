@@ -29,7 +29,7 @@
         <view class="order-body">
             <view class="order-body-text time_start">工单发起时间：{{orderData.timeStart}}</view>
             <view wx:if="{{orderData.timeDistribution != null}}" class="order-body-text time_distribution">
-                工单审核时间：{{orderData.timeDistribution}}
+                工单分配时间：{{orderData.timeDistribution}}
             </view>
             <view wx:if="{{orderData.timeEnd != null}}" class="order-body-text time_end">工单完成时间：{{orderData.timeEnd}}
             </view>
@@ -37,8 +37,15 @@
                 评价状态：{{orderData.feedback == null ? '未评价' : '已评价'}}
             </view>
         </view>
+        <view wx:if="{{userInfo.authorities[0].authority == 'ROLE_repairman' && orderData.progress == 1}}"
+              class="order-options">
+            <view class="finish_btn">
+                <button class="btn" bindtap="finishOrder">完成</button>
+            </view>
+        </view>
     </view>
-    <view wx:if="{{orderData.progress == 2 && orderData.feedback == null}}" class="feedback_">
+    <view wx:if="{{userInfo.authorities[0].authority == 'ROLE_user' && orderData.progress == 2 && orderData.feedback == null}}"
+          class="feedback_">
         <!--        <view class="feedback_submission">-->
         <view class="feedback_title">
             <view class="title-text">提交评价</view>
