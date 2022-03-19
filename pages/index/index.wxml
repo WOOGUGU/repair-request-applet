@@ -7,20 +7,24 @@
             indicator-color="#C6EDFF"
             indicator-active-color="#0088E2"
             autoplay="true" interval="3000">
-        <swiper-item>
-            <image src="/static/imgs/a.png"></image>
+        <swiper-item wx:for="{{slideData}}">
+            <image class="slide-img-item" src="{{item.imgPath}}"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/static/imgs/c.png"></image>
+            <image class="slide-img-item" src="/static/imgs/a.png"></image>
         </swiper-item>
         <swiper-item>
-            <image src="/static/imgs/gonggao.png"></image>
+            <image class="slide-img-item" src="/static/imgs/c.png"></image>
+        </swiper-item>
+        <swiper-item>
+            <image class="slide-img-item" src="/static/imgs/gonggao.png"></image>
         </swiper-item>
     </swiper>
 
     <!-- 推荐列表 -->
     <view class="lists">
-        <view class="news" bindtap="jump_2">
+        <!--        <view class="news" bindtap="jump_2">-->
+        <view class="news">
             <view class="content">
                 <view class='imgitem'>
                     <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
@@ -36,7 +40,8 @@
                 </view>
             </view>
         </view>
-        <view class="news" bindtap="jump_1">
+        <!--        <view class="news" bindtap="jump_1">-->
+        <view class="news">
             <view class="content">
                 <view class='imgitem'>
                     <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>

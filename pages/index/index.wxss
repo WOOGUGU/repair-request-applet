@@ -15,7 +15,7 @@ page {
     height: 45vw;
 }
 
-.banners image {
+.banners .slide-img-item {
     width: 100%;
     height: 100%;
 }
