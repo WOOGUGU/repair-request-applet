@@ -105,6 +105,7 @@ Page({
             return;
         }
 
+        let cookie = this.data.cookie;
         let username = this.data.userInfo.username;
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
@@ -119,31 +120,38 @@ Page({
                 tel: tel
             }
         });
+        wx.showModal({
+            title: '系统提示',
+            content: '确定要提交吗？',
+            success: async function (res) {
+                if (res.confirm) {
+                    let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
+                        cookie,
+                        'content-type': 'application/x-www-form-urlencoded'
+                    }, {
+                        username,
+                        sender,
+                        tel,
+                        type,
+                        position,
+                        des,
+                        timeSubscribe
+                    });
 
-        let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
-            cookie: this.data.cookie,
-            'content-type': 'application/x-www-form-urlencoded'
-        }, {
-            username,
-            sender,
-            tel,
-            type,
-            position,
-            des,
-            timeSubscribe
+                    if (sendOrderRes.data.code == '00000') {
+                        wx.reLaunch({
+                            url: '/pages/order/order'
+                        });
+                    } else {
+                        wx.showModal({
+                            title: '系统提示',
+                            content: '发生未知错误，请重试',
+                            showCancel: false,
+                        });
+                    }
+                }
+            }
         });
-
-        if (sendOrderRes.data.code == '00000') {
-            wx.reLaunch({
-                url: '/pages/order/order'
-            });
-        } else {
-            wx.showModal({
-                title: '系统提示',
-                content: '发生未知错误，请重试',
-                showCancel: false,
-            });
-        }
     },
 
     onShow: function () {

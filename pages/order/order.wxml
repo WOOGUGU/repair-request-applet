@@ -1,5 +1,5 @@
 <view class="top">报修工单</view>
-<view class="container">
+<view class="container" wx:if="{{userInfo.authorities[0].authority == 'ROLE_user'}}">
     <view class="navbar">
         <view class="nav">
             <view class="item {{current == 'all' ? 'active' : ''}}" bindtap="clickNavbar" id="all">全部</view>
@@ -17,6 +17,28 @@
         <order-card wx:if="{{current == 'all' || item.progress == current}}"
                     wx:for="{{listData}}"
                     orderData="{{item}}">
+        </order-card>
+    </view>
+</view>
+
+<view class="container" wx:if="{{userInfo.authorities[0].authority == 'ROLE_repairman'}}">
+    <view class="navbar">
+        <view class="nav">
+            <view class="item {{current == 'all' ? 'active' : ''}}" bindtap="clickNavbar" id="all">全部</view>
+            <view class="item {{current == '1' ? 'active' : ''}}" bindtap="clickNavbar" id="1">待处理</view>
+            <view class="item {{current == '2' ? 'active' : ''}}" bindtap="clickNavbar" id="2">已完成</view>
+        </view>
+    </view>
+
+    <!--    <view class="sendOrder" wx:if="{{current == 'all'}}">-->
+    <!--        <button class="btn" bindtap="sendOrder">发起工单</button>-->
+    <!--    </view>-->
+
+    <view class="orders">
+        <order-card wx:if="{{current == 'all' || item.progress == current}}"
+                    wx:for="{{listData}}"
+                    orderData="{{item}}"
+                    withCancelBtn="{{false}}">
         </order-card>
     </view>
 </view>

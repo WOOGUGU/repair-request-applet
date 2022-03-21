@@ -6,6 +6,10 @@ Component({
         orderData: {
             type: Object,
             value: {}
+        },
+        withCancelBtn: {
+            type: Boolean,
+            value: true
         }
     },
 
@@ -15,36 +19,44 @@ Component({
     },
 
     methods: {
-        cancelOrder: async function () {
+        cancelOrder: function () {
             let cookie = getStorage('cookie');
             let orderId = this.data.orderData.id;
             let username = this.data.orderData.username;
-            let cancelRes = await request('/v2/order/cancelOrder', 'POST', {
-                cookie,
-                'content-type': 'application/x-www-form-urlencoded'
-            }, {
-                orderId,
-                username
-            });
-            let cancelData = cancelRes.data;
-            if (cancelData.code == '00000') {
-                wx.showModal({
-                    title: '系统提示',
-                    content: '取消成功',
-                    showCancel: false,
-                    success: function (res) {
-                        wx.reLaunch({
-                            url: '/pages/order/order'
-                        })
+            wx.showModal({
+                title: '系统提示',
+                content: '确定要取消吗？',
+                success: async function (res) {
+                    if (res.confirm) {
+                        let cancelRes = await request('/v2/order/cancelOrder', 'POST', {
+                            cookie,
+                            'content-type': 'application/x-www-form-urlencoded'
+                        }, {
+                            orderId,
+                            username
+                        });
+                        let cancelData = cancelRes.data;
+                        if (cancelData.code == '00000') {
+                            wx.showModal({
+                                title: '系统提示',
+                                content: '取消成功',
+                                showCancel: false,
+                                success: function (res) {
+                                    wx.reLaunch({
+                                        url: '/pages/order/order'
+                                    })
+                                }
+                            });
+                        } else {
+                            wx.showModal({
+                                title: '系统提示',
+                                content: cancelData.userMsg,
+                                showCancel: false
+                            });
+                        }
                     }
-                });
-            } else {
-                wx.showModal({
-                    title: '系统提示',
-                    content: cancelData.userMsg,
-                    showCancel: false
-                });
-            }
+                }
+            });
         },
 
         more: function () {
