@@ -5,7 +5,8 @@
 <view class="padding-tb-xl padding text-center" style="height: 360rpx;">
     <button wx:if='{{test>0}}' class='{{topNavBar.bgColor}} shadow'>
         <view class="padding-xl text-while">
-            <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>
+            <!--            <view class="cu-avatar xl round" style="background-image:url({{user_info.avatar}});"></view>-->
+            <view class="cu-avatar xl round" style="background-image:url(/static/icon/mine.png);"></view>
             <view class="padding-xs text-xl">
                 {{name}}
             </view>
@@ -32,6 +33,15 @@
         <view class="content" hover-class="none">
             <text class="cuIcon-info text-blue"></text>
             <text class="text-grey">关于我们</text>
+        </view>
+    </view>
+</view>
+
+<view class="cu-list menu card-menu">
+    <view class="cu-item arrow" bindtap="toExit">
+        <view class="content" hover-class="none">
+            <text class="cuIcon-close text-blue"></text>
+            <text class="text-grey">退出</text>
         </view>
     </view>
 </view>
