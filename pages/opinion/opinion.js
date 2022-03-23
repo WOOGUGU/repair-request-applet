@@ -122,23 +122,11 @@ Page({
             })
             return;
         }
-        let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+        let res = await request('/v2/inner/isExpired', 'GET', {
             cookie: cookie
-        }, {
-            username: userInfo.username
         });
         res = res.data;
-        if (res.code == '00000') {
-            userInfo = getStorage('localUserInfo');
-            cookie = getStorage('cookie');
-            if (userInfo && cookie) {
-                this.setData({
-                    userInfo,
-                    cookie
-                });
-            }
-            return;
-        } else if (res.code == 'A0200') {
+        if (res.code == 'F300' || res.code == 'A0200') {
             wx.showModal({
                 title: '系统提示',
                 content: res.userMsg,
@@ -153,12 +141,6 @@ Page({
                         });
                     }
                 }
-            });
-        } else if (res.code == 'E0100') {
-            wx.showModal({
-                title: '系统提示',
-                content: res.userMsg,
-                showCancel: false,
             });
         }
     }
