@@ -15,6 +15,7 @@ Page({
         posArray: [[], []],
         posIndex: [0, 0],
         positionPickerData: {},
+        posPlus: '',
         desIndex: null,
         desSet: ['其他'],
         desPlus: '',
@@ -75,10 +76,10 @@ Page({
                 showCancel: false,
             });
             return;
-        } else if (this.data.posResult == null) {
+        } else if (this.data.posResult == null || (this.data.posResult == null && (this.data.posPlus == '' || this.data.posPlus == null))) {
             wx.showModal({
                 title: '系统提示',
-                content: '请选择报修位置',
+                content: '请选择/填写报修位置',
                 showCancel: false,
             });
             return;
@@ -110,7 +111,7 @@ Page({
         let sender = this.data.userInfo.name;
         let tel = this.data.tel;
         let type = this.data.type;
-        let position = this.data.posResult;
+        let position = (this.data.posResult == '其他' ? '' : this.data.posResult) + this.data.posPlus;
         let des = (this.data.desSet[this.data.desIndex] == '其他' ? '' : this.data.desSet[this.data.desIndex]) + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 

@@ -17,29 +17,31 @@ page {
     width: 85%;
     padding: 20rpx;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
     background: #ffffff;
     box-shadow: 6px 6px 12px #cad1d5, -6px -6px 12px #ffffff;
 }
 
 .order-title {
     width: 100%;
-    height: 80rpx;
+    /*height: 80rpx;*/
     display: flex;
     justify-content: space-between;
 }
 
 .order-title .title-text {
-    width: 65%;
+    /*width: 100%;*/
     color: #333333;
     font-size: 34rpx;
     font-weight: bold;
-    height: 80rpx;
+    /*height: 80rpx;*/
     line-height: 80rpx;
     /*溢出隐藏*/
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /*display: block;*/
+    /*white-space: nowrap;*/
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
 }
 
 .order .order-title .progress {
