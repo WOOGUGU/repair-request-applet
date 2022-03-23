@@ -5,13 +5,13 @@ export default (url, method, header = {'content-type': 'application/json'}, data
         console.log('header', typeof header == 'object' ? JSON.stringify(header) : header);
         console.log('data', typeof data == 'object' ? JSON.stringify(data) : data);
         wx.request({
-            url: config.host + url,
+            url: (url[0] == '/' ? config.host : '') + url,
             method,
             header,
             data,
             success: (res) => {
-                console.log('res', res);
-                console.log('res.data', res.data);
+                // console.log('res', res);
+                // console.log('res.data', res.data);
                 resolve(res);
             },
             fail: (err) => {

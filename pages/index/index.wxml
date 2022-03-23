@@ -16,47 +16,80 @@
         <swiper-item>
             <image class="slide-img-item" src="/static/imgs/c.png"></image>
         </swiper-item>
-        <swiper-item>
-            <image class="slide-img-item" src="/static/imgs/gonggao.png"></image>
-        </swiper-item>
+        <!--        <swiper-item>-->
+        <!--            <image class="slide-img-item" src="/static/imgs/gonggao.png"></image>-->
+        <!--        </swiper-item>-->
     </swiper>
 
-    <!-- 推荐列表 -->
-    <view class="lists">
-        <!--        <view class="news" bindtap="jump_2">-->
-        <view class="news">
-            <view class="content">
-                <view class='imgitem'>
-                    <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>
+    <view class="article">
+        <view wx:for="{{articleList}}" class="article-item" id="{{index}}" bindtap="toArticle">
+            <view class="article-cover">
+                <image class="article-cover-image"
+                       src="{{item.cover}}"></image>
+            </view>
+            <view class="article-info">
+                <view class="article-title">
+                    <text>{{item.title}}</text>
                 </view>
-                <view class="title">公告</view>
-                <view class="bottom">
-                    <view class="icon">
-                        2021-1-19
-                    </view>
-                </view>
-                <view class="detail">
-                    公告就是公告
+                <view class="article-other">
+                    <text class="article-desc">{{item.des}}</text>
+                    <text class="article-time">{{item.time}}</text>
                 </view>
             </view>
         </view>
-        <!--        <view class="news" bindtap="jump_1">-->
-        <view class="news">
-            <view class="content">
-                <view class='imgitem'>
-                    <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>
-                </view>
-                <view class="title">使用指南</view>
-                <view class="bottom">
-                    <view class="icon">
-                        2022-1-19
-                    </view>
-                </view>
-                <view class="detail">
-                    校园网常见问题及解决方案
-                </view>
-            </view>
-        </view>
+        <!--        <view class="article-item">-->
+        <!--            <view class="article-cover">-->
+        <!--                <image class="article-cover-image"-->
+        <!--                       src="http://mmbiz.qpic.cn/mmbiz_jpg/ShWpWlQmUzpmCGado7ib3VkR2feJU30QD71DZFwucOu0OREibGibR3icnbbaXTob9FDWBVGQS0oYY6SZWQrClt29tQ/0?wx_fmt=jpeg"></image>-->
+        <!--            </view>-->
+        <!--            <view class="article-info">-->
+        <!--                <view class="article-title">-->
+        <!--                    <text>我是标题我是标题我是标题我是标题我是标题我是标题我是标题</text>-->
+        <!--                </view>-->
+        <!--                <view class="article-other">-->
+        <!--                    <text class="article-desc">我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要我是摘要</text>-->
+        <!--                    <text class="article-time">2022-03-23</text>-->
+        <!--                </view>-->
+        <!--            </view>-->
+        <!--        </view>-->
     </view>
+
+    <!-- 推荐列表 -->
+    <!--    <view class="lists">-->
+    <!--        <view class="news" bindtap="jump_2">-->
+    <!--        <view class="news">-->
+    <!--            <view class="content">-->
+    <!--                <view class='imgitem'>-->
+    <!--                    <image class='imgitem' mode="widthFit" src="/static/imgs/gonggao.png"></image>-->
+    <!--                </view>-->
+    <!--                <view class="title">公告</view>-->
+    <!--                <view class="bottom">-->
+    <!--                    <view class="icon">-->
+    <!--                        2021-1-19-->
+    <!--                    </view>-->
+    <!--                </view>-->
+    <!--                <view class="detail">-->
+    <!--                    公告就是公告-->
+    <!--                </view>-->
+    <!--            </view>-->
+    <!--        </view>-->
+    <!--        &lt;!&ndash;        <view class="news" bindtap="jump_1">&ndash;&gt;-->
+    <!--        <view class="news">-->
+    <!--            <view class="content">-->
+    <!--                <view class='imgitem'>-->
+    <!--                    <image class='imgitem' mode="widthFit" src="/static/imgs/problem.png"></image>-->
+    <!--                </view>-->
+    <!--                <view class="title">使用指南</view>-->
+    <!--                <view class="bottom">-->
+    <!--                    <view class="icon">-->
+    <!--                        2022-1-19-->
+    <!--                    </view>-->
+    <!--                </view>-->
+    <!--                <view class="detail">-->
+    <!--                    校园网常见问题及解决方案-->
+    <!--                </view>-->
+    <!--            </view>-->
+    <!--        </view>-->
+    <!--    </view>-->
     <!-- 底部 -->
 </view>

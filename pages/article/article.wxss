@@ -1,0 +1,13 @@
+page {
+    background-color: #f6f6f6;
+}
+
+.container {
+    width: 100%;
+    margin-top: 80rpx;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

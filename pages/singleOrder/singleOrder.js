@@ -22,7 +22,7 @@ Page({
         })
     },
 
-    onLoad: async function (options) {
+    onLoad: function (options) {
         let data = JSON.parse(options.order);
         this.setData({
             orderData: data

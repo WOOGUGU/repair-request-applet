@@ -97,7 +97,7 @@ image {
           图片
  ==================== */
 
-image {
+/* image {
     max-width: 100%;
     display: inline-block;
     position: relative;
@@ -136,7 +136,7 @@ image.loading::after {
 
 .response {
     width: 100%;
-}
+} */
 
 /* ==================
          开关
