@@ -43,6 +43,12 @@
             </view>
 
             <view class="form-item">
+                <label>详细位置（宿舍号等）</label>
+                <input class="input-higher" value="" placeholder="请输入" type="text" id="posPlus"
+                       bindinput="handleInput"></input>
+            </view>
+
+            <view class="form-item">
                 <label>故障类型</label>
                 <picker bindchange="handleInput" value="{{desIndex}}" range="{{desSet}}" id="desIndex">
                     <view class="picker">
@@ -52,7 +58,7 @@
             </view>
 
             <view class="form-item">
-                <label>位置/故障补充说明</label>
+                <label>故障补充说明</label>
                 <input class="input-higher" value="" placeholder="请输入" type="text" id="desPlus"
                        bindinput="handleInput"></input>
             </view>

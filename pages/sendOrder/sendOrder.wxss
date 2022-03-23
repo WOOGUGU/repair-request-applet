@@ -17,7 +17,7 @@ page {
 /* 表单框 start */
 .formContainer {
     width: 90%;
-    margin: 45rpx 0;
+    margin: 85rpx 0;
     border-radius: 15px;
     box-shadow: 6px 6px 12px #cad1d5,
     -6px -6px 12px #ffffff;
