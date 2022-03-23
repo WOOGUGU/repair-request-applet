@@ -4,7 +4,9 @@
 <view class="container">
     <view class="order">
         <view class="order-title">
-            <view class="title-text">{{orderData.position + '-' + orderData.des}}</view>
+            <view class="title-text">
+                <text>{{orderData.position + '-' + orderData.des}}</text>
+            </view>
             <view wx:if="{{orderData.progress == 3}}" class="progress {{color[orderData.progress]}}">
                 {{status[orderData.progress]}}
             </view>
