@@ -33,7 +33,7 @@ Page({
             let articleData = articleRes.data.data;
             let articleList = [];
             for (let i in articleData) {
-                if (articleData[i].displayStatus == 0) {
+                if (articleData[i].displayStatus == 2) {
                     continue;
                 }
                 let id = articleData[i].id;
@@ -43,9 +43,9 @@ Page({
                 let title = html.data.split('msg_title')[2].split("'")[1];
                 let des = html.data.split('msg_desc')[1].split('"')[1];
                 let cover = html.data.split('cdn_url_235_1')[1].split('"')[1];
-                console.log(title);
-                console.log(des);
-                console.log(cover);
+                // console.log(title);
+                // console.log(des);
+                // console.log(cover);
                 articleList.push({
                     id,
                     title,
@@ -58,6 +58,21 @@ Page({
             this.setData({
                 articleList: articleList
             })
+        }
+        let noticeRes = await request('/v2/notice/selectAllNotice', 'GET');
+        if (noticeRes.data.code == '00000') {
+            console.log(noticeRes.data);
+            let noticeData = noticeRes.data.data;
+            for (let i in noticeData) {
+                if (noticeData[i].displayStatus == 2) {
+                    continue;
+                }
+                wx.showModal({
+                    title: '通知',
+                    content: '【' + noticeData[i].updateTime.substring(0, 16) + '】\n' + noticeData[i].content,
+                    showCancel: false,
+                });
+            }
         }
     },
 
