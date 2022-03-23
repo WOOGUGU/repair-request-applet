@@ -25,9 +25,6 @@ Page({
             console.log(this.data.slideData);
         }
         let articleRes = await request('/v2/article/selectAllArticle', 'GET');
-        if (articleRes.data.code == 'E0100') {
-            return;
-        }
         if (articleRes.data.code == '00000') {
             console.log(this.data.articleData);
             let articleData = articleRes.data.data;
