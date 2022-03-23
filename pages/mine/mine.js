@@ -1,5 +1,4 @@
 import getStorage from "../../utils/getStorage";
-import request from "../../utils/request";
 
 Page({
     data: {

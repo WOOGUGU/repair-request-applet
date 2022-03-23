@@ -1,5 +1,7 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "cu-custom": "/components/cu-custom/cu-custom"
+    },
     "navigationBarTitleText": "首页",
     "van-icon": "/dist/icon/index"
 }

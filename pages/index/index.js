@@ -1,5 +1,3 @@
-// pages/index/index.js
-
 import request from "../../utils/request";
 
 Page({

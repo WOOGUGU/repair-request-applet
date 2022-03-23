@@ -1,5 +1,4 @@
 import {hexMD5} from "../../utils/md5";
-import response from "../../utils/request";
 import request from "../../utils/request";
 
 Page({
