@@ -21,10 +21,6 @@ Page({
         });
     },
 
-    onLoad: async function () {
-
-    },
-
     onShow: async function (options) {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
@@ -52,6 +48,7 @@ Page({
             userInfo
         });
         if (userInfo.authorities[0].authority == 'ROLE_repairman') {
+            // 维修人员
             let res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
                 cookie: cookie
             }, {
@@ -87,6 +84,7 @@ Page({
                 });
             }
         } else if (userInfo.authorities[0].authority == 'ROLE_user') {
+            // 普通用户
             let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
                 cookie: cookie
             }, {

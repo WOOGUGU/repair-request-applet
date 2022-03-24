@@ -15,7 +15,7 @@ Page({
         })
     },
 
-    toOpinion: async function () {
+    toOpinion: function () {
         wx.navigateTo({
             url: '/pages/opinion/opinion'
         });
@@ -29,6 +29,11 @@ Page({
 
     toExit: function () {
         wx.clearStorage();
+        this.setData({
+                test: 0,
+                name: ''
+            }
+        )
     },
 
     onShow: function () {
@@ -42,7 +47,7 @@ Page({
         } else {
             this.setData({
                     test: 0,
-                    name: "n"
+                name: ''
                 }
             )
         }

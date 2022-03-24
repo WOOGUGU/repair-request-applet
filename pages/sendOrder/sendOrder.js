@@ -40,6 +40,7 @@ Page({
         })
     },
 
+    // 多级picker数据发生改变
     bindMultiPickerChange: function (event) {
         this.setData({
             posIndex: event.detail.value,
@@ -48,6 +49,7 @@ Page({
         console.log(this.data.posResult);
     },
 
+    // 多级picker列发生改变
     bindMultiPickerColumnChange: function (event) {
         let data = {
             posArray: this.data.posArray,
@@ -115,6 +117,7 @@ Page({
         let des = (this.data.desSet[this.data.desIndex] == '其他' ? '' : this.data.desSet[this.data.desIndex]) + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
+        // 保存tel
         wx.setStorage({
             key: 'tel',
             data: {
@@ -156,6 +159,7 @@ Page({
     },
 
     onShow: function () {
+        // 尝试从本地获取tel
         let tel_local = getStorage('tel');
         if (tel_local) {
             this.setData({
@@ -175,6 +179,7 @@ Page({
             });
         }
 
+        // 位置picker数据
         let locationRes = await request('/v2/picker/selectAllPickerLocation', 'GET', {
             cookie
         });
@@ -190,23 +195,18 @@ Page({
             posArray: [areaList, this.data.positionPickerData[0].position]
         })
 
-        // let dateRes = await request('/v2/inner/getTime', 'GET', {
-        //     cookie
-        // });
-        // let dateData = dateRes.data;
-        // this.setData({
-        //     dateStart: dateData.data.now,
-        //     dateEnd: dateData.data.after
-        // })
-
         let pickerRes = await request('/v2/picker/selectAllPicker', 'GET', {
             cookie
         });
+        // 时间picker数据
         let timeData = pickerRes.data.data.picker.time;
         let timeList = [];
         for (let i in timeData) {
             timeList.push(timeData[i].picker)
         }
+        let dateStart = pickerRes.data.data.now;
+        let dateEnd = pickerRes.data.data.after;
+        // 故障类型picker数据
         let typeData = pickerRes.data.data.picker.des;
         let typeList = [];
         for (let i in typeData) {
@@ -215,8 +215,8 @@ Page({
         this.setData({
             timeSet: timeList,
             desSet: typeList,
-            dateStart: pickerRes.data.data.now,
-            dateEnd: pickerRes.data.data.after
+            dateStart,
+            dateEnd
         });
     }
 });
