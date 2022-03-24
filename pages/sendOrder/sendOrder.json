@@ -1,4 +1,5 @@
 {
     "usingComponents": {
+        "cu-custom": "/components/cu-custom/cu-custom"
     }
 }

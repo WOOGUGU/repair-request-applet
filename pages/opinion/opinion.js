@@ -2,9 +2,6 @@ import getStorage from "../../utils/getStorage";
 import request from "../../utils/request";
 
 Page({
-    /**
-     * 页面的初始数据
-     */
     data: {
         opinion: '',
         name: '',
@@ -70,6 +67,7 @@ Page({
                             }
                         });
                     } else if (sendFeedbackRes.data.code == 'A0200') {
+                        // cookie失效
                         wx.showModal({
                             title: '系统提示',
                             content: sendFeedbackRes.data.userMsg,
@@ -95,10 +93,6 @@ Page({
                 }
             }
         });
-    },
-
-    onLoad: function () {
-
     },
 
     onShow: async function () {

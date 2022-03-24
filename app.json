@@ -17,9 +17,7 @@
         "navigationStyle": "custom",
         "navigationBarTextStyle": "white"
     },
-    "usingComponents": {
-        "cu-custom": "/components/cu-custom/cu-custom"
-    },
+    "usingComponents": {},
     "sitemapLocation": "sitemap.json",
     "tabBar": {
         "list": [

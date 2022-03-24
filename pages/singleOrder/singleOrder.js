@@ -15,6 +15,7 @@ Page({
         userInfo: {}
     },
 
+    // 表单数据发生改变
     handleInput(event) {
         let type = event.currentTarget.id;
         this.setData({
@@ -23,6 +24,7 @@ Page({
     },
 
     onLoad: function (options) {
+        // 从url获取order对象
         let data = JSON.parse(options.order);
         this.setData({
             orderData: data
@@ -57,6 +59,7 @@ Page({
         });
     },
 
+    // 普通用户-添加反馈
     addFeedback: function () {
         let cookie = getStorage('cookie');
         let orderId = this.data.orderData.id;
@@ -98,6 +101,7 @@ Page({
         });
     },
 
+    // 维修员-完成工单
     finishOrder: function () {
         let cookie = getStorage('cookie');
         let orderId = this.data.orderData.id;

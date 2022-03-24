@@ -1,4 +1,6 @@
 {
-    "usingComponents": {},
+    "usingComponents": {
+        "cu-custom": "/components/cu-custom/cu-custom"
+    },
     "navigationBarTitleText": "登录"
 }
