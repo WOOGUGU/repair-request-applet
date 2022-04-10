@@ -204,8 +204,8 @@ Page({
         for (let i in timeData) {
             timeList.push(timeData[i].picker)
         }
-        let dateStart = pickerRes.data.data.now;
-        let dateEnd = pickerRes.data.data.after;
+        let dateStart = pickerRes.data.data.start;
+        let dateEnd = pickerRes.data.data.end;
         // 故障类型picker数据
         let typeData = pickerRes.data.data.picker.des;
         let typeList = [];
