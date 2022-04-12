@@ -11,6 +11,7 @@ Page({
         per: [5, 55, 100, 0, 100],
         progress_color: ['#FFA500', '#1E90FF', '#2E8B57', '#656565', '#FF5D5D'],
         orderData: {},
+        score: 0,
         feedback: '',
         userInfo: {}
     },
@@ -20,6 +21,14 @@ Page({
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
+        })
+    },
+
+    changeScore: function (event) {
+        // 星星点击事件
+        let target_score = event.currentTarget.id;
+        this.setData({
+            score: target_score
         })
     },
 
@@ -62,8 +71,26 @@ Page({
     // 普通用户-添加反馈
     addFeedback: function () {
         let cookie = getStorage('cookie');
+        if (this.data.score == 0) {
+            wx.showModal({
+                title: '系统提示',
+                content: '请选择评价星级',
+                showCancel: false,
+            });
+            return;
+        } else if (this.data.feedback == null || this.data.feedback == '') {
+            wx.showModal({
+                title: '系统提示',
+                content: '请填写评价内容',
+                showCancel: false,
+            });
+            return;
+        }
+
         let orderId = this.data.orderData.id;
+        let stars = this.data.score;
         let feedback = this.data.feedback;
+
         wx.showModal({
             title: '系统提示',
             content: '确定要继续吗？',
@@ -74,6 +101,7 @@ Page({
                         'content-type': 'application/x-www-form-urlencoded'
                     }, {
                         orderId,
+                        stars,
                         feedback
                     });
                     if (feedbackRes.data.code == '00000') {

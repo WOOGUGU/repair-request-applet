@@ -51,6 +51,10 @@
         <view class="feedback_title">
             <view class="title-text">提交评价</view>
         </view>
+        <view class="star-item">
+            <text wx:for="{{[1, 2, 3, 4, 5]}}" class="star fa {{item <= score ? 'fa-star': 'fa-star-o'}}"
+                  id="{{item}}" bindtap="changeScore"></text>
+        </view>
         <view class="form-item">
             <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价"
                       bindinput="handleInput"></textarea>
