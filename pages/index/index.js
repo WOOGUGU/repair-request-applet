@@ -24,8 +24,7 @@ Page({
             let noticeData = noticeRes.data.data;
             for (let i in noticeData) {
                 // 跳过隐藏通知
-                if (noticeData[i].displayStatus) {
-                    // if (noticeData[i].displayStatus == 2) {
+                if (noticeData[i].displayStatus == 2) {
                     continue;
                 }
                 // 展示通知
