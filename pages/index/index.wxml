@@ -16,7 +16,7 @@
         <view wx:for="{{articleList}}" class="article-item" id="{{index}}" bindtap="toArticle">
             <view class="article-cover">
                 <image class="article-cover-image"
-                       src="{{item.cover}}"></image>
+                       src="{{item.coverPath}}"></image>
             </view>
             <view class="article-info">
                 <view class="article-title">

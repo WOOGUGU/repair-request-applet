@@ -24,7 +24,8 @@ Page({
             let noticeData = noticeRes.data.data;
             for (let i in noticeData) {
                 // 跳过隐藏通知
-                if (noticeData[i].displayStatus == 2) {
+                if (noticeData[i].displayStatus) {
+                    // if (noticeData[i].displayStatus == 2) {
                     continue;
                 }
                 // 展示通知
@@ -46,7 +47,6 @@ Page({
         // 请求文章数据
         let articleRes = await request('/v2/article/selectAllArticle', 'GET');
         if (articleRes.data.code == '00000') {
-            console.log(this.data.articleData);
             let articleData = articleRes.data.data;
             let articleList = [];
             for (let i in articleData) {
@@ -54,25 +54,8 @@ Page({
                 if (articleData[i].displayStatus == 2) {
                     continue;
                 }
-                let id = articleData[i].id;
-                let path = articleData[i].contentPath;
-                let time = articleData[i].updateTime.substring(0, 10);
-                // 请求文章标题、摘要、封面
-                let html = await request(path, 'GET');
-                let title = html.data.split('msg_title')[2].split("'")[1];
-                let des = html.data.split('msg_desc')[1].split('"')[1];
-                let cover = html.data.split('cdn_url_235_1')[1].split('"')[1];
-                // console.log(title);
-                // console.log(des);
-                // console.log(cover);
-                articleList.push({
-                    id,
-                    title,
-                    des,
-                    cover,
-                    path,
-                    time
-                })
+                articleData[i].time = articleData[i].updateTime.substring(0, 10);
+                articleList.push(articleData[i]);
             }
             this.setData({
                 articleList: articleList
