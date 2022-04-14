@@ -9,7 +9,6 @@ Page({
         userInfo: {},
         cookie: '',
         tel: '',
-        tel_local: '',
         type: 'wire',
         posResult: null,
         posArray: [[], []],
@@ -117,13 +116,6 @@ Page({
         let des = (this.data.desSet[this.data.desIndex] == '其他' ? '' : this.data.desSet[this.data.desIndex]) + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
-        // 保存tel
-        wx.setStorage({
-            key: 'tel',
-            data: {
-                tel: tel
-            }
-        });
         wx.showModal({
             title: '系统提示',
             content: '确定要提交吗？',
@@ -158,24 +150,14 @@ Page({
         });
     },
 
-    onShow: function () {
-        // 尝试从本地获取tel
-        let tel_local = getStorage('tel');
-        if (tel_local) {
-            this.setData({
-                tel_local: tel_local.tel,
-                tel: tel_local.tel
-            })
-        }
-    },
-
     onLoad: async function (options) {
         let userInfo = getStorage('localUserInfo');
         let cookie = getStorage('cookie');
         if (userInfo && cookie) {
             this.setData({
                 userInfo,
-                cookie
+                cookie,
+                tel: userInfo.tel
             });
         }
 
