@@ -28,6 +28,8 @@
             <view class="order-body-text tel">联系方式：{{orderData.tel}}</view>
             <view class="order-body-text solver">维修人员及联系方式：{{orderData.solver == null ? '待分配' : orderData.solver}}
             </view>
+            <view class="order-body-text remark">备注：{{orderData.remark}}
+            </view>
         </view>
         <view class="order-body">
             <view class="order-body-text time_start">工单发起时间：{{orderData.timeStart}}</view>
