@@ -23,16 +23,16 @@
         </view>
         <view class="order-body">
             <view class="order-body-text type">网络类型：{{orderData.type == 'wire' ? '有线网络' : '无线网络'}}</view>
-            <view class="order-body-text time_subscribe">预约上门时间：{{orderData.timeSubscribe}}</view>
+            <view class="order-body-text time_subscribe">预计上门时间：{{orderData.timeSubscribe}}</view>
             <view class="order-body-text sender">发起者：{{orderData.sender}}</view>
             <view class="order-body-text tel">联系方式：{{orderData.tel}}</view>
-            <view class="order-body-text solver">维修人员：{{orderData.solver == null ? '待分配' : orderData.solver}}</view>
+            <view class="order-body-text solver">维修人员及联系方式：{{orderData.solver == null ? '待分配' : orderData.solver}}
+            </view>
+            <view class="order-body-text remark">备注：{{orderData.remark}}
+            </view>
         </view>
         <view class="order-body">
             <view class="order-body-text time_start">工单发起时间：{{orderData.timeStart}}</view>
-            <view wx:if="{{orderData.timeDistribution != null}}" class="order-body-text time_distribution">
-                工单分配时间：{{orderData.timeDistribution}}
-            </view>
             <view wx:if="{{orderData.timeEnd != null}}" class="order-body-text time_end">工单完成时间：{{orderData.timeEnd}}
             </view>
             <view wx:if="{{orderData.progress == 2}}" class="order-body-text feedback">
@@ -50,6 +50,10 @@
           class="feedback_">
         <view class="feedback_title">
             <view class="title-text">提交评价</view>
+        </view>
+        <view class="star-item">
+            <text wx:for="{{[1, 2, 3, 4, 5]}}" class="star fa {{item <= score ? 'fa-star': 'fa-star-o'}}"
+                  id="{{item}}" bindtap="changeScore"></text>
         </view>
         <view class="form-item">
             <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价"

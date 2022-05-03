@@ -17,11 +17,6 @@
             </view>
 
             <view class="form-item">
-                <input class="opinionInput" value="" type="text" id="name" maxlength="15" placeholder="姓名（选填）"
-                       bindinput="handleInput"/>
-            </view>
-
-            <view class="form-item">
                 <input class="opinionInput" value="" type="text" id="tel" maxlength="11" placeholder="联系方式（选填）"
                        bindinput="handleInput"/>
             </view>

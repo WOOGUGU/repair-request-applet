@@ -1,3 +1,5 @@
+@import '/static/icon/font-awesome.wxss';
+
 page {
     background-color: #f6f6f6;
 }
@@ -138,6 +140,18 @@ page {
 .feedback_ .form-item {
     width: 100%;
     display: flex;
+}
+
+.feedback_ .star-item {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.feedback_ .star-item .star {
+    padding: 10rpx 12rpx;
+    font-size: 48rpx;
+    color: gold;
 }
 
 .feedback_ .form-item textarea {

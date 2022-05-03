@@ -28,12 +28,21 @@ Page({
     },
 
     toExit: function () {
+        let userInfo = getStorage('localUserInfo');
+        if (!userInfo) {
+            return;
+        }
         wx.clearStorage();
         this.setData({
                 test: 0,
                 name: ''
             }
         )
+        wx.showModal({
+            title: '系统通知',
+            content: '已退出登录',
+            showCancel: false
+        });
     },
 
     onShow: function () {

@@ -3,8 +3,9 @@ import request from "../../utils/request";
 
 Page({
     data: {
+        userInfo: {},
+        cookie: '',
         opinion: '',
-        name: '',
         tel: '',
         topNavBar: {
             bgColor: 'bg-gradual-blue'
@@ -40,7 +41,7 @@ Page({
 
         let cookie = this.data.cookie;
         let uid = this.data.userInfo.id;
-        let content = ((this.data.name != null && this.data.name != '') ? (this.data.name + '：') : 'Anonymous：') + this.data.opinion;
+        let content = this.data.opinion;
         let tel = (this.data.tel != null && this.data.tel != '') ? this.data.tel : '';
         wx.showModal({
             title: '系统提示',
@@ -136,6 +137,11 @@ Page({
                     }
                 }
             });
+            return;
         }
+        this.setData({
+            userInfo,
+            cookie,
+        });
     }
 });

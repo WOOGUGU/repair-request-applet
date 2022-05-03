@@ -52,7 +52,7 @@ Page({
             let res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
                 cookie: cookie
             }, {
-                name: userInfo.name
+                name: userInfo.name + ' ' + userInfo.tel
             });
             res = res.data;
             if (res.code == '00000') {

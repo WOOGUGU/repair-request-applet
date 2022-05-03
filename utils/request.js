@@ -10,7 +10,7 @@ export default (url, method, header = {'content-type': 'application/json'}, data
             header,
             data,
             success: (res) => {
-                // console.log('res', res);
+                console.log('res', res);
                 // console.log('res.data', res.data);
                 resolve(res);
             },
