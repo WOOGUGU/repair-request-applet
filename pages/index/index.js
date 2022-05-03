@@ -12,7 +12,7 @@ Page({
         let i = event.currentTarget.id;
         // 目标url带上对应path
         wx.navigateTo({
-            url: '/pages/article/article?path=' + JSON.stringify(this.data.articleList[i].path)
+            url: '/pages/article/article?path=' + JSON.stringify(this.data.articleList[i].contentPath)
         })
     },
 
