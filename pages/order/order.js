@@ -60,7 +60,7 @@ Page({
                     listData: res.data
                 });
                 console.log(this.data.listData);
-            } else if (res.code == 'A0200') {
+            } else if (res.code == 'B0300') {
                 wx.showModal({
                     title: '系统提示',
                     content: res.userMsg,
@@ -76,7 +76,7 @@ Page({
                         }
                     }
                 });
-            } else if (res.code == 'E0100') {
+            } else {
                 wx.showModal({
                     title: '系统提示',
                     content: res.userMsg,
@@ -96,7 +96,7 @@ Page({
                     listData: res.data
                 });
                 console.log(this.data.listData);
-            } else if (res.code == 'A0200') {
+            } else if (res.code == 'B0300') {
                 wx.showModal({
                     title: '系统提示',
                     content: res.userMsg,
@@ -112,7 +112,7 @@ Page({
                         }
                     }
                 });
-            } else if (res.code == 'E0100') {
+            } else {
                 wx.showModal({
                     title: '系统提示',
                     content: res.userMsg,

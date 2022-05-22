@@ -67,7 +67,7 @@ Page({
                                 });
                             }
                         });
-                    } else if (sendFeedbackRes.data.code == 'A0200') {
+                    } else if (sendFeedbackRes.data.code == 'B0300') {
                         // cookie失效
                         wx.showModal({
                             title: '系统提示',
@@ -121,7 +121,7 @@ Page({
             cookie: cookie
         });
         res = res.data;
-        if (res.code == 'F300' || res.code == 'A0200') {
+        if (res.code == 'B0100') {
             wx.showModal({
                 title: '系统提示',
                 content: res.userMsg,

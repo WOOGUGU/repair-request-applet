@@ -53,13 +53,6 @@ Page({
                 data: loginRes.data.data
             });
             wx.navigateBack();
-        } else if (loginRes.data.code == 'A0201' || loginRes.data.code == 'A0202') {
-            // 用户名不存在/密码错误
-            wx.showModal({
-                title: '系统提示',
-                content: loginRes.data.userMsg,
-                showCancel: false,
-            });
         } else {
             wx.showModal({
                 title: '系统提示',

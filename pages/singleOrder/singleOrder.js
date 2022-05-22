@@ -138,13 +138,13 @@ Page({
             content: '确定要继续吗？',
             success: async function (res) {
                 if (res.confirm) {
-                    let feedbackRes = await request('/v2/order/finishOrder', 'POST', {
+                    let finishRes = await request('/v2/order/finishOrder', 'POST', {
                         cookie,
                         'content-type': 'application/x-www-form-urlencoded'
                     }, {
                         orderId,
                     });
-                    if (feedbackRes.data.code == '00000') {
+                    if (finishRes.data.code == '00000') {
                         wx.showModal({
                             title: '系统提示',
                             content: '工单状态已更新',
