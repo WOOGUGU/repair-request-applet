@@ -61,6 +61,17 @@
                 <label>故障补充说明</label>
                 <input class="input-higher" value="" placeholder="请输入" type="text" id="desPlus"
                        bindinput="handleInput"></input>
+                <button class="btn" bindtap="chooseMedia">{{media.length == 0 ? '' : '重新'}}选择图片/视频</button>
+                <view class="order-media">
+                    <view class="order-medium" wx:for="{{media}}">
+                        <image class="order-medium-content" wx:if="{{item.fileType == 'image'}}"
+                               src="{{item.tempFilePath}}"
+                               id="{{index}}"
+                               bindtap="previewMedia"></image>
+                        <image class="order-medium-content" wx:else src="{{item.thumbTempFilePath}}" id="{{index}}"
+                               bindtap="previewMedia"></image>
+                    </view>
+                </view>
             </view>
 
             <view class="form-item">
@@ -74,7 +85,7 @@
                 </picker>
             </view>
 
-            <button class="btn" bindtap="submit">提交</button>
+            <button class="btn" bindtap="submit" disabled="{{disabled}}">提交</button>
         </view>
 
     </view>
