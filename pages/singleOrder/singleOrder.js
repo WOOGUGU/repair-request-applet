@@ -21,7 +21,7 @@ Page({
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
-        })
+        });
     },
 
     changeScore: function (event) {
@@ -29,7 +29,7 @@ Page({
         let target_score = event.currentTarget.id;
         this.setData({
             score: target_score
-        })
+        });
     },
 
     onLoad: function (options) {
@@ -37,7 +37,7 @@ Page({
         let data = JSON.parse(options.order);
         this.setData({
             orderData: data
-        })
+        });
     },
 
     onShow: function () {
@@ -60,7 +60,7 @@ Page({
                         });
                     }
                 }
-            })
+            });
             return;
         }
         this.setData({
@@ -113,16 +113,16 @@ Page({
                                 if (res.confirm) {
                                     wx.reLaunch({
                                         url: '/pages/order/order'
-                                    })
+                                    });
                                 }
                             }
-                        })
+                        });
                     } else {
                         wx.showModal({
                             title: '系统提示',
                             content: '出现错误',
                             showCancel: false
-                        })
+                        });
                     }
                 }
             }
@@ -153,19 +153,19 @@ Page({
                                 if (res.confirm) {
                                     wx.reLaunch({
                                         url: '/pages/order/order'
-                                    })
+                                    });
                                 }
                             }
-                        })
+                        });
                     } else {
                         wx.showModal({
                             title: '系统提示',
                             content: '出现错误',
                             showCancel: false
-                        })
+                        });
                     }
                 }
             }
         });
     }
-});
+})

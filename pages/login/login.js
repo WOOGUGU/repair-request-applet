@@ -15,7 +15,7 @@ Page({
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
-        })
+        });
     },
 
     // 提交表单

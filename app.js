@@ -14,7 +14,7 @@ App({
                 this.globalData.Custom = custom * 0.65;
                 this.globalData.CustomBar = Math.floor((custom.bottom + custom.top - e.statusBarHeight) * 0.65);
             }
-        })
+        });
     }
 
 })

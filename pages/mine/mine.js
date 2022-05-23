@@ -12,7 +12,7 @@ Page({
     toLogin: function () {
         wx.navigateTo({
             url: '/pages/login/login'
-        })
+        });
     },
 
     toOpinion: function () {
@@ -24,7 +24,7 @@ Page({
     toAbout: function () {
         wx.navigateTo({
             url: '/pages/about/about'
-        })
+        });
     },
 
     toExit: function () {

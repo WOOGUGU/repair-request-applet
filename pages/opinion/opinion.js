@@ -17,7 +17,7 @@ Page({
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
-        })
+        });
     },
 
     submit: function () {
@@ -114,7 +114,7 @@ Page({
                         wx.navigateBack();
                     }
                 }
-            })
+            });
             return;
         }
         let res = await request('/v2/inner/isExpired', 'GET', {

@@ -11,7 +11,7 @@ Page({
     sendOrder() {
         wx.navigateTo({
             url: '/pages/sendOrder/sendOrder'
-        })
+        });
     },
 
     clickNavbar: function (event) {
@@ -41,7 +41,7 @@ Page({
                         });
                     }
                 }
-            })
+            });
             return;
         }
         this.setData({

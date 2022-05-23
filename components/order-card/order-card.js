@@ -44,7 +44,7 @@ Component({
                                 success: function (res) {
                                     wx.reLaunch({
                                         url: '/pages/order/order'
-                                    })
+                                    });
                                 }
                             });
                         } else {
@@ -63,7 +63,7 @@ Component({
             let data = this.data.orderData;
             wx.navigateTo({
                 url: '/pages/singleOrder/singleOrder?order=' + JSON.stringify(data),
-            })
+            });
         }
     }
 

@@ -13,7 +13,7 @@ Page({
         // 目标url带上对应path
         wx.navigateTo({
             url: '/pages/article/article?path=' + JSON.stringify(this.data.articleList[i].contentPath)
-        })
+        });
     },
 
     onLoad: async function (options) {
@@ -58,7 +58,7 @@ Page({
             }
             this.setData({
                 articleList: articleList
-            })
+            });
         }
     }
 
