@@ -138,17 +138,19 @@ Page({
 
         let filesPath = [];
         let filesName = [];
+        let filesType = [];
         let filenamePrefix = new Date().getTime();
         for (let file of this.data.media) {
             filesPath.push(file.tempFilePath);
             let temp = file.tempFilePath.split('.');
             filesName.push(filenamePrefix + '-' + filesPath.length + '.' + temp[temp.length - 1]);
+            filesType.push(file.fileType);
         }
         // console.log(filesName);
         // console.log(filesPath);
 
         var cos = new COS({
-            // ForcePathStyle: true, // 如果使用了很多存储桶，可以通过打开后缀式，减少配置白名单域名数量，请求时会用地域域名
+            ForcePathStyle: true, // 如果使用了很多存储桶，可以通过打开后缀式，减少配置白名单域名数量，请求时会用地域域名
             getAuthorization: function (options, callback) {
                 callback({
                     TmpSecretId: stsData.id,
@@ -184,7 +186,10 @@ Page({
                     }
                 });
             });
-            urls.push(uploadData.headers.location);
+            urls.push({
+                url: 'https://' + uploadData.Location,
+                type: filesType[i]
+            });
         }
         return JSON.stringify(urls);
     },
@@ -268,7 +273,7 @@ Page({
             success: async function (res) {
                 if (res.confirm) {
                     let imgPath = await that.uploadMedia();
-                    console.log(imgPath);
+                    // console.log(imgPath);
                     let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
                         cookie,
                         'content-type': 'application/x-www-form-urlencoded'

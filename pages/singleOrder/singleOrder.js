@@ -33,8 +33,8 @@ Page({
     },
 
     previewMedia: function () {
-        let urls = JSON.parse(this.data.orderData.imgPath);
-        if (urls.length == 0) {
+        let files = JSON.parse(this.data.orderData.imgPath);
+        if (files.length == 0) {
             wx.showModal({
                 title: '系统提示',
                 content: '当前工单没有图片/视频',
@@ -43,9 +43,10 @@ Page({
             return;
         }
         let sources = [];
-        for (let url of urls) {
+        for (let file of files) {
             sources.push({
-                url
+                url: file.url,
+                type: file.type
             });
         }
         wx.previewMedia({
