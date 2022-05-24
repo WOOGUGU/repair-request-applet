@@ -32,6 +32,27 @@ Page({
         });
     },
 
+    previewMedia: function () {
+        let urls = JSON.parse(this.data.orderData.imgPath);
+        if (urls.length == 0) {
+            wx.showModal({
+                title: '系统提示',
+                content: '当前工单没有图片/视频',
+                showCancel: false,
+            });
+            return;
+        }
+        let sources = [];
+        for (let url of urls) {
+            sources.push({
+                url
+            });
+        }
+        wx.previewMedia({
+            sources
+        });
+    },
+
     onLoad: function (options) {
         // 从url获取order对象
         let data = JSON.parse(options.order);
@@ -129,10 +150,12 @@ Page({
         });
     },
 
-    // 维修员-完成工单
-    finishOrder: function () {
+    // 维修员-填写反馈/完成工单
+    finishOrder: function (event) {
         let cookie = getStorage('cookie');
         let orderId = this.data.orderData.id;
+        let feedback = event.currentTarget.id == 'finish' ? this.data.orderData.feedback : this.data.feedback;
+        let progress = event.currentTarget.id == 'finish' ? 2 : this.data.orderData.progress;
         wx.showModal({
             title: '系统提示',
             content: '确定要继续吗？',
@@ -143,6 +166,8 @@ Page({
                         'content-type': 'application/x-www-form-urlencoded'
                     }, {
                         orderId,
+                        feedback,
+                        progress
                     });
                     if (finishRes.data.code == '00000') {
                         wx.showModal({

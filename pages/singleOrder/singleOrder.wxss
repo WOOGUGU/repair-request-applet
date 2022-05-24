@@ -110,6 +110,11 @@ page {
     width: 80%;
 }
 
+.order-options .media_btn {
+    align-self: center;
+    width: 80%;
+}
+
 .feedback_ {
     margin-top: 40rpx;
     width: 85%;

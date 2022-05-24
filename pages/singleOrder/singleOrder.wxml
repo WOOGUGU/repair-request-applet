@@ -21,6 +21,11 @@
                 <view wx:if="{{orderData.progress == 4}}" class="progress-text {{color[4]}}">审核不通过</view>
             </view>
         </view>
+        <view class="order-options">
+            <view class="media_btn">
+                <button class="btn" bindtap="previewMedia">查看图片/视频信息</button>
+            </view>
+        </view>
         <view class="order-body">
             <view class="order-body-text type">网络类型：{{orderData.type == 'wire' ? '有线网络' : '无线网络'}}</view>
             <view class="order-body-text time_subscribe">预计上门时间：{{orderData.timeSubscribe}}</view>
@@ -28,39 +33,51 @@
             <view class="order-body-text tel">联系方式：{{orderData.tel}}</view>
             <view class="order-body-text solver">维修人员及联系方式：{{orderData.solver == null ? '待分配' : orderData.solver}}
             </view>
-            <view class="order-body-text remark">备注：{{orderData.remark}}
+            <view class="order-body-text remark">审核备注：{{orderData.remark == null ? '' : orderData.remark}}
             </view>
         </view>
         <view class="order-body">
             <view class="order-body-text time_start">工单发起时间：{{orderData.timeStart}}</view>
             <view wx:if="{{orderData.timeEnd != null}}" class="order-body-text time_end">工单完成时间：{{orderData.timeEnd}}
             </view>
-            <view wx:if="{{orderData.progress == 2}}" class="order-body-text feedback">
-                评价状态：{{orderData.feedback == null ? '未评价' : '已评价'}}
-            </view>
+            <!--            <view wx:if="{{orderData.progress == 2}}" class="order-body-text feedback">-->
+            <!--                评价状态：{{orderData.feedback == null ? '未评价' : '已评价'}}-->
+            <!--            </view>-->
         </view>
         <view wx:if="{{userInfo.authorities[0].authority == 'ROLE_repairman' && orderData.progress == 1}}"
               class="order-options">
             <view class="finish_btn">
-                <button class="btn" bindtap="finishOrder">完成</button>
+                <button class="btn" id="finish" bindtap="finishOrder">完成工单</button>
             </view>
         </view>
     </view>
-    <view wx:if="{{userInfo.authorities[0].authority == 'ROLE_user' && orderData.progress == 2 && orderData.feedback == null}}"
+    <view wx:if="{{userInfo.authorities[0].authority == 'ROLE_repairman' && orderData.feedback == null}}"
           class="feedback_">
         <view class="feedback_title">
-            <view class="title-text">提交评价</view>
-        </view>
-        <view class="star-item">
-            <text wx:for="{{[1, 2, 3, 4, 5]}}" class="star fa {{item <= score ? 'fa-star': 'fa-star-o'}}"
-                  id="{{item}}" bindtap="changeScore"></text>
+            <view class="title-text">提交反馈</view>
         </view>
         <view class="form-item">
-            <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价"
+            <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写反馈"
                       bindinput="handleInput"></textarea>
         </view>
         <view class="feedback_btn">
-            <button class="btn" bindtap="addFeedback">提交</button>
+            <button class="btn" id="feedback" bindtap="finishOrder">提交反馈</button>
         </view>
     </view>
+    <!--    <view wx:if="{{userInfo.authorities[0].authority == 'ROLE_user' && orderData.progress == 2 && orderData.feedback == null}}" class="feedback_">-->
+    <!--        <view class="feedback_title">-->
+    <!--            <view class="title-text">提交评价</view>-->
+    <!--        </view>-->
+    <!--        <view class="star-item">-->
+    <!--            <text wx:for="{{[1, 2, 3, 4, 5]}}" class="star fa {{item <= score ? 'fa-star': 'fa-star-o'}}"-->
+    <!--                  id="{{item}}" bindtap="changeScore"></text>-->
+    <!--        </view>-->
+    <!--        <view class="form-item">-->
+    <!--            <textarea class="font-break" value="" type="text" id="feedback" maxlength="50" placeholder="请在此处填写评价"-->
+    <!--                      bindinput="handleInput"></textarea>-->
+    <!--        </view>-->
+    <!--        <view class="feedback_btn">-->
+    <!--            <button class="btn" bindtap="addFeedback">提交</button>-->
+    <!--        </view>-->
+    <!--    </view>-->
 </view>
