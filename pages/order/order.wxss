@@ -51,7 +51,7 @@ page {
 
 .sendOrder button {
     width: 90%;
-    font-size: 32rpx;
+    /*font-size: 32rpx;*/
     margin: 0 auto;
 }
 
