@@ -23,7 +23,7 @@
         </view>
         <view class="order-options">
             <view class="media_btn">
-                <button class="btn" bindtap="previewMedia">查看图片/视频信息</button>
+                <button class="btn" bindtap="previewMedia">查看图片信息</button>
             </view>
         </view>
         <view class="order-body">

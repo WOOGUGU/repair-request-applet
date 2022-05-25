@@ -79,7 +79,7 @@ Page({
         let username = this.data.userInfo.username;
         wx.chooseMedia({
             count: 3,
-            mediaType: ['image', 'video', 'mix'],
+            mediaType: ['image'],
             maxDuration: 10,
             camera: 'back',
             success: function (res) {

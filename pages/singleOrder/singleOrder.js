@@ -37,7 +37,7 @@ Page({
         if (files.length == 0) {
             wx.showModal({
                 title: '系统提示',
-                content: '当前工单没有图片/视频',
+                content: '当前工单没有图片',
                 showCancel: false,
             });
             return;
