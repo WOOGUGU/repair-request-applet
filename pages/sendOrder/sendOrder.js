@@ -1,6 +1,5 @@
 import getStorage from "../../utils/getStorage";
 import request from "../../utils/request";
-import config from "../../utils/config";
 
 var COS = require('../../utils/cos-wx-sdk-v5')
 

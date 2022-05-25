@@ -56,7 +56,7 @@ Page({
         } else {
             this.setData({
                     test: 0,
-                name: ''
+                    name: ''
                 }
             )
         }
