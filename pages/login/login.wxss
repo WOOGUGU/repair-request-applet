@@ -14,7 +14,8 @@
 /* 登录框 start */
 .loginContainer {
     width: 70%;
-    height: 60%;
+    /*height: 90%;*/
+    padding: 40rpx 0;
     border-radius: 20rpx;
     box-shadow: #dddddd 5rpx 5rpx 15rpx;
     background-color: #ffffff;
