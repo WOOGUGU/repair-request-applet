@@ -1,8 +1,3 @@
 {
-    "usingComponents": {},
-    "navigationStyle": "default",
-    "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#13A8CD",
-    "navigationBarTitleText": "首页",
-    "van-icon": "/dist/icon/index"
+    "navigationBarTitleText": "首页"
 }

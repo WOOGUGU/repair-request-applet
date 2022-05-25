@@ -3,7 +3,7 @@
 }
 
 .bg {
-    background: linear-gradient(45deg, #0081ff, #1cbbb4);
+    background: linear-gradient(90deg, #0071ba, #81c37a);
 }
 
 .avatar {

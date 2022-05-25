@@ -13,7 +13,7 @@
     "window": {
         "navigationStyle": "default",
         "navigationBarTextStyle": "white",
-        "navigationBarBackgroundColor": "#13A8CD",
+        "navigationBarBackgroundColor": "#00aeef",
         "backgroundTextStyle": "light"
     },
     "usingComponents": {},
