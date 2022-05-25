@@ -1,4 +1,3 @@
-<view class="top">报修工单</view>
 <view class="container" wx:if="{{userInfo.authorities[0].authority == 'ROLE_user'}}">
     <view class="navbar">
         <view class="nav">

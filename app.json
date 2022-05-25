@@ -11,11 +11,10 @@
         "pages/article/article"
     ],
     "window": {
-        "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "ColorUI",
-        "navigationStyle": "custom",
-        "navigationBarTextStyle": "white"
+        "navigationStyle": "default",
+        "navigationBarTextStyle": "white",
+        "navigationBarBackgroundColor": "#13A8CD",
+        "backgroundTextStyle": "light"
     },
     "usingComponents": {},
     "sitemapLocation": "sitemap.json",

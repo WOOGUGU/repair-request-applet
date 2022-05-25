@@ -6,10 +6,7 @@ Page({
         userInfo: {},
         cookie: '',
         opinion: '',
-        tel: '',
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        }
+        tel: ''
     },
 
     // 表单数据发生改变

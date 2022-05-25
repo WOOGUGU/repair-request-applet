@@ -2,11 +2,8 @@ import getStorage from "../../utils/getStorage";
 
 Page({
     data: {
-        name: "n",
-        test: 0,
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        },
+        username: '',
+        isLogin: false
     },
 
     toLogin: function () {
@@ -34,10 +31,9 @@ Page({
         }
         wx.clearStorage();
         this.setData({
-                test: 0,
-                name: ''
-            }
-        )
+            username: '',
+            isLogin: false
+        });
         wx.showModal({
             title: '系统通知',
             content: '已退出登录',
@@ -49,16 +45,9 @@ Page({
         let userInfo = getStorage('localUserInfo');
         if (userInfo) {
             this.setData({
-                    test: 1,
-                    name: userInfo.username
-                }
-            )
-        } else {
-            this.setData({
-                    test: 0,
-                    name: ''
-                }
-            )
+                username: userInfo.username,
+                isLogin: true
+            });
         }
     }
 

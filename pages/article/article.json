@@ -1,7 +1,7 @@
 {
     "usingComponents": {},
     "navigationStyle": "default",
-    "navigationBarTitleText": "文章详情",
     "navigationBarTextStyle": "white",
-    "navigationBarBackgroundColor": "#13A8CD"
+    "navigationBarBackgroundColor": "#13A8CD",
+    "navigationBarTitleText": "文章详情"
 }

@@ -5,9 +5,6 @@ var COS = require('../../utils/cos-wx-sdk-v5')
 
 Page({
     data: {
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        },
         userInfo: {},
         cookie: '',
         tel: '',

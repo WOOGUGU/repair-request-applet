@@ -3,9 +3,6 @@ import request from "../../utils/request";
 
 Page({
     data: {
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        },
         status: ['待审核', '待处理', '已完成', '已取消', '审核不通过'],
         color: ['zero', 'one', 'two', 'three', 'four'],
         per: [5, 55, 100, 0, 100],

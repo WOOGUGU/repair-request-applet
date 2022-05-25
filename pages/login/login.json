@@ -1,6 +1,7 @@
 {
-    "usingComponents": {
-        "cu-custom": "/components/cu-custom/cu-custom"
-    },
+    "usingComponents": {},
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#13A8CD",
     "navigationBarTitleText": "登录"
 }

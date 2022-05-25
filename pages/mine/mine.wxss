@@ -1,1 +1,21 @@
-/* pages/mine/mine.wxss */
+.user {
+    height: 360rpx;
+}
+
+.bg {
+    background: linear-gradient(45deg, #0081ff, #1cbbb4);
+}
+
+.avatar {
+    height: 100rpx;
+    width: 100rpx;
+}
+
+.username-text {
+    color: #fff;
+    font-size: 40rpx;
+}
+
+.menu-text {
+    font-size: 36rpx !important;
+}

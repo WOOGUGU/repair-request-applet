@@ -2,5 +2,8 @@
     "usingComponents": {
         "order-card": "/components/order-card/order-card"
     },
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#13A8CD",
     "navigationBarTitleText": "报修工单"
 }

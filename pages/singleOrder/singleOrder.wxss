@@ -6,7 +6,7 @@ page {
 
 .container {
     width: 100%;
-    margin-top: 80rpx;
+    margin-top: 30rpx;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,6 @@ page {
 }
 
 .order {
-    margin-top: 40rpx;
     width: 85%;
     padding: 20rpx;
     border-radius: 15px;
@@ -116,7 +115,7 @@ page {
 }
 
 .feedback_ {
-    margin-top: 40rpx;
+    margin: 40rpx 0;
     width: 85%;
     padding: 20rpx;
     border-radius: 15px;

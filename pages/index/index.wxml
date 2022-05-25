@@ -1,5 +1,3 @@
-<!--pages/index/index.wxml-->
-<view class="top">主页</view>
 
 <view class="indexContainer">
 
