@@ -12,7 +12,7 @@ page {
     text-align: center;
     line-height: 180rpx;
     color: white;
-    font-size: 13px;
+    font-size: 40rpx;
     font-weight: normal;
     background: linear-gradient(45deg, #0081ff, #1cbbb4);
     position: sticky;
@@ -33,6 +33,7 @@ input {
 
 .btn {
     color: white;
+    font-size: 36rpx;
     margin: 20rpx 0 30rpx;
     height: 80rpx;
     line-height: 80rpx;
