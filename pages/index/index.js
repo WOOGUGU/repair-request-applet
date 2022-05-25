@@ -3,8 +3,8 @@ import request from "../../utils/request";
 Page({
 
     data: {
-        slideData: {},
-        articleList: {}
+        slideData: [],
+        articleList: []
     },
 
     toArticle: function (event) {
