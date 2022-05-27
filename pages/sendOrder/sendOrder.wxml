@@ -82,7 +82,7 @@
                 </picker>
             </view>
 
-            <button class="btn" bindtap="submit" disabled="{{disabled}}">提交</button>
+            <button class="btn" bindtap="submit">提交</button>
         </view>
 
     </view>

@@ -21,21 +21,21 @@ Page({
         });
     },
 
-    changeScore: function (event) {
-        // 星星点击事件
-        let target_score = event.currentTarget.id;
-        this.setData({
-            score: target_score
-        });
-    },
+    // changeScore: function (event) {
+    //     // 星星点击事件
+    //     let target_score = event.currentTarget.id;
+    //     this.setData({
+    //         score: target_score
+    //     });
+    // },
 
     previewMedia: function () {
         let files = JSON.parse(this.data.orderData.imgPath);
         if (files.length == 0) {
-            wx.showModal({
-                title: '系统提示',
-                content: '当前工单没有图片',
-                showCancel: false,
+            wx.showToast({
+                title: '当前工单没有图片',
+                icon: 'none',
+                duration: 1000
             });
             return;
         }
@@ -87,66 +87,69 @@ Page({
         });
     },
 
-    // 普通用户-添加反馈
-    addFeedback: function () {
-        let cookie = getStorage('cookie');
-        if (this.data.score == 0) {
-            wx.showModal({
-                title: '系统提示',
-                content: '请选择评价星级',
-                showCancel: false,
-            });
-            return;
-        } else if (this.data.feedback == null || this.data.feedback == '') {
-            wx.showModal({
-                title: '系统提示',
-                content: '请填写评价内容',
-                showCancel: false,
-            });
-            return;
-        }
-
-        let orderId = this.data.orderData.id;
-        let stars = this.data.score;
-        let feedback = this.data.feedback;
-
-        wx.showModal({
-            title: '系统提示',
-            content: '确定要继续吗？',
-            success: async function (res) {
-                if (res.confirm) {
-                    let feedbackRes = await request('/v2/order/updateOrderFeedback', 'POST', {
-                        cookie,
-                        'content-type': 'application/x-www-form-urlencoded'
-                    }, {
-                        orderId,
-                        stars,
-                        feedback
-                    });
-                    if (feedbackRes.data.code == '00000') {
-                        wx.showModal({
-                            title: '系统提示',
-                            content: '评价成功',
-                            showCancel: false,
-                            success: function (res) {
-                                if (res.confirm) {
-                                    wx.reLaunch({
-                                        url: '/pages/order/order'
-                                    });
-                                }
-                            }
-                        });
-                    } else {
-                        wx.showModal({
-                            title: '系统提示',
-                            content: '出现错误',
-                            showCancel: false
-                        });
-                    }
-                }
-            }
-        });
-    },
+    // 普通用户-添加评价
+    // addFeedback: function () {
+    //     let cookie = getStorage('cookie');
+    //     if (this.data.score == 0) {
+    //         wx.showModal({
+    //             title: '系统提示',
+    //             content: '请选择评价星级',
+    //             showCancel: false,
+    //         });
+    //         return;
+    //     } else if (this.data.feedback == null || this.data.feedback == '') {
+    //         wx.showModal({
+    //             title: '系统提示',
+    //             content: '请填写评价内容',
+    //             showCancel: false,
+    //         });
+    //         return;
+    //     }
+    //
+    //     let orderId = this.data.orderData.id;
+    //     let stars = this.data.score;
+    //     let feedback = this.data.feedback;
+    //
+    //     wx.showModal({
+    //         title: '系统提示',
+    //         content: '确定要继续吗？',
+    //         success: async function (res) {
+    //             if (res.confirm) {
+    //                 wx.showLoading({
+    //                     title: '加载中',
+    //                     mask: true
+    //                 });
+    //                 let feedbackRes = await request('/v2/order/updateOrderFeedback', 'POST', {
+    //                     cookie,
+    //                     'content-type': 'application/x-www-form-urlencoded'
+    //                 }, {
+    //                     orderId,
+    //                     stars,
+    //                     feedback
+    //                 });
+    //                 wx.hideLoading();
+    //                 if (feedbackRes.data.code == '00000') {
+    //                     wx.showToast({
+    //                         title: '评价成功',
+    //                         icon: 'success',
+    //                         duration: 1000
+    //                     });
+    //                     setTimeout(function () {
+    //                         wx.reLaunch({
+    //                             url: '/pages/order/order'
+    //                         });
+    //                     }, 1000);
+    //                 } else {
+    //                     wx.showToast({
+    //                         title: '未知错误',
+    //                         icon: 'error',
+    //                         duration: 1000
+    //                     });
+    //                 }
+    //             }
+    //         }
+    //     });
+    // },
 
     // 维修员-填写反馈/完成工单
     finishOrder: function (event) {
@@ -159,6 +162,10 @@ Page({
             content: '确定要继续吗？',
             success: async function (res) {
                 if (res.confirm) {
+                    wx.showLoading({
+                        title: '加载中',
+                        mask: true
+                    })
                     let finishRes = await request('/v2/order/finishOrder', 'POST', {
                         cookie,
                         'content-type': 'application/x-www-form-urlencoded'
@@ -167,24 +174,23 @@ Page({
                         feedback,
                         progress
                     });
+                    wx.hideLoading();
                     if (finishRes.data.code == '00000') {
-                        wx.showModal({
-                            title: '系统提示',
-                            content: '工单状态已更新',
-                            showCancel: false,
-                            success: function (res) {
-                                if (res.confirm) {
-                                    wx.reLaunch({
-                                        url: '/pages/order/order'
-                                    });
-                                }
-                            }
+                        wx.showToast({
+                            title: '工单已更新',
+                            icon: 'success',
+                            duration: 1000
                         });
+                        setTimeout(function () {
+                            wx.reLaunch({
+                                url: '/pages/order/order'
+                            });
+                        }, 1000);
                     } else {
-                        wx.showModal({
-                            title: '系统提示',
-                            content: '出现错误',
-                            showCancel: false
+                        wx.showToast({
+                            title: '未知错误',
+                            icon: 'error',
+                            duration: 1000
                         });
                     }
                 }

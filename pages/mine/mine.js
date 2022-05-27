@@ -34,10 +34,10 @@ Page({
             username: '',
             isLogin: false
         });
-        wx.showModal({
-            title: '系统通知',
-            content: '已退出登录',
-            showCancel: false
+        wx.showToast({
+            title: '退出登录',
+            icon: 'success',
+            duration: 1000
         });
     },
 

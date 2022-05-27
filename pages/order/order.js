@@ -5,7 +5,8 @@ Page({
     data: {
         current: 'all',
         listData: {},
-        userInfo: {}
+        userInfo: null,
+        loaded: false
     },
 
     // 发起工单
@@ -23,12 +24,48 @@ Page({
     },
 
     onPullDownRefresh: async function () {
-        // 权限验证
+        if (!this.data.loaded) {
+            return;
+        }
         let userInfo = this.data.userInfo;
-        if (!userInfo) {
+        let cookie = getStorage('cookie');
+        wx.showLoading({
+            title: '获取中',
+            mask: true
+        });
+        let res;
+        if (userInfo.authorities[0].authority == 'ROLE_repairman') {
+            // 维修人员
+            res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
+                cookie: cookie
+            }, {
+                name: userInfo.name + ' ' + userInfo.tel
+            });
+        } else if (userInfo.authorities[0].authority == 'ROLE_user') {
+            // 普通用户
+            res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+                cookie: cookie
+            }, {
+                username: userInfo.username
+            });
+        }
+        res = res.data;
+        wx.hideLoading();
+        if (res.code == '00000') {
+            this.setData({
+                listData: res.data,
+                loaded: true
+            });
+            console.log(this.data.listData);
+            wx.showToast({
+                title: '获取成功',
+                icon: 'success',
+                duration: 1000
+            });
+        } else if (res.code == 'B0300') {
             wx.showModal({
                 title: '系统提示',
-                content: '您还未登录，请先登录！',
+                content: res.userMsg,
                 success: function (res) {
                     if (res.confirm) {
                         wx.navigateTo({
@@ -41,86 +78,17 @@ Page({
                     }
                 }
             });
-            return;
-        }
-        let cookie = getStorage('cookie');
-        if (userInfo.authorities[0].authority == 'ROLE_repairman') {
-            // 维修人员
-            let res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
-                cookie: cookie
-            }, {
-                name: userInfo.name + ' ' + userInfo.tel
+        } else {
+            wx.showToast({
+                title: '未知错误',
+                icon: 'error',
+                duration: 1000
             });
-            res = res.data;
-            if (res.code == '00000') {
-                this.setData({
-                    listData: res.data
-                });
-                console.log(this.data.listData);
-            } else if (res.code == 'B0300') {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.navigateTo({
-                                url: '/pages/login/login'
-                            });
-                        } else if (res.cancel) {
-                            wx.switchTab({
-                                url: '/pages/index/index'
-                            });
-                        }
-                    }
-                });
-            } else {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    showCancel: false,
-                });
-            }
-        } else if (userInfo.authorities[0].authority == 'ROLE_user') {
-            // 普通用户
-            let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
-                cookie: cookie
-            }, {
-                username: userInfo.username
-            });
-            res = res.data;
-            if (res.code == '00000') {
-                this.setData({
-                    listData: res.data
-                });
-                console.log(this.data.listData);
-            } else if (res.code == 'B0300') {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.navigateTo({
-                                url: '/pages/login/login'
-                            });
-                        } else if (res.cancel) {
-                            wx.switchTab({
-                                url: '/pages/index/index'
-                            });
-                        }
-                    }
-                });
-            } else {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    showCancel: false,
-                });
-            }
         }
         wx.stopPullDownRefresh();
     },
 
-    onLoad: async function () {
+    onShow: async function () {
         // 权限验证
         let userInfo = getStorage('localUserInfo');
         let cookie = getStorage('cookie');
@@ -146,78 +114,64 @@ Page({
         this.setData({
             userInfo
         });
+        if (this.data.loaded) {
+            return;
+        }
+        wx.showLoading({
+            title: '获取中',
+            mask: true
+        });
+        let res;
         if (userInfo.authorities[0].authority == 'ROLE_repairman') {
             // 维修人员
-            let res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
+            res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
                 cookie: cookie
             }, {
                 name: userInfo.name + ' ' + userInfo.tel
             });
-            res = res.data;
-            if (res.code == '00000') {
-                this.setData({
-                    listData: res.data
-                });
-                console.log(this.data.listData);
-            } else if (res.code == 'B0300') {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.navigateTo({
-                                url: '/pages/login/login'
-                            });
-                        } else if (res.cancel) {
-                            wx.switchTab({
-                                url: '/pages/index/index'
-                            });
-                        }
-                    }
-                });
-            } else {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    showCancel: false,
-                });
-            }
         } else if (userInfo.authorities[0].authority == 'ROLE_user') {
             // 普通用户
-            let res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
+            res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
                 cookie: cookie
             }, {
                 username: userInfo.username
             });
-            res = res.data;
-            if (res.code == '00000') {
-                this.setData({
-                    listData: res.data
-                });
-                console.log(this.data.listData);
-            } else if (res.code == 'B0300') {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    success: function (res) {
-                        if (res.confirm) {
-                            wx.navigateTo({
-                                url: '/pages/login/login'
-                            });
-                        } else if (res.cancel) {
-                            wx.switchTab({
-                                url: '/pages/index/index'
-                            });
-                        }
+        }
+        res = res.data;
+        wx.hideLoading();
+        if (res.code == '00000') {
+            this.setData({
+                listData: res.data,
+                loaded: true
+            });
+            console.log(this.data.listData);
+            wx.showToast({
+                title: '获取成功',
+                icon: 'success',
+                duration: 1000
+            });
+        } else if (res.code == 'B0300') {
+            wx.showModal({
+                title: '系统提示',
+                content: res.userMsg,
+                success: function (res) {
+                    if (res.confirm) {
+                        wx.navigateTo({
+                            url: '/pages/login/login'
+                        });
+                    } else if (res.cancel) {
+                        wx.switchTab({
+                            url: '/pages/index/index'
+                        });
                     }
-                });
-            } else {
-                wx.showModal({
-                    title: '系统提示',
-                    content: res.userMsg,
-                    showCancel: false,
-                });
-            }
+                }
+            });
+        } else {
+            wx.showToast({
+                title: '未知错误',
+                icon: 'error',
+                duration: 1000
+            });
         }
     }
 });

@@ -28,7 +28,6 @@ Page({
             '15:00-15:30', '15:30-16:00',
             '16:00-16:30', '16:30-17:00'
         ],
-        disabled: false,
         media: [],
         imgPath: []
     },
@@ -206,16 +205,7 @@ Page({
         });
     },
 
-    switchStatus: function () {
-        this.setData({
-            disabled: !this.data.disabled
-        });
-    },
-
     submit: async function () {
-        let that = this;
-        that.switchStatus();
-
         let pattern = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
         if (!pattern.test(this.data.tel)) {
             wx.showModal({
@@ -223,35 +213,35 @@ Page({
                 content: '请输入正确的联系方式',
                 showCancel: false,
             });
-            return that.switchStatus();
+            return;
         } else if (this.data.posResult == null || (this.data.posResult == null && (this.data.posPlus == '' || this.data.posPlus == null))) {
             wx.showModal({
                 title: '系统提示',
                 content: '请选择/填写报修位置',
                 showCancel: false,
             });
-            return that.switchStatus();
-        } else if (this.data.desIndex == null || (this.data.desIndex == null && (this.data.desPlus == '' || this.data.desPlus == null))) {
+            return;
+        } else if (this.data.desIndex == null || ((this.data.desIndex == null || this.data.desSet[this.data.desIndex] == '其他') && (this.data.desPlus == '' || this.data.desPlus == null))) {
             wx.showModal({
                 title: '系统提示',
                 content: '请选择/填写故障描述',
                 showCancel: false,
             });
-            return that.switchStatus();
+            return;
         } else if (this.data.date == null) {
             wx.showModal({
                 title: '系统提示',
                 content: '请选择日期',
                 showCancel: false,
             });
-            return that.switchStatus();
+            return;
         } else if (this.data.timeIndex == null) {
             wx.showModal({
                 title: '系统提示',
                 content: '请选择时间',
                 showCancel: false,
             });
-            return that.switchStatus();
+            return;
         }
 
         let cookie = this.data.cookie;
@@ -263,11 +253,17 @@ Page({
         let des = (this.data.desSet[this.data.desIndex] == '其他' ? '' : this.data.desSet[this.data.desIndex]) + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
+        let that = this;
+
         wx.showModal({
             title: '系统提示',
             content: '确定要提交吗？',
             success: async function (res) {
                 if (res.confirm) {
+                    wx.showLoading({
+                        title: '加载中',
+                        mask: true
+                    });
                     let imgPath = await that.uploadMedia();
                     // console.log(imgPath);
                     let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
@@ -283,21 +279,25 @@ Page({
                         timeSubscribe,
                         imgPath
                     });
-
+                    wx.hideLoading();
                     if (sendOrderRes.data.code == '00000') {
-                        wx.reLaunch({
-                            url: '/pages/order/order'
+                        wx.showToast({
+                            title: '提交成功',
+                            icon: 'success',
+                            duration: 1000
                         });
+                        setTimeout(function () {
+                            wx.reLaunch({
+                                url: '/pages/order/order'
+                            });
+                        }, 1000);
                     } else {
                         wx.showModal({
                             title: '系统提示',
                             content: sendOrderRes.data.userMsg,
                             showCancel: false,
                         });
-                        that.switchStatus();
                     }
-                } else {
-                    that.switchStatus();
                 }
             }
         });
