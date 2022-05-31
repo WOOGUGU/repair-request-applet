@@ -1,5 +1,3 @@
-/* pages/opinion/opinion.wxss */
-
 .opinion {
     width: 100%;
     height: 95%;

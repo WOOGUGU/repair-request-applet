@@ -1,11 +1,7 @@
-<cu-custom bgColor="{{topNavBar.bgColor}}" isBack="{{true}}">
-    <view slot="backText">返回</view>
-    <view slot="content">登录</view>
-</cu-custom>
 <view class="container">
     <view class="loginContainer">
 
-    <view class="loginTitle">
+        <view class="loginTitle">
             <view class="titleImg">
                 <image src="/static/imgs/HBUT-all.svg"></image>
             </view>

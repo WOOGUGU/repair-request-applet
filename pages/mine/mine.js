@@ -2,17 +2,14 @@ import getStorage from "../../utils/getStorage";
 
 Page({
     data: {
-        name: "n",
-        test: 0,
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        },
+        username: '',
+        isLogin: false
     },
 
     toLogin: function () {
         wx.navigateTo({
             url: '/pages/login/login'
-        })
+        });
     },
 
     toOpinion: function () {
@@ -24,7 +21,7 @@ Page({
     toAbout: function () {
         wx.navigateTo({
             url: '/pages/about/about'
-        })
+        });
     },
 
     toExit: function () {
@@ -34,14 +31,13 @@ Page({
         }
         wx.clearStorage();
         this.setData({
-                test: 0,
-                name: ''
-            }
-        )
-        wx.showModal({
-            title: '系统通知',
-            content: '已退出登录',
-            showCancel: false
+            username: '',
+            isLogin: false
+        });
+        wx.showToast({
+            title: '退出登录',
+            icon: 'success',
+            duration: 1000
         });
     },
 
@@ -49,16 +45,9 @@ Page({
         let userInfo = getStorage('localUserInfo');
         if (userInfo) {
             this.setData({
-                    test: 1,
-                    name: userInfo.username
-                }
-            )
-        } else {
-            this.setData({
-                    test: 0,
-                name: ''
-                }
-            )
+                username: userInfo.username,
+                isLogin: true
+            });
         }
     }
 

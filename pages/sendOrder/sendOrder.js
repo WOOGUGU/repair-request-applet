@@ -1,11 +1,10 @@
 import getStorage from "../../utils/getStorage";
 import request from "../../utils/request";
 
+var COS = require('../../utils/cos-wx-sdk-v5')
+
 Page({
     data: {
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        },
         userInfo: {},
         cookie: '',
         tel: '',
@@ -28,7 +27,9 @@ Page({
             '11:00-11:30', '14:30-15:00',
             '15:00-15:30', '15:30-16:00',
             '16:00-16:30', '16:30-17:00'
-        ]
+        ],
+        media: [],
+        imgPath: []
     },
 
     // 表单数据发生改变
@@ -36,7 +37,7 @@ Page({
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
-        })
+        });
     },
 
     // 多级picker数据发生改变
@@ -68,6 +69,142 @@ Page({
         this.setData(data);
     },
 
+    chooseMedia: async function () {
+        let that = this;
+        let username = this.data.userInfo.username;
+        wx.chooseMedia({
+            count: 3,
+            mediaType: ['image'],
+            maxDuration: 10,
+            camera: 'back',
+            success: function (res) {
+                console.log(res);
+                let mediaList = [];
+                for (let singleFile of res.tempFiles) {
+                    if (singleFile.size > 10 * 1000 * 1000) {
+                        wx.showModal({
+                            title: '系统提示',
+                            content: '单个文件大于10MB，请重新选择！',
+                            showCancel: false,
+                        });
+                        return;
+                    }
+                    mediaList.push({
+                        fileType: singleFile.fileType,
+                        tempFilePath: singleFile.tempFilePath,
+                        thumbTempFilePath: singleFile.thumbTempFilePath
+                    });
+                }
+                that.setData({
+                    media: mediaList
+                });
+            },
+            fail: function (res) {
+                that.setData({
+                    media: []
+                });
+            }
+        });
+    },
+
+    uploadMedia: async function () {
+        let cookie = this.data.cookie;
+
+        let barRes = await request('/v2/cos/getCosBucketAndRegion', 'GET', {
+            cookie
+        }, {});
+        let barData = {};
+        if (barRes.data.code == '00000') {
+            barData = barRes.data.data;
+        } else {
+            return false;
+        }
+
+        // 异步获取临时密钥
+        let stsRes = await request('/v2/cos/getCosTemporaryKey', 'GET', {
+            cookie
+        }, {});
+        let stsData = {};
+        if (stsRes.data.code == '00000') {
+            stsData = stsRes.data.data;
+        } else {
+            return false;
+        }
+
+        let filesPath = [];
+        let filesName = [];
+        let filesType = [];
+        let filenamePrefix = new Date().getTime();
+        for (let file of this.data.media) {
+            filesPath.push(file.tempFilePath);
+            let temp = file.tempFilePath.split('.');
+            filesName.push(filenamePrefix + '-' + filesPath.length + '.' + temp[temp.length - 1]);
+            filesType.push(file.fileType);
+        }
+        // console.log(filesName);
+        // console.log(filesPath);
+
+        var cos = new COS({
+            ForcePathStyle: true, // 如果使用了很多存储桶，可以通过打开后缀式，减少配置白名单域名数量，请求时会用地域域名
+            getAuthorization: function (options, callback) {
+                callback({
+                    TmpSecretId: stsData.id,
+                    TmpSecretKey: stsData.key,
+                    XCosSecurityToken: stsData.token,
+                    StartTime: stsData.startTime,
+                    ExpiredTime: stsData.expiredTime
+                });
+            },
+            FileParallelLimit: 9
+        });
+
+        // 接下来可以通过 cos 实例调用 COS 请求。
+        // TODO
+        let urls = [];
+        for (let i in filesName) {
+            let uploadData = await new Promise((resolve, reject) => {
+                cos.postObject({
+                    Bucket: barData.bucket,
+                    Region: barData.region,
+                    Key: this.data.userInfo.username + '/' + filesName[i],
+                    FilePath: filesPath[i], // wx.chooseImage 选择文件得到的 tmpFilePath
+                    onProgress: function (progressData) {
+                        console.log(JSON.stringify(progressData));
+                    }
+                }, function (err, data) {
+                    // console.log(err || data);
+                    if (err) {
+                        reject(err);
+                    }
+                    if (data) {
+                        resolve(data);
+                    }
+                });
+            });
+            urls.push({
+                url: 'https://' + uploadData.Location,
+                type: filesType[i]
+            });
+        }
+        return JSON.stringify(urls);
+    },
+
+    previewMedia: function (event) {
+        let sources = [];
+        for (let mediaElement of this.data.media) {
+            sources.push({
+                url: mediaElement.tempFilePath,
+                type: mediaElement.fileType
+            });
+        }
+        let current = event.currentTarget.id;
+        // console.log(current);
+        wx.previewMedia({
+            sources,
+            current
+        });
+    },
+
     submit: async function () {
         let pattern = /^1(3\d|4[5-9]|5[0-35-9]|6[567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
         if (!pattern.test(this.data.tel)) {
@@ -84,7 +221,7 @@ Page({
                 showCancel: false,
             });
             return;
-        } else if (this.data.desIndex == null || (this.data.desIndex == null && (this.data.desPlus == '' || this.data.desPlus == null))) {
+        } else if (this.data.desIndex == null || ((this.data.desIndex == null || this.data.desSet[this.data.desIndex] == '其他') && (this.data.desPlus == '' || this.data.desPlus == null))) {
             wx.showModal({
                 title: '系统提示',
                 content: '请选择/填写故障描述',
@@ -116,11 +253,19 @@ Page({
         let des = (this.data.desSet[this.data.desIndex] == '其他' ? '' : this.data.desSet[this.data.desIndex]) + this.data.desPlus;
         let timeSubscribe = this.data.date + ' ' + this.data.timeSet[this.data.timeIndex];
 
+        let that = this;
+
         wx.showModal({
             title: '系统提示',
             content: '确定要提交吗？',
             success: async function (res) {
                 if (res.confirm) {
+                    wx.showLoading({
+                        title: '加载中',
+                        mask: true
+                    });
+                    let imgPath = await that.uploadMedia();
+                    // console.log(imgPath);
                     let sendOrderRes = await request('/v2/order/addOrder', 'POST', {
                         cookie,
                         'content-type': 'application/x-www-form-urlencoded'
@@ -131,17 +276,25 @@ Page({
                         type,
                         position,
                         des,
-                        timeSubscribe
+                        timeSubscribe,
+                        imgPath
                     });
-
+                    wx.hideLoading();
                     if (sendOrderRes.data.code == '00000') {
-                        wx.reLaunch({
-                            url: '/pages/order/order'
+                        wx.showToast({
+                            title: '提交成功',
+                            icon: 'success',
+                            duration: 1000
                         });
+                        setTimeout(function () {
+                            wx.reLaunch({
+                                url: '/pages/order/order'
+                            });
+                        }, 1000);
                     } else {
                         wx.showModal({
                             title: '系统提示',
-                            content: '发生未知错误，请重试',
+                            content: sendOrderRes.data.userMsg,
                             showCancel: false,
                         });
                     }
@@ -201,4 +354,4 @@ Page({
             dateEnd
         });
     }
-});
+})

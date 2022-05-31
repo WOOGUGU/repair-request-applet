@@ -74,4 +74,20 @@ page {
     margin: 40rpx 0 40rpx;
 }
 
+.order-media {
+    height: 100%;
+    display: flex;
+}
+
+.order-medium {
+    height: 150rpx;
+    width: 150rpx;
+    margin: 10rpx;
+}
+
+.order-medium-content {
+    height: 100%;
+    width: 100%;
+}
+
 /* 表单框 end */

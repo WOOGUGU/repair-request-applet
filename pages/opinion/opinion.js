@@ -6,10 +6,7 @@ Page({
         userInfo: {},
         cookie: '',
         opinion: '',
-        tel: '',
-        topNavBar: {
-            bgColor: 'bg-gradual-blue'
-        }
+        tel: ''
     },
 
     // 表单数据发生改变
@@ -17,7 +14,7 @@ Page({
         let type = event.currentTarget.id;
         this.setData({
             [type]: event.detail.value
-        })
+        });
     },
 
     submit: function () {
@@ -48,6 +45,10 @@ Page({
             content: '确定要提交吗？',
             success: async function (res) {
                 if (res.confirm) {
+                    wx.showLoading({
+                        title: '加载中',
+                        mask: true
+                    });
                     let sendFeedbackRes = await request('/v2/feedback/addFeedback', 'POST', {
                         cookie,
                         'content-type': 'application/x-www-form-urlencoded'
@@ -56,18 +57,19 @@ Page({
                         content,
                         tel
                     });
+                    wx.hideLoading();
                     if (sendFeedbackRes.data.code == '00000') {
-                        wx.showModal({
-                            title: '系统提示',
-                            content: sendFeedbackRes.data.userMsg,
-                            showCancel: false,
-                            success: function () {
-                                wx.switchTab({
-                                    url: '/pages/mine/mine'
-                                });
-                            }
+                        wx.showToast({
+                            title: '提交成功',
+                            icon: 'success',
+                            duration: 1000
                         });
-                    } else if (sendFeedbackRes.data.code == 'A0200') {
+                        setTimeout(function () {
+                            wx.switchTab({
+                                url: '/pages/mine/mine'
+                            })
+                        }, 1000);
+                    } else if (sendFeedbackRes.data.code == 'B0300') {
                         // cookie失效
                         wx.showModal({
                             title: '系统提示',
@@ -85,10 +87,10 @@ Page({
                             }
                         });
                     } else {
-                        wx.showModal({
-                            title: '系统提示',
-                            content: sendFeedbackRes.data.userMsg,
-                            showCancel: false,
+                        wx.showToast({
+                            title: '未知错误',
+                            icon: 'error',
+                            duration: 1000
                         });
                     }
                 }
@@ -114,14 +116,14 @@ Page({
                         wx.navigateBack();
                     }
                 }
-            })
+            });
             return;
         }
         let res = await request('/v2/inner/isExpired', 'GET', {
-            cookie: cookie
+            cookie
         });
         res = res.data;
-        if (res.code == 'F300' || res.code == 'A0200') {
+        if (res.code == 'B0100') {
             wx.showModal({
                 title: '系统提示',
                 content: res.userMsg,

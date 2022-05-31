@@ -12,9 +12,9 @@ page {
     text-align: center;
     line-height: 180rpx;
     color: white;
-    font-size: 13px;
+    font-size: 40rpx;
     font-weight: normal;
-    background: linear-gradient(45deg, #0081ff, #1cbbb4);
+    background: linear-gradient(30deg, #0071ba, #81c37a);
     position: sticky;
     top: 0;
     z-index: 2;
@@ -33,10 +33,11 @@ input {
 
 .btn {
     color: white;
+    font-size: 36rpx;
     margin: 20rpx 0 30rpx;
     height: 80rpx;
     line-height: 80rpx;
-    background-image: linear-gradient(45deg, #0081ff, #1cbbb4);
+    background: linear-gradient(30deg, #0071ba, #81c37a);
     border-radius: 20rpx;
     box-shadow: #dddddd 5rpx 5rpx 15rpx;
 }

@@ -1,18 +1,16 @@
-<!--pages/index/index.wxml-->
-<view class="top">主页</view>
-
 <view class="indexContainer">
 
     <swiper class="banners" indicator-dots
             indicator-color="#C6EDFF"
             indicator-active-color="#0088E2"
-            autoplay="true" interval="3000">
+            autoplay="true" interval="3000"
+            wx:if="{{slideData.length > 0}}">
         <swiper-item wx:for="{{slideData}}">
             <image class="slide-img-item" src="{{item.imgPath}}"></image>
         </swiper-item>
     </swiper>
 
-    <view class="article">
+    <view class="article" wx:if="{{articleList.length > 0}}">
         <view wx:for="{{articleList}}" class="article-item" id="{{index}}" bindtap="toArticle">
             <view class="article-cover">
                 <image class="article-cover-image"
