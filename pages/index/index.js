@@ -18,10 +18,12 @@ Page({
 
     onLoad: async function (options) {
         // 请求通知数据
-        let noticeRes = await request('/v2/notice/selectAllNotice', 'GET');
+        let noticeRes = await request('/v2/notice/selectAllNotice', 'GET', {}, {
+            pageSize: 2147483647
+        });
         if (noticeRes.data.code == '00000') {
             console.log(noticeRes.data);
-            let noticeData = noticeRes.data.data;
+            let noticeData = noticeRes.data.data.list;
             for (let i in noticeData) {
                 // 跳过隐藏通知
                 if (noticeData[i].displayStatus == 2) {
@@ -36,17 +38,21 @@ Page({
             }
         }
         // 请求轮播图数据
-        let slideRes = await request('/v2/slide/selectAllSlide', 'GET');
+        let slideRes = await request('/v2/slide/selectAllSlide', 'GET', {}, {
+            pageSize: 2147483647
+        });
         if (slideRes.data.code == '00000') {
             this.setData({
-                slideData: slideRes.data.data
+                slideData: slideRes.data.data.list
             });
             console.log(this.data.slideData);
         }
         // 请求文章数据
-        let articleRes = await request('/v2/article/selectAllArticle', 'GET');
+        let articleRes = await request('/v2/article/selectAllArticle', 'GET', {}, {
+            pageSize: 2147483647
+        });
         if (articleRes.data.code == '00000') {
-            let articleData = articleRes.data.data;
+            let articleData = articleRes.data.data.list;
             let articleList = [];
             for (let i in articleData) {
                 // 跳过隐藏文章

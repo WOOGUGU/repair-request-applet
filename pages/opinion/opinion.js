@@ -120,7 +120,7 @@ Page({
             return;
         }
         let res = await request('/v2/inner/isExpired', 'GET', {
-            cookie: cookie
+            cookie
         });
         res = res.data;
         if (res.code == 'B0100') {

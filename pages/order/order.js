@@ -37,23 +37,25 @@ Page({
         if (userInfo.authorities[0].authority == 'ROLE_repairman') {
             // 维修人员
             res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
-                cookie: cookie
+                cookie
             }, {
-                name: userInfo.name + ' ' + userInfo.tel
+                name: userInfo.name + ' ' + userInfo.tel,
+                pageSize: 2147483647
             });
         } else if (userInfo.authorities[0].authority == 'ROLE_user') {
             // 普通用户
             res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
-                cookie: cookie
+                cookie
             }, {
-                username: userInfo.username
+                username: userInfo.username,
+                pageSize: 2147483647
             });
         }
         res = res.data;
         wx.hideLoading();
         if (res.code == '00000') {
             this.setData({
-                listData: res.data,
+                listData: res.data.list,
                 loaded: true
             });
             console.log(this.data.listData);
@@ -125,23 +127,25 @@ Page({
         if (userInfo.authorities[0].authority == 'ROLE_repairman') {
             // 维修人员
             res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
-                cookie: cookie
+                cookie
             }, {
-                name: userInfo.name + ' ' + userInfo.tel
+                name: userInfo.name + ' ' + userInfo.tel,
+                pageSize: 2147483647
             });
         } else if (userInfo.authorities[0].authority == 'ROLE_user') {
             // 普通用户
             res = await request('/v2/order/selectAllOrderOfUser', 'GET', {
-                cookie: cookie
+                cookie
             }, {
-                username: userInfo.username
+                username: userInfo.username,
+                pageSize: 2147483647
             });
         }
         res = res.data;
         wx.hideLoading();
         if (res.code == '00000') {
             this.setData({
-                listData: res.data,
+                listData: res.data.list,
                 loaded: true
             });
             console.log(this.data.listData);
