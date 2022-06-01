@@ -80,6 +80,12 @@ Page({
                     }
                 }
             });
+        } else if (res.code == 'C0200') {
+            wx.showToast({
+                title: '工单记录为空',
+                icon: 'error',
+                duration: 1000
+            });
         } else {
             wx.showToast({
                 title: '未知错误',
@@ -169,6 +175,12 @@ Page({
                         });
                     }
                 }
+            });
+        } else if (res.code == 'C0200') {
+            wx.showToast({
+                title: '工单记录为空',
+                icon: 'error',
+                duration: 1000
             });
         } else {
             wx.showToast({
