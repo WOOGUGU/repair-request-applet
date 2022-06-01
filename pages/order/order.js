@@ -39,7 +39,7 @@ Page({
             res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
                 cookie
             }, {
-                name: userInfo.name + ' ' + userInfo.tel,
+                username: userInfo.name + ' ' + userInfo.tel,
                 pageSize: 2147483647
             });
         } else if (userInfo.authorities[0].authority == 'ROLE_user') {
@@ -129,7 +129,7 @@ Page({
             res = await request('/v2/order/selectAllOrderOfRepairman', 'GET', {
                 cookie
             }, {
-                name: userInfo.name + ' ' + userInfo.tel,
+                username: userInfo.name + ' ' + userInfo.tel,
                 pageSize: 2147483647
             });
         } else if (userInfo.authorities[0].authority == 'ROLE_user') {

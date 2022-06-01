@@ -29,16 +29,31 @@ Page({
         if (!userInfo) {
             return;
         }
-        wx.clearStorage();
-        this.setData({
-            username: '',
-            isLogin: false
+        let that = this;
+        wx.showModal({
+            title: '系统提示',
+            content: '确定要退出登录吗？',
+            success: function (res) {
+                if (res.confirm) {
+                    wx.clearStorage();
+                    that.setData({
+                        username: '',
+                        isLogin: false
+                    });
+                    wx.showToast({
+                        title: '退出登录',
+                        icon: 'success',
+                        duration: 1000
+                    });
+                    setTimeout(function () {
+                        wx.reLaunch({
+                            url: '/pages/mine/mine'
+                        });
+                    }, 1000);
+                }
+            }
         });
-        wx.showToast({
-            title: '退出登录',
-            icon: 'success',
-            duration: 1000
-        });
+
     },
 
     onShow: function () {
